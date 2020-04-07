@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
  <h3>이벤트 주문</h3>
- <table border="1" align="center">
+ <table border="1" align="center"> 
  	<tr><th colspan="3">이벤트 주문 신청</th></tr>
  	<tr><th>회원명</td><td colspan="2">회원명</td></tr>
  	<tr><th>회원 ID</td><td colspan="2">회원 ID</td></tr>
