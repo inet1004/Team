@@ -9,7 +9,7 @@
  	<tr><th>회원 등급</th><td colspan="2">회원ID</td></tr>
  	<tr><th>작성일</th><td colspan="2"><input type="Date"></td></tr>
  	<tr><th>신청 날자</th><td colspan="2"><input type="Date"></td></tr>
- 	<tr><th>신청 장소</th><td>f
+ 	<tr><th>신청 장소</th><td>
  		<input type="radio" name="chk_info" value="std">Standard Room
 		<input type="radio" name="chk_info" value="siler" checked>Silver Room
 		<input type="radio" name="chk_info" value="gold">Gold Room</td><td>100,000원</td></tr>
