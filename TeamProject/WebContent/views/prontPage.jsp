@@ -5,8 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<jsp:forward page="/prontpage.do"></jsp:forward>
 </head>
 <body>
+정문이당
 </body>
 </html>
