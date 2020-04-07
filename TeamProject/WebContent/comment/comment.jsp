@@ -40,13 +40,12 @@
          }
      }
  }
-
  </script>
 </head>
 <body>
 <form method="post" id="comment" action="">
 <div>
-   게시글
+   게시글ddddkjfsdkfja
 </div>
 <div>
 <label></label><textarea rows="4" cols="70"></textarea>
