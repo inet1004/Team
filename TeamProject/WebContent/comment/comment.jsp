@@ -6,27 +6,6 @@
 <meta charset="UTF-8">
 <title>comment</title>
  <script>
-  function writeCmt(){
-	  var form = document.getElementById("writeCommentForm");
-	  
-	  var board = form.comment_board.value
-	  var id = form.comment_id.value
-	  var content = form.comment_content.value;
-	  
-	  if(!content){
-		  alert("내용을 입력하세요.");
-		  return false;
-	  } else {
-		  var param = "comment_board=" +board+ "&comment_id"+id+"&commnent_content="+content;
-		  
-		  httpRequest = getXMLHttpRequest();
-		  httpRequest.onreadystatechange = checkFunc;
-          httpRequest.open("POST", "CommentWriteAction.co", true);    
-          httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=EUC-KR'); 
-          httpRequest.send(param);
-
-	  }
-  }
   
  </script>
 </head>
