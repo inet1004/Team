@@ -10,7 +10,6 @@
  	<tr><th>작성일</td><td colspan="2"><input type="Date"></td></tr>
  	<tr><th>신청 날자</td><td colspan="2"><input type="Date"></td></tr>
  	<tr><th>신청 장소</td><td>
- 		<input type="radio" name="chk_place" value="std">Standard Room
 		<input type="radio" name="chk_place" value="siler" checked>Silver Room
 		<input type="radio" name="chk_place" value="gold">Gold Room</td><td>100,000원</td></tr>
  	<tr><th>신청 의상</td><td>
