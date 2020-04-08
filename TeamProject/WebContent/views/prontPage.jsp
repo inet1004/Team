@@ -63,7 +63,7 @@
             <nav class="site-navigation position-relative text-right" role="navigation">
 
               <ul class="site-menu main-menu js-clone-nav mr-auto d-none d-lg-block">
-                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li><a href="${pageContext.request.contextPath}/home.do" class="nav-link">Home</a></li>
                 <li class="has-children">
                   <a href="#about-section" class="nav-link">About Us</a>
                   <ul class="dropdown">
@@ -104,7 +104,7 @@
 
   
      
-    <div class="site-blocks-cover overlay" style="background-image: url(images/hero_2.jpg);" data-aos="fade" id="home-section">
+    <div class="site-blocks-cover overlay" style="background-image: url(bootstrep/images/hero_2.jpg);" data-aos="fade" id="home-section">
 
       <div class="container">
         <div class="row align-items-center justify-content-center">
@@ -146,17 +146,17 @@
       <div class="container">
         <div class="row mb-5">
           <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="">
-            <img src="images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+            <img src="bootstrep/images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
             <h3 class="card-title">Money Savings</h3>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
           </div>
           <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="100">
-            <img src="images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+            <img src="bootstrep/images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
             <h3 class="card-title">Online Shoppings</h3>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
           </div>
           <div class="col-md-4 text-center" data-aos="fade-up" data-aos-delay="200">
-            <img src="images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+            <img src="bootstrep/images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
             <h3 class="card-title">Credit / Debit Cards</h3>
             <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
           </div>
@@ -166,7 +166,7 @@
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
             <figure class="circle-bg">
-            <img src="images/about_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            <img src="bootstrep/images/about_2.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
             </figure>
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -213,7 +213,7 @@
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
             <figure class="circle-bg">
-            <img src="images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            <img src="bootstrep/images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
             </figure>
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -251,7 +251,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_5.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_5.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Kaiara Spencer</h3>
@@ -269,7 +269,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_6.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_6.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Dave Simpson</h3>
@@ -287,7 +287,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_7.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_7.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Ben Thompson</h3>
@@ -305,7 +305,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_8.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_8.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Kyla Stewart</h3>
@@ -323,7 +323,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_1.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_1.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Kaiara Spencer</h3>
@@ -341,7 +341,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_2.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_2.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Dave Simpson</h3>
@@ -359,7 +359,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_3.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_3.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Ben Thompson</h3>
@@ -377,7 +377,7 @@
                   <li><a href="#"><span class="icon-linkedin"></span></a></li>
                   <li><a href="#"><span class="icon-instagram"></span></a></li>
                 </ul>
-                <img src="images/person_4.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/person_4.jpg" alt="Image" class="img-fluid">
               </figure>
               <div class="p-3">
                 <h3>Chris Stewart</h3>
@@ -414,87 +414,87 @@
         
         <div id="posts" class="row no-gutter">
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_1.jpg" class="item-wrap fancybox">
+            <a href="bootstrep/images/img_1.jpg" class="item-wrap fancybox">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_1.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_1.jpg">
             </a>
           </div>
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_2.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_2.jpg">
             </a>
           </div>
 
           <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_3.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_3.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_3.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_3.jpg">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
 
-            <a href="images/img_4.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_4.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_4.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_4.jpg">
             </a>
 
           </div>
 
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_5.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_5.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_5.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_5.jpg">
             </a>
           </div>
 
           <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_1.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_1.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_1.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_1.jpg">
             </a>
           </div>
 
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_2.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_2.jpg">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_3.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_3.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_3.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_3.jpg">
             </a>
           </div>
 
           <div class="item web col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_4.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_4.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_4.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_4.jpg">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_5.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_5.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_5.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_5.jpg">
             </a>
           </div>
 
           <div class="item brand col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_1.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_1.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_1.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_1.jpg">
             </a>
           </div>
 
           <div class="item design col-sm-6 col-md-4 col-lg-4 col-xl-3 mb-4">
-            <a href="images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
+            <a href="bootstrep/images/img_2.jpg" class="item-wrap fancybox" data-fancybox="gallery2">
               <span class="icon-search2"></span>
-              <img class="img-fluid" src="images/img_2.jpg">
+              <img class="img-fluid" src="bootstrep/images/img_2.jpg">
             </a>
           </div>
 
@@ -519,9 +519,9 @@
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
 
             <div class="owl-carousel slide-one-item-alt">
-              <img src="images/slide_1.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_2.jpg" alt="Image" class="img-fluid">
-              <img src="images/slide_3.jpg" alt="Image" class="img-fluid">
+              <img src="bootstrep/images/slide_1.jpg" alt="Image" class="img-fluid">
+              <img src="bootstrep/images/slide_2.jpg" alt="Image" class="img-fluid">
+              <img src="bootstrep/images/slide_3.jpg" alt="Image" class="img-fluid">
             </div>
             <div class="custom-direction">
               <a href="#" class="custom-prev"><span><span class="icon-keyboard_backspace"></span></span></a><a href="#" class="custom-next"><span><span class="icon-keyboard_backspace"></span></span></a>
@@ -570,7 +570,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/001-wallet.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Business Consulting</h3>
@@ -582,7 +582,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/006-credit-card.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Credit Card</h3>
@@ -594,7 +594,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/002-rich.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/002-rich.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Income Monitoring</h3>
@@ -608,7 +608,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/003-notes.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/003-notes.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Insurance Consulting</h3>
@@ -620,7 +620,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/004-cart.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Financial Investment</h3>
@@ -632,7 +632,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="unit-4">
               <div class="unit-4-icon">
-                <img src="images/flaticon-svg/svg/005-megaphone.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
+                <img src="bootstrep/images/flaticon-svg/svg/005-megaphone.svg" alt="Free Website Template by Free-Template.co" class="img-fluid w-25 mb-4">
               </div>
               <div>
                 <h3>Financial Management</h3>
@@ -663,7 +663,7 @@
               </blockquote>
 
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="bootstrep/images/person_3.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>John Smith</p>
               </figure>
             </div>
@@ -675,7 +675,7 @@
                 <p>&ldquo;A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="bootstrep/images/person_2.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Christine Aguilar</p>
               </figure>
               
@@ -689,7 +689,7 @@
                 <p>&ldquo;Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="bootstrep/images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Robert Spears</p>
               </figure>
 
@@ -704,7 +704,7 @@
                 <p>&ldquo;The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen. She packed her seven versalia, put her initial into the belt and made herself on the way.&rdquo;</p>
               </blockquote>
               <figure class="mb-4 d-flex align-items-center justify-content-center">
-                <div><img src="images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
+                <div><img src="bootstrep/images/person_4.jpg" alt="Image" class="w-50 img-fluid mb-3"></div>
                 <p>Bruce Rogers</p>
               </figure>
 
@@ -843,7 +843,7 @@
         <div class="row">
           <div class="col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="">
             <figure class="circle-bg">
-            <img src="images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
+            <img src="bootstrep/images/hero_1.jpg" alt="Free Website Template by Free-Template.co" class="img-fluid">
             </figure>
           </div>
           <div class="col-lg-5 ml-auto" data-aos="fade-up" data-aos-delay="100">
@@ -899,7 +899,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="">
             <div class="h-entry">
               <a href="single.html">
-                <img src="images/img_1.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/img_1.jpg" alt="Image" class="img-fluid">
               </a>
               <h2 class="font-size-regular"><a href="#">A Basic Guide to Starting a Franchise in the Philippines</a></h2>
               <div class="meta mb-4">Ham Brook <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
@@ -910,7 +910,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="h-entry">
               <a href="single.html">
-                <img src="images/img_4.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/img_4.jpg" alt="Image" class="img-fluid">
               </a>
               <h2 class="font-size-regular"><a href="#">A Basic Guide to Starting a Franchise in the Philippines</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
@@ -921,7 +921,7 @@
           <div class="col-md-6 col-lg-4 mb-4 mb-lg-4" data-aos="fade-up" data-aos-delay="200">
             <div class="h-entry">
               <a href="single.html">
-                <img src="images/img_3.jpg" alt="Image" class="img-fluid">
+                <img src="bootstrep/images/img_3.jpg" alt="Image" class="img-fluid">
               </a>
               <h2 class="font-size-regular"><a href="#">A Basic Guide to Starting a Franchise in the Philippines</a></h2>
               <div class="meta mb-4">James Phelps <span class="mx-2">&bullet;</span> Jan 18, 2019<span class="mx-2">&bullet;</span> <a href="#">News</a></div>
