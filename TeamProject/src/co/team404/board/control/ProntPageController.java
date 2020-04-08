@@ -10,10 +10,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @WebServlet("/prontpage.do")
-public class ProntPage extends HttpServlet {
+public class ProntPageController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ProntPage() {
+    public ProntPageController() {
         super();
     }
 
