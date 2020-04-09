@@ -125,7 +125,7 @@
 			<div class="sendForm">
 				<label for="sendForm">위의 사항을 확인하고 신청합니다.</label>
 				<input type="button" class="inputOrder" id="mc" name="mc" value="신청하기">
-			</div>
+			</div> 
 			
 			
 			<div><br/></div>
