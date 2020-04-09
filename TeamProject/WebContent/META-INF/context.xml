@@ -35,6 +35,11 @@
               url="jdbc:oracle:thin:@39.116.34.40:1521:xe"
               username="system" password="yedam4212460" maxTotal="20" maxIdle="10"
               maxWaitMillis="-1"/>
+    <Resource name="jdbc/localteam" auth="Container"
+              type="javax.sql.DataSource" driverClassName="oracle.jdbc.OracleDriver"
+              url="jdbc:oracle:thin:@192.168.0.116:1521:xe"
+              username="hr" password="hr" maxTotal="20" maxIdle="10"
+              maxWaitMillis="-1"/>
               
               
 </Context>
