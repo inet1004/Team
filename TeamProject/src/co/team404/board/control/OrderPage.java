@@ -27,7 +27,7 @@ public class OrderPage extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String path="board/order.jsp";
+		String path="board/orderWriteForm.jsp";
 		request.getRequestDispatcher(path).forward(request,response);
 	}
 
