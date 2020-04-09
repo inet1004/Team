@@ -5,7 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <style>
+<<<<<<< HEAD
 	table, tr,td { border: 1px solid black;}
+=======
+	table, tr,td { 
+	border: 1px solid black;
+	}
+>>>>>>> branch 'master' of https://github.com/inet1004/Team.git
 </style>
 <title>Insert title here</title>
 </head>
