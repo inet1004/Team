@@ -1,59 +1,121 @@
 package co.team404.member.dao;
 
+import java.sql.Date;
+
 public class MemberVo {
-	
-	 String member_id;
-	 String member_name;
-	 String pw;
-	 String addr;
-	 String tell;
-	 String grade;
+	private String id;
+	private String name;
+	private String pw;
+	private String addr;
+	private String tell;
+	private String grade;
+	/**
+	 * @return the tell
+	 */
+	public String getTell() {
+		return tell;
+	}
+
+	/**
+	 * @param tell the tell to set
+	 */
+	public void setTell(String tell) {
+		this.tell = tell;
+	}
+
+	private Date jdate;
 	
 	public MemberVo() {
 	}
 	
 	public MemberVo(String id, String pw) {
-		this.member_id = id;
+		this.id = id;
 		this.pw = pw;
-		
 	}
-	
-	public String getMemberid() {
-		return member_id;
+
+	/**
+	 * @return the id
+	 */
+	public String getId() {
+		return id;
 	}
-	public void setMemberid(String memberid) {
-		this.member_id = memberid;
+
+	/**
+	 * @param id the id to set
+	 */
+	public void setId(String id) {
+		this.id = id;
 	}
-	public String getMembername() {
-		return member_name;
+
+	/**
+	 * @return the name
+	 */
+	public String getName() {
+		return name;
 	}
-	public void setMembername(String membername) {
-		this.member_name = membername;
+
+	/**
+	 * @param name the name to set
+	 */
+	public void setName(String name) {
+		this.name = name;
 	}
+
+	/**
+	 * @return the pw
+	 */
 	public String getPw() {
 		return pw;
 	}
+
+	/**
+	 * @param pw the pw to set
+	 */
 	public void setPw(String pw) {
 		this.pw = pw;
 	}
+
+	/**
+	 * @return the addr
+	 */
 	public String getAddr() {
 		return addr;
 	}
+
+	/**
+	 * @param addr the addr to set
+	 */
 	public void setAddr(String addr) {
 		this.addr = addr;
 	}
-	public String getTell() {
-		return tell;
-	}
-	public void setTell(String tell) {
-		this.tell = tell;
-	}
+
+
+	/**
+	 * @return the grade
+	 */
 	public String getGrade() {
 		return grade;
 	}
+
+	/**
+	 * @param grade the grade to set
+	 */
 	public void setGrade(String grade) {
 		this.grade = grade;
 	}
-	
-	
+
+	/**
+	 * @return the jdate
+	 */
+	public Date getJdate() {
+		return jdate;
+	}
+
+	/**
+	 * @param jdate the jdate to set
+	 */
+	public void setJdate(Date jdate) {
+		this.jdate = jdate;
+	}
+
 }
