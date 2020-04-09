@@ -66,7 +66,7 @@ section:after {
 </head>
 <body>
 
-<h2>영상 게시판</h2>
+<h2>영상 게시판!</h2>
 <p> </p>
 
 <header>
