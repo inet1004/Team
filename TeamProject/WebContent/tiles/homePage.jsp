@@ -9,7 +9,7 @@
                      <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
                   </div>
                   <div class="blog_details">
-                     <h2>돌아버리겠네. 이거 할 수 있으려나...
+                     <h2>돌아버리겠네.  이거 할 수 있으려나...
                      </h2>
                      <ul class="blog-info-link mt-3 mb-4">
                         <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
