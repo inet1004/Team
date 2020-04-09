@@ -18,7 +18,7 @@
     <url-pattern>*.tiles</url-pattern>
 </servlet-mapping>
 
-<!-- 아래는 context.xml 파일을 프로젝트 META-INF 아래에 둘 경우 레퍼런스 하기 위하여 주가함 -->
+<!-- 아래는 context.xml 파일을 프로젝트 META-INF 아래에 둘 경우 레퍼런스 하기 위하여 주가함  -->
  <resource-ref>
   	<res-ref-name>jdbc/team</res-ref-name>
   	<res-type>javax.sql.DataSource</res-type>
