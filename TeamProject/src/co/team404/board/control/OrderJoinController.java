@@ -18,17 +18,15 @@ public class OrderJoinController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doAction(request, response);
+		request.setCharacterEncoding("utf-8");
+		
+		String path = "board/orderWriteform.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		doAction(request, response);
-	}
-	
-	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String path = "board/orderWriteForm.jsp";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
+		doGet(request, response);
 	}
 
 }
