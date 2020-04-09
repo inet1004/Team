@@ -32,7 +32,7 @@ public class HomePageCotroler extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		String path = "tiles/homePage.jsp";
+		String path = "tiles/homePage.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
