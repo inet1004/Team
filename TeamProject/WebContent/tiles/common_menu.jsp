@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <header>
-        <!-- Header Start -->
+        <!-- Header Start  -->
        <div class="header-area">
             <div class="main-header header-sticky">
                 <div class="container">
