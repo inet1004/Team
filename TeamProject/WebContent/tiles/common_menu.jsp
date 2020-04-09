@@ -6,7 +6,7 @@
             <div class="main-header header-sticky">
                 <div class="container">
                     <div class="row align-items-center">
-                        <!-- Logo -->
+                        <!-- Logo --> 
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="logo">
                                 <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
