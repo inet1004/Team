@@ -7,7 +7,7 @@
  
 <listener>
     <listener-class>org.apache.tiles.web.startup.simple.SimpleTilesListener</listener-class>
-</listener>
+</listener> 
 
 <servlet>
     <servlet-name>Tiles Dispatch Servlet</servlet-name>
