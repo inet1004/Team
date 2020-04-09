@@ -19,6 +19,9 @@ body {
 header {
   background-color: #666;
   text-align: center;
+   padding: 0px;
+   magin : 0px;
+   
   font-size: 35px;
   color: white;
 }
@@ -29,7 +32,7 @@ nav {
   width: 30%;
   height: 300px; 
   background: #ccc;
-  padding: 20px;
+  padding: 30px;
 }
 
 
@@ -68,7 +71,7 @@ section:after {
 
 <h2>영상 게시판!</h2>
 <p> </p>
-
+`1
 <header>
   <h2>Youtube</h2>
 </header>
@@ -84,9 +87,11 @@ section:after {
     
   </article>
   <section>
+  
 <div class="slide">
-<img src
+<img src ="../img/dg1.jpg">
 </div>
+
 </section>
 
 </body>
