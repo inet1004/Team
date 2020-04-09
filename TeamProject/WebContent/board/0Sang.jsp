@@ -2,6 +2,7 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <head>
 <title>CSS Template</title>
 <meta charset="utf-8">
@@ -43,7 +44,7 @@ nav ul {
 
 article {
   float: left;
-  padding: 10px;
+  padding: 30px;
   width: 70%;
   background-color: #f1f1f1;
   height: 120px; 
@@ -71,25 +72,31 @@ section:after {
 
 <h2>영상 게시판!</h2>
 <p> </p>
-`1
+
 <header>
   <h2>Youtube</h2>
 </header>
 
-<section>
+
   <nav>
-    <iframe width="420" height="250" src="https://www.youtube.com/embed/BqXZN7MhR5g" frameborder="30" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <iframe width="100%" height="100%" src="https://www.youtube.com/embed/BqXZN7MhR5g"  ></iframe>
   </nav>
  
   <article>
     <h1>YouTuBe 조회수 10만 이상 </h1>
-    <p> 브라이덜샤워의 대한 영상모음집.</p>
+    
+     <li> 브라이덜샤워의 대한 영상모음집.</li>
+      <li> 브라이덜샤워의 대한 영상모음집.</li>
+	      <li> 브라이덜샤워의 대한 영상모음집.</li>
+      
+      
+      
     
   </article>
   <section>
   
 <div class="slide">
-<img src ="../img/dg1.jpg">
+<img src ="../img/dg1.jpg" width="30%" height="">
 </div>
 
 </section>
