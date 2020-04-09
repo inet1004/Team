@@ -2,8 +2,8 @@ package co.team404.member.dao;
 
 public class MemberVo {
 	
-	 String memberid;
-	 String membername;
+	 String member_id;
+	 String member_name;
 	 String pw;
 	 String addr;
 	 String tell;
@@ -13,22 +13,22 @@ public class MemberVo {
 	}
 	
 	public MemberVo(String id, String pw) {
-		this.memberid = id;
+		this.member_id = id;
 		this.pw = pw;
 		
 	}
 	
 	public String getMemberid() {
-		return memberid;
+		return member_id;
 	}
 	public void setMemberid(String memberid) {
-		this.memberid = memberid;
+		this.member_id = memberid;
 	}
 	public String getMembername() {
-		return membername;
+		return member_name;
 	}
 	public void setMembername(String membername) {
-		this.membername = membername;
+		this.member_name = membername;
 	}
 	public String getPw() {
 		return pw;
