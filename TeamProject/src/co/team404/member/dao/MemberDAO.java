@@ -7,11 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-import common.ConnectionManager;
-=======
->>>>>>> branch 'master' of https://github.com/inet1004/Team
 
 public class MemberDAO {
 
@@ -20,7 +15,7 @@ public class MemberDAO {
 	private String user = "hr";
 	private String password = "hr";
 
-	Connection conn = null;
+	Connection conn = null; 
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 
@@ -37,32 +32,6 @@ public class MemberDAO {
 			instance = new MemberDAO();
 		return instance;
 	}
-<<<<<<< HEAD
-<<<<<<< HEAD
-	
-	String SELECT_ALL = "SELECT * FROM EMEMBER";
-	String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
-	String INSERT = "INSERT INTO EMEMBER VALUES(?,?,?,?,?)";
-	String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
-	String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
-		 
-		public int memberInsert(MemberVo member) {
-			int n = 0;
-			try {
-				psmt = conn.prepareStatement(INSERT);
-				psmt.setString(1, member.getId());
-				psmt.setString(2, member.getName());
-				psmt.setString(3, member.getPw());
-				psmt.setString(4, member.getAddr());
-				psmt.setString(5, member.getTell());
-				n = psmt.executeUpdate();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-			return n;
-=======
-=======
->>>>>>> branch 'master' of https://github.com/inet1004/Team
 
 	public MemberDAO() {
 		try {
