@@ -58,9 +58,9 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>                              
                                     <ul id="navigation">    
-                                        <li><a href="${pageContext.request.contextPath}/home.do"> home</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/home.do">home</a></li>
                                         <li><a href="location.html">Location</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
+                                        <li><a href="#">order</a></li>
                                         <li><a href="booking.html">Guest Book</a></li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">

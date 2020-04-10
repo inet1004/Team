@@ -1,4 +1,4 @@
-package co.team404.board.control;
+package co.team404.common.control;
 
 import java.io.IOException;
 

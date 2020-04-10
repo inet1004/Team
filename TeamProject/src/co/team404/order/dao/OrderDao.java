@@ -3,24 +3,30 @@ package co.team404.order.dao;
 import java.sql.Connection;
 
 
-
-
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 
 public class OrderDao {
-	private final String driver = "oracle.jdbc.driver.OracleDriver";
-	private final String url = "jdbc:oracle:thin:@localhost:1521:xe";
-	private String user = "park";
-	private String password = "park";
-		
-	private Connection conn;
-	private PreparedStatement psmt;
+
+	Connection conn = null;
+	PreparedStatement psmt = null;
+	Statement stmt = null;
+	
 	private ResultSet rs;
+
+	//싱글톤 구현
+	static OrderDao instance;	
+	public static OrderDao getInstance() {
+		if (instance == null)
+			instance = new OrderDao();
+		return instance;
+	}
+	
 
 	private final String ORDER_LIST = "select * from order";
 	private final String ORDER_CHECK = "select * from order where id = ? and pw = ? and orderid = ?";
@@ -28,14 +34,14 @@ public class OrderDao {
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	
 	
-	public OrderDao() {
-		try {
-			Class.forName(driver);
-			conn = DriverManager.getConnection(url,user,password);
-		} catch (ClassNotFoundException | SQLException e) {
-			e.printStackTrace();
-		}
-	}
+///	public OrderDao() {
+///		try {
+///			Class.forName(driver);
+///			conn = DriverManager.getConnection(url,user,password);
+///		} catch (ClassNotFoundException | SQLException e) {
+///			e.printStackTrace();
+///		}
+///	}
 	
 	public ArrayList<OrderVo> select(){
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
