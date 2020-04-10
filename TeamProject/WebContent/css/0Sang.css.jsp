@@ -8,5 +8,9 @@
 </head>
 <body>
 
+caption { 
+  display: table-caption;
+  text-align: center;
+}
 </body>
 </html>
