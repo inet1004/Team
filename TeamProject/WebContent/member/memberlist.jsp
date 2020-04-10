@@ -61,8 +61,8 @@
 			</c:choose>
 		</table>
 	</div>
-	<button type="button" id="btnupdate" name="btnupdate">수정</button>
-	<button type="button" id="btndelete" name="btndelete">삭제</button>
+	<button type="button" id="btnupdate" name="btnupdate" onclick="">수정</button>
+	<button type="button" id="btndelete" name="btndelete" onclick="">삭제</button>
 	<div>
 		<br />
 	</div>
