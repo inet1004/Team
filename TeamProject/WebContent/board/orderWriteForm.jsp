@@ -12,22 +12,22 @@
 <div class="container" align="center">
  <div><h3>이벤트 주문</h3></div>
  <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
- 	<form action="orderConfirm.jsp" class="order" id="orderInsert"
-			name="order-insert" method="post" enctype="multipart/form-data" >
+ 	<form action="orderConfirm.jsp" class="order" id="orderConfirm"
+			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">
-			<div><br/></div>
-  
-			<div class="memberName">
-				<label for="name">회원명 :</label> 
-				<input type="text" class="inputOrder" id="name" name="name">
-			</div>
-			
 			<div><br/></div>
 			
 			<div class="memberId">
 				<label for="id">회원 아이디 :</label> 
 				<input type="text" class="inputOrder" id="id" name="id">
+			</div>
+			
+			<div><br/></div>
+  
+			<div class="memberName">
+				<label for="name">회원명 :</label> 
+				<input type="text" class="inputOrder" id="name" name="name">
 			</div>
 			
 			<div><br/></div>
@@ -53,13 +53,13 @@
 			
 			<div><br/></div>
 			
-			<div class="requestPlace">
+			<div class="place">
 				<div class="unit">
-				<label for="requestPlace">이벤트 신청장소 : </label>
-				<input type="radio"	class="inputOrder" id="requestPlace" name="requestPlace" value="outside" Checked>출장 장소 
-				<input type="radio"	class="inputOrder" id="requestPlace" name="requestPlace" value="inside">장소 임대
+				<label for="place">이벤트 신청장소 : </label>
+				<input type="radio"	class="inputOrder" id="place" name="place" value="1" Checked>출장 장소 
+				<input type="radio"	class="inputOrder" id="place" name="place" value="2">장소 임대
 				</div>
-				<div class="unit"> [ 가격: $('#id') 원 ] </div>
+				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
 			
 			<div><br/></div>
@@ -69,7 +69,7 @@
 				<label for="placeAddress">신청장소의 주소: </label>
 				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="이벤트 장소의 주소 입력 "></textarea>
 				</div>
-				<div class="unit"> [ 가격: $('#id') 원 ] </div>
+				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
 			
 			<div><br/></div>			
@@ -77,10 +77,10 @@
 			<div class="requestDress">
 				<div class="unit">
 				<label for="requestDress">이벤트 의상 : </label>
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="notFull" Checked>기본 의상 
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="full">풀 드레스
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" Checked>기본 의상 
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2">풀 드레스
 				</div>
-				<div class="unit"> [ 가격: $('#id') 원 ] </div>
+				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
 			
 			<div><br/></div>
@@ -88,10 +88,11 @@
 			<div class="eventGoods">
 				<div class="unit">
 				<label for="eventGoods">이벤트 소품 : </label>
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="minGoods" Checked>기본 소품 
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="maxGoods">풀 소품 
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" Checked>기본 소품 
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2">풀 소품 
+        		수량 : <input type="number" name="goodsSet" size="3"><br>
 				</div>
-				<div class="unit"> [ 가격: $('#id') 원 ] </div>
+				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
 			
 			<div><br/></div>
@@ -99,21 +100,12 @@
 			<div class="eventMc">
 				<div class="unit">
 				<label for="eventMc">이벤트 소품 : </label>
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="noMc" Checked>사회자 불필요 
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="Mc">사회자 요청
+				<input type="radio"	class="inputOrder" id="mc" name="mc" value="1" Checked>사회자 불필요 
+				<input type="radio"	class="inputOrder" id="mc" name="mc" value="2">사회자 요청
 				</div>
-				<div class="unit"> [ 가격: $('#id') 원 ] </div>
+				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
-<%--			
-			<div><br/></div>
-			
-		<div>
-			파일 유첨 :
-			<input type="file" id="filename" class="filename" 
-  accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
-			</div>
- --%>	
-			
+		
 			<div><br/></div>
 			
 			<div class="totalPrice">
@@ -123,9 +115,14 @@
 			
 			<div><br/></div>
 			
+			
+      		  입금액 : <input type="number" name="money" size="10"><br/><p>
+			<div><br/></div>
+        
+        
 			<div class="sendForm">
 				<label for="sendForm">위의 사항을 확인하고 신청합니다.</label>
-				<input type="button" class="inputOrder" id="mc" name="mc" value="신청하기">
+				<input type="submit" value="주문하기">
 			</div> 
 			
 			 
