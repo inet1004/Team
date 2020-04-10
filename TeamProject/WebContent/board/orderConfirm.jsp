@@ -1,17 +1,26 @@
+<%@page import="java.util.Enumeration"%>
+<%@page import="java.util.Date"%>
+<%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
 <%
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
-    
-    //int idd = Integer.parseInt(request.getParameter("id"));
-	String namee = request.getParameter("name");
+
+	String uid = (String) session.getAttribute("userId");
+	String uname = (String) session.getAttribute("userName");
+
+	int grade = Integer.parseInt(request.getParameter("grade"));
 	
     int dress = Integer.parseInt(request.getParameter("dress"));
 	int goods = Integer.parseInt(request.getParameter("goods"));
 	int place = Integer.parseInt(request.getParameter("place"));
 	int mc = Integer.parseInt(request.getParameter("mc"));
+	
+	Date wDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("writeDate"));
+	Date rDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("requestDate"));
+	String rAddr = request.getParameter("rAddr");
 	
     int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
     int money = Integer.parseInt(request.getParameter("money"));
@@ -60,10 +69,14 @@
 %>
 
 
-    <h2>주문 회원</h2> 회원이름: <%=namee%>
-
+    <h2>주문 회원</h2> 
+    	회원이름: <%=uname%> 회원아이디: <%=uid%> 회원등급: <%=grade%>
     <h2>주문 결과</h2>
          <ul>
+         
+            <li>writeDate : <%=wDate %></li>
+            <li>requestDate : <%=rDate %></li>
+            <li>rAddr : <%=rAddr %></li>
             <li>Dress : <%=danDress %></li>
             <li>Goods : <%=danGoods %> * set수: <%=goodsSet %>
                 = GoodsTotal : <%=goodsTotal %></li>
