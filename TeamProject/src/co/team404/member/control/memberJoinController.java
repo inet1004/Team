@@ -3,6 +3,7 @@ package co.team404.member.control;
 import java.io.IOException;
 import java.sql.Date;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -38,9 +39,11 @@ public class memberJoinController extends HttpServlet {
 		
 		String path = null;
 		if (n !=0) {
-			path = "views/member"
+			path = "views/member/memberJoin.tiles";
 		}
 		
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
