@@ -43,11 +43,11 @@
 
 					<c:when test="${empty members }">
 						<tr>
-							<td colspan="4" align="center">데이터가 없습니다.</td>
+							<td colspan="5" align="center">데이터가 없습니다.</td>
 						</tr>
 					</c:when>
 					<c:otherwise>
-						<c:forEach var="member" items="${list }">
+						<c:forEach var="member" items="${members }">
 							<tr>
 								<td align="center">${member.id }</td>
 								<td align="center">${member.name }</td>

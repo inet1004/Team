@@ -11,9 +11,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.jiae.lmstest.student.dao.MemberDao;
-import co.jiae.lmstest.student.dao.MemberVo;
 import co.team404.member.dao.MemberDAO;
+import co.team404.member.dao.MemberVo;
 
 @WebServlet("/memberList.do")
 public class MemberListController extends HttpServlet {
@@ -36,13 +35,13 @@ public class MemberListController extends HttpServlet {
 	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		//DB작업
-		MemberDAO dao = new MemberDAO();
-		List<co.team404.member.dao.MemberVo> list = new ArrayList<co.team404.member.dao.MemberVo>();
-		list = dao.MemberList();
+		
+		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+		list = MemberDAO.getInstance().selectAll();
 		
 		//request객체에 실어주는 구문
 		request.setAttribute("members", list);
-		String path = "memberlist/memberlist.jsp";
+		String path = "tiles/memberlist.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 		
