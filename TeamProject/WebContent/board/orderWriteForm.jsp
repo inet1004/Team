@@ -1,3 +1,4 @@
+<%@page import="java.sql.Time"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -62,13 +63,13 @@
 			
 			<div class="writeDate">
 				<label for="writeDate">작성 일자 :</label> 
-				<input type="Date" class="inputOrder" id="writeDate" name="writeDate">
+				<input type="date" class="inputOrder" id="writeDate" name="writeDate">
 			</div>
-			
+			 
 			<div><br/></div>
 			
 			<div class="requestDate">
-				<label for="requestDate">작성 일자 :</label> 
+				<label for="requestDate">요청 일자 :</label> 
 				<input type="Date" class="inputOrder" id="requestDate" name="requestDate">
 			</div>
 			
