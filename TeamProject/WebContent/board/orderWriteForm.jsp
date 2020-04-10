@@ -128,7 +128,7 @@
 				<input type="button" class="inputOrder" id="mc" name="mc" value="신청하기">
 			</div> 
 			
-			
+			 
 			<div><br/></div>
 			
 		</div> 
