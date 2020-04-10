@@ -15,7 +15,7 @@ public class MemberDAO {
 	private String user = "hr";
 	private String password = "hr";
 
-	Connection conn = null;
+	Connection conn = null; 
 	PreparedStatement psmt = null;
 	ResultSet rs = null;
 
