@@ -11,8 +11,8 @@
 
 <div class="container" align="center">
  <div><h3>이벤트 주문</h3></div>
- <div><h4>여기는 <code>회원 가입</code> 하는 곳입니다.</h4></div> 
- 	<form action="orderInsert.do" class="order" id="orderInsert"
+ <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
+ 	<form action="orderConfirm.jsp" class="order" id="orderInsert"
 			name="order-insert" method="post" enctype="multipart/form-data" >
 			
 		<div id="formBody" class="formBody">
@@ -104,14 +104,15 @@
 				</div>
 				<div class="unit"> [ 가격: $('#id') 원 ] </div>
 			</div>
-			
+<%--			
 			<div><br/></div>
 			
-			<div>
+		<div>
 			파일 유첨 :
 			<input type="file" id="filename" class="filename" 
   accept=".doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document">
 			</div>
+ --%>	
 			
 			<div><br/></div>
 			
