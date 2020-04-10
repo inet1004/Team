@@ -91,6 +91,6 @@
        * 위의 사항을 확인하고 주문 합니다 : <br/><p>
     <form action="qqqq.jsp">
         <input type="submit" value="주문 확인">
-    </form>
+    </form> 
   
   
