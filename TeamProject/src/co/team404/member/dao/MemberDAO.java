@@ -24,7 +24,8 @@ public class MemberDAO {
 	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
 	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
-
+    private final String DELETE_MEMBER = "delete from emember where member_id = ?";
+	
 	static MemberDAO instance;
 
 	public static MemberDAO getInstance() {
@@ -67,12 +68,23 @@ public class MemberDAO {
 
 	// 회원 수정
 	public void updateMember(MemberVo vo) {
-
+      
 	}
 
 	// 회원 삭제
-	public void deleteMember(MemberVo vo) {
-
+	public int deleteMember(MemberVo member) {
+     PreparedStatement psmt = null;
+     int n = 0;
+     try {
+    	 psmt = conn.prepareStatement(DELETE_MEMBER);
+    	 psmt.setString(1, member.getId());
+    	 n = psmt.executeUpdate();
+    	 } catch(SQLException e) {
+    		 e.printStackTrace();
+     }
+     
+	return n;
+     
 	}
 
 	public ArrayList<MemberVo> selectAll() {
