@@ -1,7 +1,6 @@
 package co.team404.common.control;
 
 import java.io.IOException;
-import java.sql.Connection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,58 +8,27 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import co.team404.member.dao.MemberDAO;
-import co.team404.member.dao.MemberVo;
-import common.ConnectionManager;
-
-
-@WebServlet("/LoginCheck.do")
+@WebServlet("/login.do")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-    
-    public LoginController() {
-        super();
-       
-    }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		doAction(request,response);
+
+	public LoginController() {
+		super();
+
 	}
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-		doAction(request,response);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		response.setCharacterEncoding("utf-8");
+
+		String path = "views/login.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
-	protected void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		HttpSession session = request.getSession(true);
-		MemberDAO dao = new MemberDAO();
-		MemberVo member = new MemberVo();
-		String view = "";
-		Connection conn = ConnectionManager.getConnnection();
-		
-		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		member.setId(id);
-		member.setPw(pw);
-		member = dao.selectMember(id);
-		
-		if(member != null) {
-			session.setAttribute("name", member.getName());
-			session.setAttribute("sessionid", member.getId());
-			   view = "tiles/loginfail.tiles";
-					   
-		} else {
-			 view = "tiles/homepage.tiles";
-		}
-		ConnectionManager.close(conn);
-		dispatch(request,response,view);
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doGet(request, response);
 	}
-		
-		private void dispatch(HttpServletRequest request, HttpServletResponse response, String view) throws ServletException, IOException{
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-			dispatcher.forward(request, response);
-		}
-	
-}	
+}
