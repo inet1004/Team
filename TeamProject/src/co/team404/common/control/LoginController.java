@@ -12,23 +12,23 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/login.do")
 public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    
-    public LoginController() {
-        super();
-       
-    }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public LoginController() {
+		super();
+
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setCharacterEncoding("utf-8");
-		
-		String path = "views/login.jsp";
+
+		String path = "views/login.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 }

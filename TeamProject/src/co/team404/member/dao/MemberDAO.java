@@ -6,24 +6,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 import common.ConnectionManager;
-
 =======
 >>>>>>> branch 'master' of https://github.com/inet1004/Team
+
 public class MemberDAO {
-<<<<<<< HEAD
-	
-	
-	
-	private Connection conn;
-	private PreparedStatement psmt;
-	private ResultSet rs;
-	
-	
-=======
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
 	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
@@ -35,9 +25,11 @@ public class MemberDAO {
 	ResultSet rs = null;
 
 	private final String MEMBER_LIST = "select * from emember";
+	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
 	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
+	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
+	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
 
->>>>>>> branch 'master' of https://github.com/inet1004/Team
 	static MemberDAO instance;
 
 	public static MemberDAO getInstance() {
@@ -45,6 +37,7 @@ public class MemberDAO {
 			instance = new MemberDAO();
 		return instance;
 	}
+<<<<<<< HEAD
 <<<<<<< HEAD
 	
 	String SELECT_ALL = "SELECT * FROM EMEMBER";
@@ -68,6 +61,8 @@ public class MemberDAO {
 			}
 			return n;
 =======
+=======
+>>>>>>> branch 'master' of https://github.com/inet1004/Team
 
 	public MemberDAO() {
 		try {
@@ -75,50 +70,40 @@ public class MemberDAO {
 			conn = DriverManager.getConnection(url, user, password);
 		} catch (ClassNotFoundException | SQLException e) {
 			e.printStackTrace();
->>>>>>> branch 'master' of https://github.com/inet1004/Team
 		}
-<<<<<<< HEAD
-		
-		//회원 조회
-		public MemberVo selectMember(String id) {
-	         MemberVo member = null;
-	         PreparedStatement pstmt = null;
-	         ResultSet rs = null;
-	         String sql = "select * from emember where id = ?";
-	         
-	         try {
-	            pstmt = conn.prepareStatement(sql);
-	            pstmt.setString(1, id);
-	            rs = pstmt.executeQuery();
-	            if(rs.next()) {
-	               String user_id = rs.getString("id");
-	               String pass = rs.getString("pass");
-	               member = new MemberVo(user_id, pass);
-	            }
-	         } catch (SQLException e) {
-	            e.printStackTrace();
-	            
-	         }
-	      
-	         return member;
-	      }
-		//회원 목록
-		public List<MemberVo> MemberList(){
-			
-			return list;
-			
+	}
+
+	// 회원 조회
+	public MemberVo selectMember(String id) {
+		MemberVo member = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		try {
+			pstmt = conn.prepareStatement(SELECT);
+			pstmt.setString(1, id);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				String user_id = rs.getString("id");
+				String pass = rs.getString("pass");
+				member = new MemberVo(user_id, pass);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+
 		}
-		
-		//회원 수정
-		public void updateMember (MemberVo vo) {
-			
-		}
-		
-		//회원 삭제
-		public void deleteMember (MemberVo vo) {
-			
-		}
-=======
+
+		return member;
+	}
+
+	// 회원 수정
+	public void updateMember(MemberVo vo) {
+
+	}
+
+	// 회원 삭제
+	public void deleteMember(MemberVo vo) {
+
 	}
 
 	public ArrayList<MemberVo> selectAll() {
@@ -161,5 +146,4 @@ public class MemberDAO {
 		}
 		return n;
 	}
->>>>>>> branch 'master' of https://github.com/inet1004/Team
 }
