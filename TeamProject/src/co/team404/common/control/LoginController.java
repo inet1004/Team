@@ -38,22 +38,21 @@ public class LoginController extends HttpServlet {
 		MemberVo member = new MemberVo();
 		String view = "";
 		Connection conn = ConnectionManager.getConnnection();
-		String path = null;
 		
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		member.setMemberid(id);
+		member.setId(id);
 		member.setPw(pw);
-		member = dao.selectMember(member);
+		member = dao.selectMember(id);
 		
 		if(member != null) {
-			session.setAttribute("name", member.getMembername());
-			session.setAttribute("sessionid", member.getMemberid());
-			   view = "view/loginfail.jsp";
+			session.setAttribute("name", member.getName());
+			session.setAttribute("sessionid", member.getId());
+			   view = "tiles/loginfail.tiles";
 					   
 		} else {
-			 view = "tiles/homepage.jsp";
+			 view = "tiles/homepage.tiles";
 		}
 		ConnectionManager.close(conn);
 		dispatch(request,response,view);
