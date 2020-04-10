@@ -9,7 +9,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 <<<<<<< HEAD
-import co.jiae.lms.VO.MemberVo;
 import common.ConnectionManager;
 
 =======
@@ -58,8 +57,8 @@ public class MemberDAO {
 			int n = 0;
 			try {
 				psmt = conn.prepareStatement(INSERT);
-				psmt.setString(1, member.getMemberid());
-				psmt.setString(2, member.getMembername());
+				psmt.setString(1, member.getId());
+				psmt.setString(2, member.getName());
 				psmt.setString(3, member.getPw());
 				psmt.setString(4, member.getAddr());
 				psmt.setString(5, member.getTell());
