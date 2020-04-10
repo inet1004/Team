@@ -11,7 +11,7 @@ import java.util.ArrayList;
 public class MemberDAO {
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
-	private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	private String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
 	private String user = "hr";
 	private String password = "hr";
 
@@ -120,7 +120,6 @@ public class MemberDAO {
 			psmt.setString(3, member.getPw());
 			psmt.setString(4, member.getAddr());
 			psmt.setString(5, member.getTell());
-			psmt.setDate(6, member.getJdate());
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

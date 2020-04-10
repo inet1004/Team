@@ -60,8 +60,8 @@
                                     <ul id="navigation">    
                                         <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
                                         <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/memberJoin.do">회원가입</a></li>
                                         <li><a href="${pageContext.request.contextPath}/orderJoin.do">주문</a></li>
-                                        <li><a href="booking.html">Guest Book</a></li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>

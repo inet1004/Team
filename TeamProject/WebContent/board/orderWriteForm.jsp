@@ -9,6 +9,29 @@
 	input, select, textarea, label { font-size: 1.5em; }
 </style>
 
+ 
+
+<%
+	String iid = "8888" ;
+	String iname = "gggg";
+ session.setAttribute("userId",iid);
+ session.setAttribute("userName",iname);
+%>
+
+  
+
+<%
+	try{
+		String uuid = (String)session.getAttribute("userId"); 
+		String uuname = (String)session.getAttribute("userName");            
+			 if(uuname==null||uuname.equals("")){ 
+				response.sendRedirect("loginform.jsp");  
+			 }
+	} catch ( Exception e ) {
+		e.printStackTrace();
+	}
+%>
+
 <div class="container" align="center">
  <div><h3>이벤트 주문</h3></div>
  <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
@@ -19,15 +42,13 @@
 			<div><br/></div>
 			
 			<div class="memberId">
-				<label for="id">회원 아이디 :</label> 
-				<input type="text" class="inputOrder" id="id" name="id">
+				<label for="uuid">회원 아이디 :</label> <%= session.getAttribute("userID") %>
 			</div>
 			
 			<div><br/></div>
   
 			<div class="memberName">
-				<label for="name">회원명 :</label> 
-				<input type="text" class="inputOrder" id="name" name="name">
+				<label for="uuname">회원명 :</label> <%= session.getAttribute("userName") %>
 			</div>
 			
 			<div><br/></div>
@@ -90,7 +111,7 @@
 				<label for="eventGoods">이벤트 소품 : </label>
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" Checked>기본 소품 
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2">풀 소품 
-        		수량 : <input type="number" name="goodsSet" size="3"><br>
+        		셋트수량 : <input type="number" name="goodsSet" size="3"><br>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
