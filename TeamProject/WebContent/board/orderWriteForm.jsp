@@ -9,6 +9,18 @@
 	input, select, textarea, label { font-size: 1.5em; }
 </style>
 
+<%
+	try{
+		String id = (String)session.getAttribute("id"); 
+		String name = (String)session.getAttribute("name");            
+			// if(id==null||id.equals("")){ 
+			//	response.sendRedirect("loginform.jsp");  
+			// }
+	} catch ( Exception e ) {
+		e.printStackTrace();
+	}
+%>
+
 <div class="container" align="center">
  <div><h3>이벤트 주문</h3></div>
  <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
@@ -19,15 +31,13 @@
 			<div><br/></div>
 			
 			<div class="memberId">
-				<label for="id">회원 아이디 :</label> 
-				<input type="text" class="inputOrder" id="id" name="id">
+				<label for="id">회원 아이디 :</label> <%= session.getAttribute("id") %>
 			</div>
 			
 			<div><br/></div>
   
 			<div class="memberName">
-				<label for="name">회원명 :</label> 
-				<input type="text" class="inputOrder" id="name" name="name">
+				<label for="name">회원명 :</label> <%= session.getAttribute("name") %>
 			</div>
 			
 			<div><br/></div>

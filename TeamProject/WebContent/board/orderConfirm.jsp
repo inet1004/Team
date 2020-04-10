@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 <%
-    //1. 넘겨받은 값 추출 
+    //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
     
     //int idd = Integer.parseInt(request.getParameter("id"));
