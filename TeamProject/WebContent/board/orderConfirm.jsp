@@ -65,32 +65,32 @@
     //총금액
     total = danDress + goodsTotal + danPlace + danMc;
     change = money - total;
+    change = Math.abs(change);
    
 %>
 
-
     <h2>주문 회원</h2> 
-    	회원이름: <%=uname%> 회원아이디: <%=uid%> 회원등급: <%=grade%>
+    	회원이름: <%=uname %> 회원아이디: <%=uid %> 회원등급: <%=grade %>
     <h2>주문 결과</h2>
          <ul>
          
             <li>writeDate : <%=wDate %></li>
             <li>requestDate : <%=rDate %></li>
             <li>rAddr : <%=rAddr %></li>
-            <li>Dress : <%=danDress %></li>
-            <li>Goods : <%=danGoods %> * set수: <%=goodsSet %>
-                = GoodsTotal : <%=goodsTotal %></li>
-            <li>Place : <%=danPlace %></li>
-            <li>MC : <%=danMc %></li>
+            <li>Dress : <%=danDress %> 원</li>
+            <li>Goods : <%=danGoods %> * set수: <%=goodsSet %> 
+                = GoodsTotal : <%=goodsTotal %> 원</li>
+            <li>Place : <%=danPlace %> 원</li>
+            <li>MC : <%=danMc %> 원</li>
             <br/><p>----------------------<br/>
-             총 액 : <%=total %>   <br/>
-             입금액 : <%=money %>   <br/>
-             잔 액 : <%=change %>   <br/>
+             총 액 : <%=total %> 원  <br/>
+             입금액 : <%=money %> 원  <br/>
+             잔 액 : <%=change %> 원 남았습니다. <br/>
          </ul>
          
        * 위의 사항을 확인하고 주문 합니다 : <br/><p>
     <form action="qqqq.jsp">
         <input type="submit" value="주문 확인">
-    </form>
+    </form>  
   
   

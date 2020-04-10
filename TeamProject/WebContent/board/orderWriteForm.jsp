@@ -9,16 +9,16 @@
 	input, select, textarea, label { font-size: 1.5em; }
 </style>
 
-
+ 
 
 <%
 	String iid = "8888" ;
 	String iname = "gggg";
- session.setAttribute("userID",iid);
+ session.setAttribute("userId",iid);
  session.setAttribute("userName",iname);
 %>
 
-
+  
 
 <%
 	try{
