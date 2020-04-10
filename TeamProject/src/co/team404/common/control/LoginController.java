@@ -1,4 +1,4 @@
-package co.team404.board.control;
+package co.team404.common.control;
 
 import java.io.IOException;
 
@@ -9,18 +9,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/prontpage.do")
-public class ProntPageController extends HttpServlet {
+@WebServlet("/login.do")
+public class LoginController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    public ProntPageController() {
+    
+    public LoginController() {
         super();
+       
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
+		response.setCharacterEncoding("utf-8");
 		
-		String path = "views/prontPage.jsp";
+		String path = "views/login.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
