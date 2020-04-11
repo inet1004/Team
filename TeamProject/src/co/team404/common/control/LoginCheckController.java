@@ -16,7 +16,7 @@ import co.team404.member.dao.MemberVo;
 import common.ConnectionManager;
 
 
-@WebServlet("/loginCheck.do")
+@WebServlet("/LoginCheck.do")
 public class LoginCheckController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
     
@@ -36,31 +36,27 @@ public class LoginCheckController extends HttpServlet {
 		HttpSession session = request.getSession(true);
 		MemberDAO dao = new MemberDAO();
 		MemberVo member = new MemberVo();
-		String view = "";
-		Connection conn = ConnectionManager.getConnnection();
 		String path = null;
+		Connection conn = ConnectionManager.getConnnection();
 		
 		
 		String id = request.getParameter("id");
 		String pw = request.getParameter("pw");
-		member.setMemberid(id);
+		member.setId(id);
 		member.setPw(pw);
 		member = dao.selectMember(member);
 		
 		if(member != null) {
-			session.setAttribute("name", member.getMembername());
-			session.setAttribute("sessionid", member.getMemberid());
-			   view = "view/loginfail.jsp";
-					   
+			path = "views/loginOk.jsp";
 		} else {
-			 view = "tiles/homepage.jsp";
+			 path = "view/loginFail.jsp";
 		}
 		ConnectionManager.close(conn);
-		dispatch(request,response,view);
+		dispatch(request,response,path);
 	}
 		
-		private void dispatch(HttpServletRequest request, HttpServletResponse response, String view) throws ServletException, IOException{
-			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
+		private void dispatch(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException{
+			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 			dispatcher.forward(request, response);
 		}
 	

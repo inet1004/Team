@@ -43,27 +43,30 @@ public class MemberDAO {
 		}
 	}
 
-	// 회원 조회
-	public MemberVo selectMember(String id) {
-		MemberVo member = null;
+	
+	public MemberVo selectMember(MemberVo member) {
+		MemberVo vo = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		try {
-			pstmt = conn.prepareStatement(SELECT);
-			pstmt.setString(1, id);
+			pstmt = conn.prepareStatement(MEMBER_CHECK);
+			pstmt.setString(1, member.getId());
+			pstmt.setString(2, member.getPw());
 			rs = pstmt.executeQuery();
+			
 			if (rs.next()) {
-				String user_id = rs.getString("id");
-				String pass = rs.getString("pass");
-				member = new MemberVo(user_id, pass);
+				String id = rs.getString("id");
+				String pw = rs.getString("pw");
+				
+				vo = new MemberVo(id, pw);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 
 		}
 
-		return member;
+		return vo;
 	}
 
 	// 회원 수정
@@ -126,4 +129,6 @@ public class MemberDAO {
 		}
 		return n;
 	}
+
+	
 }
