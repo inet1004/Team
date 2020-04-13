@@ -23,6 +23,22 @@ public class OrderVo {
 		this.orderId = orderId;
 		this.id = id;
 	}
+	
+	
+
+	public OrderVo(String writeDate, String requestDate, String requestPlace, String placeAddress, String dress,
+			String goods, String mc, int totalPrice, String id) {
+		super();
+		this.writeDate = writeDate;
+		this.requestDate = requestDate;
+		this.requestPlace = requestPlace;
+		this.placeAddress = placeAddress;
+		this.dress = dress;
+		this.goods = goods;
+		this.mc = mc;
+		this.totalPrice = totalPrice;
+		this.id = id;
+	}
 
 	public OrderVo(int orderId, String writeDate, String requestDate, String requestPlace, String placeAddress,
 			String dress, String goods, String mc, int totalPrice, String id) {

@@ -29,7 +29,7 @@ public class OrderDao {
 	
 	private final String ORDER_LIST = "select * from eorder";
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
-	private final String ORDER_INSERT = "insert into eorder values (?,?,?,?,?,?,?,?,?,?)";
+	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
 	
@@ -112,19 +112,19 @@ public class OrderDao {
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-			psmt.setInt(1, order.getOrderId());
+//			psmt.setInt(1, order.getOrderId());
 //			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
 //			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
 //			rs.getTimestamp("save_time");
-			psmt.setString(2, order.getWriteDate());
-			psmt.setString(3, order.getRequestDate());
-			psmt.setString(4, order.getRequestPlace());
-			psmt.setString(5, order.getPlaceAddress());
-			psmt.setString(6, order.getDress());
-			psmt.setString(7, order.getGoods());
-			psmt.setString(8, order.getMc());
-			psmt.setInt(9, order.getTotalPrice());
-			psmt.setString(10, order.getId());
+			psmt.setString(1, order.getWriteDate());
+			psmt.setString(2, order.getRequestDate());
+			psmt.setString(3, order.getRequestPlace());
+			psmt.setString(4, order.getPlaceAddress());
+			psmt.setString(5, order.getDress());
+			psmt.setString(6, order.getGoods());
+			psmt.setString(7, order.getMc());
+			psmt.setInt(8, order.getTotalPrice());
+			psmt.setString(9, order.getId());
 //			psmt.setString(10, order.getFilename());
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {

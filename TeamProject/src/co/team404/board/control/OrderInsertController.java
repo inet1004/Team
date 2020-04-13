@@ -59,7 +59,7 @@ public class OrderInsertController extends HttpServlet {
 		
 		// DB처리
 //		vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
-		vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+		//vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
 		vo.setWriteDate(request.getParameter("writeDate"));
 		vo.setRequestDate(request.getParameter("requestDate"));
 		vo.setRequestPlace(request.getParameter("requestPlace"));
