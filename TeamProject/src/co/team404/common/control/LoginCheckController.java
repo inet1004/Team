@@ -47,9 +47,11 @@ public class LoginCheckController extends HttpServlet {
 		member = dao.selectMember(member);
 		
 		if(member != null) {
-			path = "views/loginOk.jsp";
+			session.setAttribute("name", member.getName());
+			session.setAttribute("sessionid", member.getId());
+			path = "/home.do";
 		} else {
-			 path = "view/loginFail.jsp";
+			 path = "views/loginFail.jsp";
 		}
 		ConnectionManager.close(conn);
 		dispatch(request,response,path);
