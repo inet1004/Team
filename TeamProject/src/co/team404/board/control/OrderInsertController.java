@@ -1,6 +1,9 @@
 package co.team404.board.control;
 
 import java.io.IOException;
+
+
+
 import java.sql.Date;
 import java.util.Enumeration;
 
@@ -39,7 +42,7 @@ public class OrderInsertController extends HttpServlet {
 		else path ="views/student/memberInsertFail.jsp";
 		*/
 		
-		
+		request.setCharacterEncoding("utf-8"); 
 		
 		
 		OrderDao dao = new OrderDao();
@@ -55,21 +58,20 @@ public class OrderInsertController extends HttpServlet {
 //		String str = (String)files.nextElement();
 		
 		// DB처리
-		vo.setId(request.getParameter("id"));
-		vo.setName(request.getParameter("name"));
-		vo.setPw(request.getParameter("pw"));
-		vo.setAddr(request.getParameter("addr"));
-		vo.setTel(request.getParameter("tel"));
-		vo.setGrade(request.getParameter("grade"));
-		vo.setOrderId(request.getParameter("orderId"));
-		vo.setWriteDate(Date.valueOf(request.getParameter("writeDate")));
-		vo.setRequestDate(Date.valueOf(request.getParameter("requestDate")));
+//		vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
+		vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+		vo.setWriteDate(request.getParameter("writeDate"));
+		vo.setRequestDate(request.getParameter("requestDate"));
 		vo.setRequestPlace(request.getParameter("requestPlace"));
 		vo.setPlaceAddress(request.getParameter("placeAddress"));
+		vo.setDress(request.getParameter("dress"));
 		vo.setGoods(request.getParameter("goods"));
 		vo.setMc(request.getParameter("mc"));
-		vo.setTotalPrice(request.getParameter("totalPrice"));
-		vo.setFilename(request.getParameter("filename"));
+		vo.setTotalPrice(Integer.parseInt(request.getParameter("totalPrice")));
+		vo.setId(request.getParameter("id"));
+		// DB처리
+
+//		vo.setFilename(request.getParameter("filename"));
 //		String[] hobbys = request.getParameterValues("hobby");
 //		String item = ""; // 이런방법은 편볍임
 //		if (hobbys != null) { 
@@ -82,10 +84,7 @@ public class OrderInsertController extends HttpServlet {
 //		vo.setFilename(ofile); //파일명 담음 // 이런방법은 편볍임
 //		int n=dao.memberInsert(vo);
 		
-
-		String path = null;
-		int n =dao.orderInsert(vo);
-		
+		int n = dao.orderInsert(vo);
 		
 		String view = null; 
 		if(n != 0) {
