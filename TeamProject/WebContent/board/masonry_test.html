@@ -1,0 +1,73 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>jQuery Masonry 플러그인</title>
+<style>
+    * {
+        margin : 0px;
+        padding : 0px;
+    }
+
+    body {
+        background-color : #525252;
+    }
+
+   item {
+        margin : 5px;
+        width : 100px;
+        height : 100px;
+        background-color : #FFFFFF;
+        border-radius : 10px;
+        float : left;
+    }
+
+    .big {
+        width : 210px;
+        height : 430px;
+    }
+   
+    .normal {
+        width : 210px;
+        height : 210px;
+    }
+   
+    .small {
+        width : 100px;
+        height : 100px;
+    }
+</style>
+
+<!-- jQuery의 호출이 masonry.pkgd.min.js보다 반드시 먼저 이루어 져야 한다. -->
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script type="text/javascript" src="./masonry.pkgd.min.js"></script>
+<script type="text/javascript">
+    jQuery(document).ready(function () {
+        jQuery("#masonry_container").masonry({
+              itemSelector : ".item"
+            , columnWidth : 110
+        });
+    });
+</script>
+</head>
+<!-- body 태그 구성 -->
+<body>
+    <div id="masonry_container">
+        <div class = "item small"></div>
+        <div class = "item big"></div>
+        <div class = "item normal"></div>
+        <div class = "item small"></div>
+        <div class = "item small"></div>
+        <div class = "item small"></div>
+        <div class = "item normal"></div>
+        <div class = "item normal"></div>
+        <div class = "item small"></div>
+        <div class = "item small"></div>
+        <div class = "item small"></div>
+    </div>
+</body>
+</html>
+
+
+
