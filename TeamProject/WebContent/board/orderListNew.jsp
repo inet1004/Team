@@ -19,7 +19,8 @@
 	<button>검색</button>
 </form>
 <c:forEach items="${list}" var="order">
-	${order.orderId}  ${emp.first_name} ${order.id}<br>
+	${order.orderId}  ${order.writeDate} ${order.requestDate} ${order.requestPlace} ${order.placeAddress} 
+	${order.dress} ${order.goods} ${order.mc} ${order.totalPrice} ${order.id}<br>
 </c:forEach>
 <my:paging paging="${paging}" jsfunc="gopage"></my:paging>
 <script>
