@@ -5,15 +5,34 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<link rel="stylesheet" href="css/main.css?after">
-<link rel="stylesheet" href="css/button.css?after">
 <script src="./assets/js/memberJoin.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script type="text/javascript">
-	function idCheck() {
-		var id = document.frm.id.value;
-		window.open("idCheck.do?id=" + id, "ID 중복체크",
-				"width=300, height=200, menubar=no, status=no, toolbar=no");
-	}
+	$(function() {
+		$('#id').blur(function idCheck() {
+			var id = $('#id').val().trim();
+			$.ajax({
+				url : "memberIdCheck.do",
+				data : {
+					"searchId" : id
+				},
+				type : "get",
+				success : function(data) {
+					var id = data;
+					console.log(data);
+					
+					if (id == 1) {
+						$('#idResult').html("중복된 아이디가 존재합니다.");
+						$('#idResult').css("color", "red");
+					} else {
+						$('#idResult').html("사용가능한 아이디입니다.");
+						$('#idResult').css("color", "blue");
+					}
+				}
+			})
+		});
+	});
 </script>
 </head>
 <body>
@@ -24,7 +43,7 @@
 			<br />
 		</div>
 		<div>
-			<form id="frm" name="frm" action="memberInsert.do" method="post" >
+			<form id="frm" name="frm" action="memberInsert.do" method="post">
 				<!-- 버튼타입일때는 onsubmit 삭제 -->
 				<div>
 					<table border="1">
@@ -35,9 +54,9 @@
 						</tr>
 						<tr>
 							<th style="color: red">* 회원ID</th>
-							<td colspan="3"><input type="text" id="id" name="id"
-								size="15" required> &nbsp;&nbsp;
-								<button id="btn" type="button" onclick="idCheck()">중복체크</button></td>
+							<td colspan="3"><input id="id" name="id"
+								required>
+								<div id="idResult"></div></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원PW</th>

@@ -25,7 +25,9 @@ public class MemberDAO {
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
 	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
-	
+    private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
+    
+    
 	static MemberDAO instance;
 
 	public static MemberDAO getInstance() {
@@ -123,6 +125,21 @@ public class MemberDAO {
 			n = psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
+		}
+		return n;
+	}
+	
+	public int memberIdCheck(String id) {
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(MEMBER_ID_CHECK);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				n = 1; //레코드의 첫번째 요소를 담는 작업
+			}
+		}catch(SQLException e) {
+		e.printStackTrace();	
 		}
 		return n;
 	}
