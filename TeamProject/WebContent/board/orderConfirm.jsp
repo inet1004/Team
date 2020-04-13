@@ -105,7 +105,7 @@
 		
 			
     <form action="../orderInsert.do" method="post" >
-				<input type="hidden" id="orderId" name="orderId" value="1178">
+				<input type="hidden" id="orderId" name="orderId" value="1179">
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= wtDate %>">
 				<input type="hidden" id="requestDate" name="requestDate" value="<%=rqDate %>">
 				<input type="hidden" id="requestPlace" name="requestPlace" value="<%= place %>">

@@ -15,7 +15,7 @@
 
 <%
 	 String iid = "ccc" ;
-	 String iname = "rrrr";
+	 String iname = "tttt";
 	 session.setAttribute("id",iid);
 	 session.setAttribute("member_name",iname);
 %>
@@ -62,7 +62,9 @@
 <div class="container" align="center">
 < 주의> orderWriteForm.jsp 페이지의
 	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
-	  String iname = "rrrr"  <--- pk설정되어 있어 글쓰기 할때마다 이름은 바꾸어 주어야 DB에 저장됩니다.
+	  
+	  orderConfirm.jsp
+	  name="orderId" value="1179"  <--- pk설정되어 있어 자동으로 부여가 안되어 1179 부분을 바꾸어야 야 DB에 저장됩니다.
 
  <div><h3>이벤트 주문</h3></div>
  <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
