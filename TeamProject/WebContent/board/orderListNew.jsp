@@ -9,17 +9,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h3>사원목록</h3> 
+<h3>이벤트 Order List</h3> 
 <div>
 검색조건<br>
 <form name="searchFrm">
-	부서 <input type="text" name="department_id" value="${param.department_id }"><br>
-	이름 <input type="text" name="first_name" value="${param.first_name }"><br>
+	주문 ID <input type="text" name="orderId" value="${param.orderId }"><br>
+	회원 ID <input type="text" name="id" value="${param.id }"><br>
 	<input type="hidden" name="page" value="1">
 	<button>검색</button>
 </form>
-<c:forEach items="${list}" var="emp">
-	${emp.employee_id}  ${emp.first_name} ${emp.department_id}<br>
+<c:forEach items="${list}" var="order">
+	${order.orderId}  ${emp.first_name} ${order.id}<br>
 </c:forEach>
 <my:paging paging="${paging}" jsfunc="gopage"></my:paging>
 <script>
