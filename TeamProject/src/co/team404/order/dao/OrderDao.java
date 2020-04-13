@@ -27,23 +27,27 @@ public class OrderDao {
 		return instance;
 	}
 	
-
-	private final String ORDER_LIST = "select * from order";
-	private final String ORDER_CHECK = "select * from order where id = ? and pw = ? and orderid = ?";
-	private final String ORDER_INSERT = "insert into order values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+	private final String ORDER_LIST = "select * from eorder";
+	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
+	private final String ORDER_INSERT = "insert into eorder values (?,?,?,?,?,?,?,?,?,?)";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
+	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
 	
-	
-///	public OrderDao() {
-///		try {
-///			Class.forName(driver);
-///			conn = DriverManager.getConnection(url,user,password);
-///		} catch (ClassNotFoundException | SQLException e) {
-///			e.printStackTrace();
-///		}
-///	}
 	
 	public ArrayList<OrderVo> select(){
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		OrderVo order = null;
 		try {
@@ -51,23 +55,16 @@ public class OrderDao {
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 				order = new OrderVo();
-				order.setId(rs.getString("id"));
-				order.setName(rs.getString("name"));
-				order.setAddr(rs.getString("addr"));
-				order.setTel(rs.getString("tel"));
-				// member.setGender(rs.getString("gender"));
-				// member.setHobby(rs.getString("hobby"));
-				order.setGrade(rs.getString("grade"));
 				order.setOrderId(rs.getInt("orderId"));
-				order.setWriteDate(rs.getDate("writeDate"));
-				order.setRequestDate(rs.getDate("requestDate"));
+				order.setWriteDate(rs.getString("writeDate"));
+				order.setRequestDate(rs.getString("requestDate"));
 				order.setRequestPlace(rs.getString("requestPlace"));
 				order.setPlaceAddress(rs.getString("placeAddress"));
 				order.setDress(rs.getString("dress"));
 				order.setGoods(rs.getString("goods"));
 				order.setMc(rs.getString("mc"));
 				order.setTotalPrice(rs.getInt("totalPrice"));
-				order.setFilename(rs.getString("filename"));
+				order.setId(rs.getString("id"));
 				list.add(order);
 			}
 		} catch (SQLException e) {
@@ -80,49 +77,53 @@ public class OrderDao {
 		OrderVo vo = null;
 		try {
 			psmt = conn.prepareStatement(ORDER_CHECK);
-			psmt.setString(1, order.getId());
-			psmt.setString(2, order.getPw());
-			psmt.setInt(3, order.getOrderId());
+			psmt.setInt(1, order.getOrderId());
+			psmt.setString(2, order.getId());
 			rs = psmt.executeQuery();
 			
 			if(rs.next()) {
-				String id = rs.getString("id");
-				String pw = rs.getString("pw");
 				int orderId = rs.getInt("orderId");
-				vo = new OrderVo(id, pw, orderId);
+				String id = rs.getString("id");
+				vo = new OrderVo(orderId, id );
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return vo;
 	}
-	
+
+	//public int orderInsert(OrderVo order) {
 	public int orderInsert(OrderVo order) {
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-			psmt.setString(1, order.getId());
-			psmt.setString(2, order.getName());
-			psmt.setString(3, order.getPw());
-			psmt.setString(4, order.getAddr());
-			psmt.setString(5, order.getTel());
-			// psmt.setString(6, member.getGender());
-			// psmt.setString(7, member.getHobby());
-			psmt.setString(6, order.getGrade());
-			psmt.setInt(7, order.getOrderId());
-			
+			psmt.setInt(1, order.getOrderId());
 //			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
 //			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
 //			rs.getTimestamp("save_time");
-			
-			psmt.setDate(8, order.getWriteDate());
-			psmt.setDate(9, order.getRequestDate());
-			psmt.setString(10, order.getRequestPlace());
-			psmt.setString(11, order.getPlaceAddress());
-			psmt.setString(12, order.getGoods());
-			psmt.setString(13, order.getMc());
-			psmt.setInt(14, order.getTotalPrice());
-			psmt.setString(15, order.getFilename());
+			psmt.setString(2, order.getWriteDate());
+			psmt.setString(3, order.getRequestDate());
+			psmt.setString(4, order.getRequestPlace());
+			psmt.setString(5, order.getPlaceAddress());
+			psmt.setString(6, order.getDress());
+			psmt.setString(7, order.getGoods());
+			psmt.setString(8, order.getMc());
+			psmt.setInt(9, order.getTotalPrice());
+			psmt.setString(10, order.getId());
+//			psmt.setString(10, order.getFilename());
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
