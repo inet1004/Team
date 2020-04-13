@@ -23,28 +23,30 @@ public class MemberListController extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		
-		doAction(request, response);
+		String path = "/member/memberlist.tiles";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		doAction(request, response);
+		doGet(request, response);
 	}
-
-	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");
-		//DB작업
-		
-		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
-		list = MemberDAO.getInstance().selectAll();
-		
-		//request객체에 실어주는 구문
-		request.setAttribute("members", list);
-		String path = "tiles/memberlist.tiles";
-		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-		dispatcher.forward(request, response);
-		
-	}
-
 }
+//	private void doAction(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		request.setCharacterEncoding("utf-8");
+//		//DB작업
+//		
+//		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+//		list = MemberDAO.getInstance().selectAll();
+//		
+//		//request객체에 실어주는 구문
+//		request.setAttribute("members", list);
+//		String path = "views/memberlist.jsp";
+//		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+//		dispatcher.forward(request, response);
+//		
+//	}
+//
+//}
