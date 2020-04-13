@@ -21,7 +21,7 @@ public class MemberDAO {
 
 	private final String MEMBER_LIST = "select * from emember";
 	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
-	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
+	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate,'U')";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
 	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
@@ -99,8 +99,8 @@ public class MemberDAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVo();
-				member.setId(rs.getString("id"));
-				member.setName(rs.getString("name"));
+				member.setId(rs.getString("member_id"));
+				member.setName(rs.getString("member_name"));
 				member.setPw(rs.getString("pw"));
 				member.setAddr(rs.getString("addr"));
 				member.setTell(rs.getString("tell"));

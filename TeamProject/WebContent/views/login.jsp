@@ -45,7 +45,7 @@
 				<br /><br />
 				<div>
 					<button type="submit" class="btn btn-secondary">로그인</button>
-					<button type="button" class="btn btn-secondary" onclick="">회원가입</button>
+					<button type="button" class="btn btn-secondary" onclick="location.href='memberJoin.do'">회원가입</button>
 
 				</div>
 			</form>
