@@ -14,16 +14,16 @@
 
 
 <%
-	 String iid = "8888" ;
+	 String iid = "ccc" ;
 	 String iname = "gggg";
-	 session.setAttribute("userId",iid);
-	 session.setAttribute("userName",iname);
+	 session.setAttribute("id",iid);
+	 session.setAttribute("member_name",iname);
 %>
 
  <%
 	try{
-		String uuid = (String)session.getAttribute("userId"); 
-		String uuname = (String)session.getAttribute("userName");            
+		String uuid = (String)session.getAttribute("id"); 
+		String uuname = (String)session.getAttribute("member_name");            
 			 if(uuname==null||uuname.equals("")){ 
 				response.sendRedirect("loginform.jsp");  
 			 }
@@ -69,13 +69,14 @@
 			<div><br/></div>
 			
 			<div class="memberId">
-				<label for="uuid">회원 아이디 :</label> <%= session.getAttribute("userID") %>
+				<label for="uuid">회원 아이디 :</label> <%= session.getAttribute("id") %>
+				<input type="hidden" class="inputOrder" id="id" name="id" value="<%= session.getAttribute("id") %>">
 			</div>
 			
 			<div><br/></div>
   
 			<div class="memberName">
-				<label for="uuname">회원명 :</label> <%= session.getAttribute("userName") %>
+				<label for="uuname">회원명 :</label> <%= session.getAttribute("member_name") %>
 			</div>
 			
 			<div><br/></div>

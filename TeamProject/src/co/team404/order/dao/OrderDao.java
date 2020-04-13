@@ -37,7 +37,8 @@ public class OrderDao {
 	public ArrayList<OrderVo> select(){
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		
@@ -96,7 +97,8 @@ public class OrderDao {
 	public int orderInsert(OrderVo order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		

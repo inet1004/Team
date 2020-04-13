@@ -8,7 +8,7 @@
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
 
-	String uid = (String) session.getAttribute("userId");
+	String id = (String) session.getAttribute("id");
 	String uname = (String) session.getAttribute("userName");
 
 	String grade = request.getParameter("grade");
@@ -83,7 +83,7 @@
 		
 		
     <h2>주문 회원</h2> 
-    	회원이름: <%=uname %> <br/> 회원아이디: <%=uid %> <br/>회원등급: <%=grade %>
+    	회원이름: <%=uname %> <br/> 회원아이디: <%=id %> <br/>회원등급: <%=grade %>
     <h2>주문 결과</h2>
          <ul>
          
@@ -113,8 +113,8 @@
 				<input type="hidden" id="dress" name="dress" value="<%= dress %>">
 				<input type="hidden" id="goods" name="goods" value="<%= goods %>">
 				<input type="hidden" id="mc" name="mc" value="<%= mc %>">
-				<input type="hidden" id="totalPrice" name="totalPrice" value="<%=total %>">
-				<input type="hidden" id="id" name="id" value="<%= 2222 %>">
+				<input type="hidden" id="totalPrice" name="totalPrice" value="<%= total %>">
+				<input type="hidden" id="id" name="id" value="<%= id %>">
         <input type="submit" value="주문 확인">
     </form>  
   
