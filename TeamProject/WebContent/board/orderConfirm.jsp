@@ -8,22 +8,24 @@
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
 
-	String uid = (String) session.getAttribute("userId");
+	String id = (String) session.getAttribute("id");
 	String uname = (String) session.getAttribute("userName");
 
-	int grade = Integer.parseInt(request.getParameter("grade"));
+	String grade = request.getParameter("grade");
 	
-    int dress = Integer.parseInt(request.getParameter("dress"));
-	int goods = Integer.parseInt(request.getParameter("goods"));
-	int place = Integer.parseInt(request.getParameter("place"));
-	int mc = Integer.parseInt(request.getParameter("mc"));
+    String dress = request.getParameter("dress");
+    String goods = request.getParameter("goods");
+    String place = request.getParameter("place");
+    String mc = request.getParameter("mc");
 	
-	Date wDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("writeDate"));
-	Date rDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("requestDate"));
+	// Date wDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("sf"));
+	// Date rDate=new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(request.getParameter("requestDate"));
 	String rAddr = request.getParameter("rAddr");
+	String writeDate = request.getParameter("writeDate");
+	String reqDate = request.getParameter("requestDate");
 	
     int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
-    int money = Integer.parseInt(request.getParameter("money"));
+    // int money = Integer.parseInt(request.getParameter("money"));
    
     //2. 계산처리
     String menu = ""; 
@@ -36,46 +38,58 @@
    
     //메뉴에 따라 가격 설정
     switch (dress) {
-    case 1 : danDress=3000; break;
-    case 2 : danDress=3300; break;
+    case "1" : dress="간편복"; danDress=30000; break;
+    case "2" : dress="풀드레스"; danDress=50000; break;
     }
     
 
     //메뉴에 따라 가격 설정
     switch (goods) {
-    case 1 : danGoods=3000; break;
-    case 2 : danGoods=3300; break;
+    case "1" : goods="스몰소품"; danGoods=30000; break;
+    case "2" : goods="빅소품"; danGoods=50000; break;
     }
     int goodsTotal = danGoods * goodsSet;
     
 
     //메뉴에 따라 가격 설정
     switch (place) {
-    case 1 : danPlace=3000; break;
-    case 2 : danPlace=3300; break;
+    case "1" : place="자택"; danPlace=30000; break;
+    case "2" : place="장소대여"; danPlace=50000; break;
     }
     
 
     //메뉴에 따라 가격 설정
     switch (mc) {
-    case 1 : danMc=3000; break;
-    case 2 : danMc=3300; break;
+    case "1" : mc="불필요"; danMc=30000; break;
+    case "2" : mc="필요"; danMc=50000; break;
     }
    
     //총금액
     total = danDress + goodsTotal + danPlace + danMc;
-    change = money - total;
-    change = Math.abs(change);
+    //change = money - total;
+    //change = Math.abs(change);
    
 %>
 
+		  
+       
+		<%--추가 --%>
+		<%		
+		String wtDate = writeDate;
+		String rqDate = reqDate;
+		%>
+
+		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
+		
+		
     <h2>주문 회원</h2> 
-    	회원이름: <%=uname %> 회원아이디: <%=uid %> 회원등급: <%=grade %>
+    	회원이름: <%=uname %> <br/> 회원아이디: <%=id %> <br/>회원등급: <%=grade %>
     <h2>주문 결과</h2>
          <ul>
          
-            <li>writeDate : <%=wDate %></li>
-            <li>requestDate : <%=rDate %></li>
+            <li>writeDate : <%=writeDate %></li>
+            <li>requestDate : <%=rqDate %></li>
+            <li>Request Place : <%=place %></li>
             <li>rAddr : <%=rAddr %></li>
             <li>Dress : <%=danDress %> 원</li>
             <li>Goods : <%=danGoods %> * set수: <%=goodsSet %> 
@@ -84,12 +98,23 @@
             <li>MC : <%=danMc %> 원</li>
             <br/><p>----------------------<br/>
              총 액 : <%=total %> 원  <br/>
-             입금액 : <%=money %> 원  <br/>
-             잔 액 : <%=change %> 원 남았습니다. <br/>
          </ul>
-         
        * 위의 사항을 확인하고 주문 합니다 : <br/><p>
-    <form action="qqqq.jsp">
+       
+     
+		
+			
+    <form action="../orderInsert.do" method="post" >
+				<input type="hidden" id="orderId" name="orderId" value="1179">
+				<input type="hidden" id="writeDate" name="writeDate" value="<%= wtDate %>">
+				<input type="hidden" id="requestDate" name="requestDate" value="<%=rqDate %>">
+				<input type="hidden" id="requestPlace" name="requestPlace" value="<%= place %>">
+				<input type="hidden" id="placeAddress" name="placeAddress" value="<%= rAddr %>">
+				<input type="hidden" id="dress" name="dress" value="<%= dress %>">
+				<input type="hidden" id="goods" name="goods" value="<%= goods %>">
+				<input type="hidden" id="mc" name="mc" value="<%= mc %>">
+				<input type="hidden" id="totalPrice" name="totalPrice" value="<%= total %>">
+				<input type="hidden" id="id" name="id" value="<%= id %>">
         <input type="submit" value="주문 확인">
     </form>  
   

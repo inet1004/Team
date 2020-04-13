@@ -3,95 +3,56 @@ package co.team404.order.dao;
 import java.sql.Date;
 
 public class OrderVo {
-	private String id;
-	private String pw;
-	private String name;
-	private String addr;
-	private String tel;
-	// private String gender;
-	// private String hobby;
-	private String grade;
 	private int orderId;
-	private Date writeDate;
-	private Date requestDate;
+	private String writeDate;
+	private String requestDate;
 	private String requestPlace;
 	private String placeAddress;
 	private String dress;
 	private String goods;
 	private String mc;
 	private int totalPrice;
-	private String filename;
+	private String id;
 	
 	
 	public OrderVo() {
 	}
 
-
-	public OrderVo(String id, String pw, int orderId) {
+	public OrderVo(int orderId, String id) {
 		super();
-		this.id = id;
-		this.pw = pw;
 		this.orderId = orderId;
+		this.id = id;
 	}
+	
+	
 
-
-	public String getId() {
-		return id;
-	}
-
-
-	public void setId(String id) {
+	public OrderVo(String writeDate, String requestDate, String requestPlace, String placeAddress, String dress,
+			String goods, String mc, int totalPrice, String id) {
+		super();
+		this.writeDate = writeDate;
+		this.requestDate = requestDate;
+		this.requestPlace = requestPlace;
+		this.placeAddress = placeAddress;
+		this.dress = dress;
+		this.goods = goods;
+		this.mc = mc;
+		this.totalPrice = totalPrice;
 		this.id = id;
 	}
 
-
-	public String getPw() {
-		return pw;
-	}
-
-
-	public void setPw(String pw) {
-		this.pw = pw;
-	}
-
-
-	public String getName() {
-		return name;
-	}
-
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-
-	public String getAddr() {
-		return addr;
-	}
-
-
-	public void setAddr(String addr) {
-		this.addr = addr;
-	}
-
-
-	public String getTel() {
-		return tel;
-	}
-
-
-	public void setTel(String tel) {
-		this.tel = tel;
-	}
-
-
-	public String getGrade() {
-		return grade;
-	}
-
-
-	public void setGrade(String grade) {
-		this.grade = grade;
+	public OrderVo(int orderId, String writeDate, String requestDate, String requestPlace, String placeAddress,
+			String dress, String goods, String mc, int totalPrice, String id) {
+		super();
+		this.orderId = orderId;
+		this.writeDate = writeDate;
+		this.requestDate = requestDate;
+		this.requestPlace = requestPlace;
+		this.placeAddress = placeAddress;
+		this.dress = dress;
+		this.goods = goods;
+		this.mc = mc;
+		this.totalPrice = totalPrice;
+		this.id = id;
 	}
 
 
@@ -105,22 +66,22 @@ public class OrderVo {
 	}
 
 
-	public Date getWriteDate() {
+	public String getWriteDate() {
 		return writeDate;
 	}
 
 
-	public void setWriteDate(Date writeDate) {
+	public void setWriteDate(String writeDate) {
 		this.writeDate = writeDate;
 	}
 
 
-	public Date getRequestDate() {
+	public String getRequestDate() {
 		return requestDate;
 	}
 
 
-	public void setRequestDate(Date requestDate) {
+	public void setRequestDate(String requestDate) {
 		this.requestDate = requestDate;
 	}
 
@@ -185,17 +146,15 @@ public class OrderVo {
 	}
 
 
-	public String getFilename() {
-		return filename;
+	public String getId() {
+		return id;
 	}
 
 
-	public void setFilename(String filename) {
-		this.filename = filename;
+	public void setId(String id) {
+		this.id = id;
 	}
-	
-	
-	
-	
+
+
 	
 }

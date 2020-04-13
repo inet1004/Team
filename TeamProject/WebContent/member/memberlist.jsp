@@ -1,5 +1,9 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="co.team404.member.dao.MemberVo" %>
+<%@ page import="co.team404.member.dao.MemberDAO" %>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,38 +33,42 @@
 	<br/><br />
 		<h1>Member List</h1>
 	<br /><br />
-	<div align="center">
-		<table class="table">
-			<thead>
-				<tr align="center">
-					<th width="100">아이디</th>
-					<th width="100">이 름</th>
-					<th width="200">주 소</th>
-					<th width="150">전화번호</th>
-					<th width="100">등  급</th>
-				</tr>
-				<c:choose>
-
-					<c:when test="${empty members }">
-						<tr>
-							<td colspan="5" align="center">데이터가 없습니다.</td>
-						</tr>
-					</c:when>
-					<c:otherwise>
-						<c:forEach var="member" items="${members }">
-							<tr>
-								<td align="center">${member.id }</td>
-								<td align="center">${member.name }</td>
-								<td align="center">${member.addr }</td>
-								<td align="center">${member.tell }</td>
-								<td align="center">${member.grade }</td>
-							</tr>
-			</thead>
-			</c:forEach>
-			</c:otherwise>
-			</c:choose>
-		</table>
-	</div>
+	
+	<%
+	  MemberDAO dao = new MemberDAO();
+	  MemberVo vo = new MemberVo();
+	  
+	  ArrayList<MemberVo> list = new ArrayList<MemberVo>();
+	  
+	  String view = null;
+	  
+	  list = dao.selectAll();
+	%>
+	
+	<table border="1">
+	 <tr>
+	   <th>아이디</th>
+	   <th>이  름</th>
+	   <th>주  소</th>
+	   <th>전화번호</th>
+	   <th>등   급</th>
+	 </tr>	
+	 
+	 <%
+	 for(MemberVo member : list){
+	 %>
+	 
+	 <tr>
+	 <td><%= member.getId() %></td>
+	 <td><%= member.getName() %></td>
+	 <td><%= member.getAddr() %></td>
+	 <td><%= member.getTell() %></td>
+	 <td><%= member.getGrade() %></td>
+	 </tr>
+	 
+	 <% } %>
+	</table>
+	<br/>
 	<button type="button" id="btnupdate" name="btnupdate" onclick="">수정</button>
 	<button type="button" id="btndelete" name="btndelete" onclick="">삭제</button>
 	<div>
