@@ -6,21 +6,12 @@ function abc() {
 	var objPwc = document.getElementById("pwc");// 패스워드 id값
 	var objTell = document.getElementById("tell");// 패스워드 id값
 	var objAddr = document.getElementById("addr");// 패스워드 id값
-	
+	var regName = /^[가-힣]{2,4}$/; // 이름에 사용할 정규 표현식
 
 	if (!IdPwCheck()) { // 아이디 비밀번호 검사
 		return false;
 	} else if (!regname.test(objName.value)) { // 이름 검사
 		alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
-		return false;
-	} else if (objPw.value=="") { // 이름 검사
-		alert("비밀번호를 입력해주세요.");
-		return false;
-	} else if (objPwc.value=="") { // 이름 검사
-		alert("비밀번호확인란을 입력해 주세요.");
-		return false;
-	} else if (objTell.value=="") { // 이름 검사
-		alert("전화번호를 입력해주세요.");
 		return false;
 	} else { // 유효성 검사 완료시 회원가입 진행
 		alert("회원가입이 완료되었습니다.");
@@ -32,22 +23,16 @@ function IdPwCheck() {
 	var objId = document.getElementById("id"); // 아이디 id
 	var objPw = document.getElementById("pw"); // 비밀번호 id
 	var objPwCheck = document.getElementById("pwc"); // 비밀번호확인id
-	var regName = /^[가-힣]{2,4}$/; // 이름에 사용할 정규 표현식
 	var regId = / ^[a-z]+[a-z0-9]{5,19}$/g; // 아이디에 사용할 정규 표현식
-	var check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,12}$/.test(mbrPwd);   //영문,숫자
+	var check1 = /^(?=.*[a-zA-Z])(?=.*[0-9]).{10,12}$/.test(objPw); // 영문,숫자
+	var check2 = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{10,12}$/.test(objPw); // 영문,특수문자
+	var check3 = /^(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{10,12}$/.test(objPw); // 특수문자,
+	// 숫자
+	if (!(check1 || check2 || check3)) {
 
-	var check2 = /^(?=.*[a-zA-Z])(?=.*[^a-zA-Z0-9]).{10,12}$/.test(mbrPwd);  //영문,특수문자
-
-	var check3 = /^(?=.*[^a-zA-Z0-9])(?=.*[0-9]).{10,12}$/.test(mbrPwd);  //특수문자, 숫자
-
-	if(!(check1||check2||check3)){
-
-		alert("사용할 수 없은 조합입니다.\n패스워드 설정안내를 확인해 주세요.");
-
-		return false;
-
-	if (objId.value == "") { // ID가 공백일 경우 false 반환
-		alert("ID를 입력해 주세요");
+		alert("* 10자~12자리의 영문(대소문자)+숫자+특수문자 중 2종류 이상을 조합하여 사용할 수 있습니다."
+				+ "* 아이디와 중복되는 패스워드는 사용이 불가능 합니다."
+				+ "* 동일한 숫자 또는 문자를 3번이상 연속으로 사용할 수 없습니다.");
 		return false;
 	} else if (!regId.test(objId.value)) { // 아이디의 값을 검사해 true or false 반환
 		alert("아이디는 영문자로 시작하는 6~20자 영문자 또는 숫자이어야 합니다.");
@@ -66,5 +51,5 @@ function IdPwCheck() {
 	} else {
 		return true;
 	}
-} // Id/Pw 검사 end
+} // Id/Pw 검사
 
