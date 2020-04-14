@@ -6,21 +6,22 @@
 <meta charset="UTF-8">
 <title>comment</title>
  <script>
-
+   
  </script>
 </head>
 <body>
 <form method="post" id="comment" action="">
 <div>
    게시글
-</div>
+</div><br>
 <div>
-<label></label><textarea rows="4" cols="70"></textarea>
-</div>
+<label>작성자</label><textarea rows="4" cols="70"></textarea>
 
 <!-- 댓글 등록 버튼 -->
-<div id="btn">
- <button type="button" onclick="writeCmt()">등록</button>
+ <button type="button" id="btn" >등록</button>
+
+
+
  
 </div>
 </form>

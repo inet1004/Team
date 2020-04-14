@@ -6,7 +6,7 @@
 <style>
     /* 전체박스 */
     #wrap {
-        width: 50%;
+        width: 40%;
         heigth: 500px;
         margin: 0 auto;
     }
@@ -19,6 +19,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
 	<div align="center" id="wrap">
@@ -34,18 +35,17 @@
 			<form id="frm" name="frm" action="LoginCheck.do" method="post">
 				<div class="form-group">
 					<label for="usr">ID</label> 
-					<input type="text" class="form-control" id="id" name="id" size="20" required>
+					<input type="text" class="form-control" id="id" name="id" size="10" required>
 				</div>
 				<div>
 					<label for="pwd">PASSWORD</label> 
-					<input type="password" class="form-control" id="pw" name="pw" size="20" required>
+					<input type="password" class="form-control" id="pw" name="pw" size="10" required>
 					<br />
 				</div>
 				<br /><br />
 				<div>
-					<button type="submit">로그인</button>
-					<button type="reset">취소</button>
-					<button type="button" onclick="">회원가입</button>
+					<button type="submit" class="btn btn-secondary">로그인</button>
+					<button type="button" class="btn btn-secondary" onclick="location.href='memberJoin.do'">회원가입</button>
 
 				</div>
 			</form>

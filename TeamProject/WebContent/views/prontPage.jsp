@@ -50,7 +50,7 @@
                         <!-- Logo -->
                         <div class="col-xl-2 col-lg-2 col-md-2">
                             <div class="logo">
-                                <a href="index.html"><img src="assets/img/logo/logo.png" alt=""></a>
+                                <a href="${pageContext.request.contextPath}/home.do"><img src="assets/img/logo/logo.png" alt=""></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-10">
@@ -58,10 +58,10 @@
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>                              
                                     <ul id="navigation">    
-                                        <li><a href="${pageContext.request.contextPath}/home.do"> home</a></li>
-                                        <li><a href="location.html">Location</a></li>
-                                        <li><a href="gallery.html">Gallery</a></li>
-                                        <li><a href="booking.html">Guest Book</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/memberJoin.do">회원가입</a></li>
+                                        <li><a href="${pageContext.request.contextPath}/orderJoin.do">주문</a></li>
                                         <li><a href="#">Pages</a>
                                             <ul class="submenu">
                                                 <li><a href="blog.html">Blog</a></li>
@@ -468,7 +468,7 @@
                          <div class="single-footer-caption mb-30">
                               <!-- logo -->
                              <div class="footer-logo">
-                                 <a href="index.html"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
+                                 <a href="${pageContext.request.contextPath}/home.do"><img src="assets/img/logo/logo2_footer.png" alt=""></a>
                              </div>
                              <div class="footer-tittle">
                                  <div class="footer-pera">
