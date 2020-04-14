@@ -3,16 +3,6 @@
 <%@ page import="java.util.Date" %>
 <%@ page import="java.text.SimpleDateFormat" %>
 
-
-<style type="text/css">
-	div.container { background-color: yellow; width: 100%; align:"center"; }
-	div.formBody { background-color: yellowgreen; }
-	.unit { display: inline-block; }
-	label { display: inline-block; }
-	input, select, textarea, label { font-size: 1.5em; }
-</style>
-
-
 <%
 	 String iid = "ccc" ;
 	 String iname = "tttt";
@@ -32,24 +22,6 @@
 	}
 %>
 
-		<%--추가 --%>
-		<%--
-		<%
-			if (session.getAttribute("userID") == null) {
-		%>
-		<ul class="nav navbar-nav navbar-right">
-			<li class="dropdown"><a href="#" class="dropdown-toggle"
-				data-toggle="dropdown" role="button" aria-haspopup="true"
-				aria-expanded="false">접속하기<span class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="login.jsp">로그인</a></li>
-					<li><a href="join.jsp">회원가입</a></li>
-				</ul></li>
-		</ul>
-		<%
-			} 
-		%>
-		 --%>	
 			
 		<%--추가 --%>
 		<%
@@ -57,15 +29,18 @@
 		SimpleDateFormat sf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss");
 		%>
 		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
-			
-			
-<div class="container" align="center">
-< 주의> orderWriteForm.jsp 페이지의
-	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
 
- <div><h3>이벤트 주문</h3></div>
- <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
- 	<form action="/tilesTest/board/orderConfirm.tiles" class="order" id="orderConfirm"
+<style>
+div#orderContailer { background-color: yellowgreen;}
+</style>		
+			
+<div id="orderContailer" class="container" align="center">
+*주의* orderWriteForm.jsp 페이지의
+	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
+<br><p>
+ <div><h2>이벤트 주문</h2></div>
+ <div><h3>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h3></div> 
+ 	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">
