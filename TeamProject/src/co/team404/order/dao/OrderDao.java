@@ -335,7 +335,7 @@ public class OrderDao {
 	public boolean update(OrderVo oid) {
 
 		String sql ="UPDATE EORDER SET "
-						+ " ORDERID = ?, "
+//						+ " ORDERID = ?, "
 						+ " WRITEDATE = ?, "
 						+ " REQUESTDATE = ?, "
 						+ " REQUESTPLACE = ?, "
@@ -349,16 +349,17 @@ public class OrderDao {
 		try {
 			conn = ConnectionManager.getConnnection();				
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,oid.getOrderId());
-			psmt.setString(2,oid.getWriteDate());
-			psmt.setString(3,oid.getRequestDate());
-			psmt.setString(4,oid.getRequestPlace());
-			psmt.setString(5,oid.getPlaceAddress());
-			psmt.setString(6,oid.getDress());
-			psmt.setString(7,oid.getGoods());
-			psmt.setString(8,oid.getMc());
-			psmt.setInt(9,oid.getTotalPrice());
-			psmt.setString(10,oid.getId());
+//			psmt.setInt(1,oid.getOrderId());
+			psmt.setString(1,oid.getWriteDate());
+			psmt.setString(2,oid.getRequestDate());
+			psmt.setString(3,oid.getRequestPlace());
+			psmt.setString(4,oid.getPlaceAddress());
+			psmt.setString(5,oid.getDress());
+			psmt.setString(6,oid.getGoods());
+			psmt.setString(7,oid.getMc());
+			psmt.setInt(8,oid.getTotalPrice());
+			psmt.setString(9,oid.getId());
+			psmt.setInt(10,oid.getOrderId());
 			psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -396,8 +397,8 @@ public class OrderDao {
 	public ArrayList<OrderVo> select(){
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		
@@ -456,8 +457,8 @@ public class OrderDao {
 	public int orderInsert(OrderVo order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		

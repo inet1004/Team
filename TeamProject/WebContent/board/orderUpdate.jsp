@@ -10,6 +10,11 @@
 	 session.setAttribute("member_name",iname);
 %>
 
+<script>
+setTimeout(function() {
+	}, 100);
+</script>
+
  <%
 	try{
 		String uuid = (String)session.getAttribute("id"); 
@@ -35,11 +40,10 @@ div#orderContailer { background-color: yellowgreen;}
 </style>		
 			
 <div id="orderContailer" class="container" align="center">
-*주의* orderWriteForm.jsp 페이지의
-	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
 <br><p>
  <div><h2>이벤트 주문</h2></div>
  <div><h3>여기는 <code>이벤트 수정</code> 하는 곳입니다.</h3></div> 
+ 
  	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
