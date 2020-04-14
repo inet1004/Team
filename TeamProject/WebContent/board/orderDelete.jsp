@@ -10,7 +10,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 
 
-	 
+	  
 <script type="text/javascript">
 function removeCheck() {
 	 if (confirm("정말 삭제하시겠습니까??") == true){    //확인
