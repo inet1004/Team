@@ -50,8 +50,7 @@ div#orderContailer { background-color: yellowgreen;}
 //	System.out.println(dto.getId() + " ");
 //	}
 	 %>
-	 
-	 
+
 <table border="1">
 
 <tr>

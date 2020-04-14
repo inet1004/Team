@@ -28,7 +28,7 @@ public class OrderDao {
 		return instance;
 	}
 	
-	private final String ORDER_LIST = "select * from eorder";
+	private final String ORDER_LIST = "select * from eorder order by orderId";
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
 	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
