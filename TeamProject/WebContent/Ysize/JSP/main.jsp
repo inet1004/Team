@@ -11,7 +11,7 @@
 <script src="js/bootstrap.js"></script>
 
 <link rel="stylesheet" href="css/bootstrap.css">
-</head>
+</head> 
 <body> 
 <% 
 		String userID = null;
