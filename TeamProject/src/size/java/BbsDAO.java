@@ -15,7 +15,7 @@ public class BbsDAO {
 		try {
 			 
 			String dbURL= "jdbc:sqlserver://0.0.0.0;databaseName=BBS";
-			String dbID="#";
+		 	String dbID="#";
 			String dbPassword="#";
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 		    conn = DriverManager.getConnection(dbURL, dbID, dbPassword);
