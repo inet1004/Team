@@ -70,7 +70,7 @@
 	 <td><%= member.getAddr() %></td>
 	 <td><%= member.getTell() %></td>
 	 <td><%= member.getGrade() %></td>
-	 <td><button type="button" onclick="location.href='memberDelete.do'">삭제</td>
+	 <td><button type="button" onclick="../memberDelete.do">삭제</td>
 	 <td><button type="button" id="btnupdate" name="btnupdate" onclick="location.href='memberUpdate.do'">수정</button></td>
 	 </tr>
 	 
