@@ -4,6 +4,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+
+
+
 <%
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
@@ -80,11 +83,23 @@
 		%>
 
 		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
+	
+	
+
+<style>
+div#orderContailer { background-color: yellowgreen;  }
+</style>	
+
+<div id="orderContailer" align="center" >
+
 		
-		
-    <h2>주문 회원</h2> 
+		<br><p>
+    <h2>회원 정보</h2> <br><p>
     	회원이름: <%=uname %> <br/> 회원아이디: <%=id %> <br/>회원등급: <%=grade %>
-    <h2>주문 결과</h2>
+    	<br><p>
+    	<br><p>
+    	
+    <h2>주문 결과</h2> <br><p>
          <ul>
          
             <li>writeDate : <%=writeDate %></li>
@@ -117,5 +132,14 @@
 				<input type="hidden" id="id" name="id" value="<%= id %>">
         <input type="submit" value="주문 확인">
     </form>  
+    
+    
+    <br><p>
+ 
+ <h4><a href="orderJoin.do">취소하고 이벤트 메뉴 돌아가기</a></h4> 
+    
+    <br><p>
+    
+    
   
-  
+  </div>

@@ -9,8 +9,8 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 
-    
-<body><h3>이벤트 Delete</h3></body>
+<div align="center"> 
+<body><h3>이벤트 삭제</h3></body>
 	
 		<%--추가 --%>
 		<%
@@ -67,4 +67,4 @@ for ( OrderVo dto : list ) {
 
         </tbody>
     </table>
-
+</div>
