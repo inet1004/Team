@@ -37,7 +37,8 @@
 						<tr>
 							<th style="color: red">* 회원PW확인</th>
 							<td colspan="3"><input type="password" id="pwc" name="pwc"
-								size="15"  tabindex="4" required></td>
+								size="15"  tabindex="4" required>
+								<div id="pwResult"></div></td>
 						</tr>
 						<tr>
 							<th>주소</th>
@@ -54,7 +55,7 @@
 						</tr>
 					</table>
 					<div>
-						<br /> <input type="submit" value="가입하기">
+						<br /> <input id="join" name="join" type="submit" value="가입하기">
 						&nbsp;&nbsp;&nbsp;
 						<!-- 버튼타입도 가능 -->
 						<input type="reset">취소 &nbsp;&nbsp;&nbsp; <input
