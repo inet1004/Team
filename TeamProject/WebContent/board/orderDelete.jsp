@@ -57,7 +57,7 @@ if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 //	}
 	 %>
 	 
-	 <br><p>
+	 <br><p> 
 	 <br><p>
 	 삭제하실 <code>이벤트 ID</code>를 입력해 주세요!
 	 <div id="inputDel" name="inputDel" align="center">
