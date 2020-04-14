@@ -311,14 +311,14 @@ public class OrderDao {
 	}
 	
 	// 주문정보 삭제 메서드
-	public boolean delete(int order_id) {
+	public boolean delete(int orderId) {
 		
-		String sql ="DELETE FROM EORDER WHERE ORDER_ID=?";
+		String sql ="DELETE FROM EORDER WHERE ORDERID=?";
 		
 		try {
 			conn = ConnectionManager.getConnnection();			
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,order_id);
+			psmt.setInt(1, orderId);
 			psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

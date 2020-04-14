@@ -45,6 +45,17 @@
 //	}
 	 %>
 	 
+	 <br><p>
+	 <br><p>
+	 삭제하실 <code>이벤트 ID</code>를 입력해 주세요!
+	 <div id="inputDel" name="inputDel" align="center">
+		 <form action="../orderDelete">
+			 <input type="text" id="orderId" name="orderId">
+			 <input type="submit">
+		 </form>	 
+	 </div>
+	 
+	 <br><p>
 	 
 <table border="1">
 
