@@ -49,6 +49,7 @@ public class LoginCheckController extends HttpServlet {
 		if(member != null) {
 			session.setAttribute("name", member.getName());
 			session.setAttribute("sessionid", member.getId());
+			session.setAttribute("grade", member.getGrade());
 			path = "/home.do";
 		} else {
 			 path = "views/loginFail.jsp";
