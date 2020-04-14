@@ -97,8 +97,8 @@ public class MemberDAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVo();
-				member.setId(rs.getString("id"));
-				member.setName(rs.getString("name"));
+				member.setId(rs.getString("member_id"));
+				member.setName(rs.getString("member_name"));
 				member.setPw(rs.getString("pw"));
 				member.setAddr(rs.getString("addr"));
 				member.setTell(rs.getString("tell"));
