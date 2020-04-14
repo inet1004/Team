@@ -28,7 +28,7 @@ public class OrderDao {
 		return instance;
 	}
 	
-	private final String ORDER_LIST = "select * from eorder";
+	private final String ORDER_LIST = "select * from eorder order by orderId";
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
 	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
@@ -311,14 +311,14 @@ public class OrderDao {
 	}
 	
 	// 주문정보 삭제 메서드
-	public boolean delete(int order_id) {
+	public boolean delete(int orderId) {
 		
-		String sql ="DELETE FROM EORDER WHERE ORDER_ID=?";
+		String sql ="DELETE FROM EORDER WHERE ORDERID=?";
 		
 		try {
 			conn = ConnectionManager.getConnnection();			
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,order_id);
+			psmt.setInt(1, orderId);
 			psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -452,7 +452,7 @@ public class OrderDao {
 //		return vo;
 //	}
 
-	//public int orderInsert(OrderVo order) {
+	//public int orderInsert(OrderVo order) {  
 	public int orderInsert(OrderVo order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";

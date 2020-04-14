@@ -30,13 +30,12 @@
 		%>
 		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
 
+
 <style>
 div#orderContailer { background-color: yellowgreen;}
 </style>		
 			
 <div id="orderContailer" class="container" align="center">
-*주의* orderWriteForm.jsp 페이지의
-	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
 <br><p>
  <div><h2>이벤트 주문</h2></div>
  <div><h3>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h3></div> 
@@ -55,13 +54,6 @@ div#orderContailer { background-color: yellowgreen;}
   
 			<div class="memberName">
 				<label for="uuname">회원명 :</label> <%= session.getAttribute("member_name") %>
-			</div>
-			
-			<div><br/></div>
-			
-			<div class="memberGrade">
-				<label for="grade">회원 등급 :</label> 
-				<input type="hidden" class="inputOrder" id="grade" name="grade" value="골드">
 			</div>
 			
 			<div><br/></div>
@@ -152,8 +144,9 @@ div#orderContailer { background-color: yellowgreen;}
 				<input type="submit" value="주문하기">
 			</div> 
 			
-			 
+			
 			<div><br/></div>
+        
 			
 		</div>  
  	</form>
