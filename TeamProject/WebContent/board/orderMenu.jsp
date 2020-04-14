@@ -29,13 +29,13 @@ div#orderContailer { background-color: yellowgreen;}
 			 	<a href="orderUpdate.do">이벤트 수정</a> 
 			</li> 
 			<br><p>
+	<h5>
 			<li>
-			 	<a href="${pageContext.request.contextPath}/home.do">메인 화면</a> 
+			 	<a href="${pageContext.request.contextPath}/home.do">-메인 화면-</a> 
+			 	&nbsp;&nbsp;&nbsp;&nbsp;
+			 	<a href="logOut.do">-로그아웃-</a> 
 			</li> 
-			<br><p>
-			<li>
-			 	<a href="logOut.do">로그아웃</a> 
-			</li> 
+	</h5>
 			<br><p>
 		</ul>
 	</h2>

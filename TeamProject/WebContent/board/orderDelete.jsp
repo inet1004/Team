@@ -16,7 +16,7 @@ function button_event(){
 if (confirm("정말 삭제하시겠습니까??") == true){    //확인
     document.form.submit();
 }else{   //취소
-    return;
+    location.reload();
 }
 }
 </script>
@@ -63,7 +63,7 @@ if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 	 <div id="inputDel" name="inputDel" align="center">
 		 <form action="orderDelete" method="post">
 			 <input type="text" id="orderId" name="orderId">
-			 <input type="submit"  onclick="button_event();">
+			 <input type="submit"  > <!-- onclick="button_event();" -->
 		 </form>	 
 	 </div>
 	 
