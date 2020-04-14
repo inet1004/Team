@@ -5,35 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>회원가입</title>
-<script src="./assets/js/memberJoin.js"></script>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script type="text/javascript">
-	$(function() {
-		$('#id').blur(function idCheck() {
-			var id = $('#id').val().trim();
-			$.ajax({
-				url : "memberIdCheck.do",
-				data : {
-					"searchId" : id
-				},
-				type : "get",
-				success : function(data) {
-					var id = data;
-					console.log(data);
-					
-					if (id == 1) {
-						$('#idResult').html("중복된 아이디가 존재합니다.");
-						$('#idResult').css("color", "red");
-					} else {
-						$('#idResult').html("사용가능한 아이디입니다.");
-						$('#idResult').css("color", "blue");
-					}
-				}
-			})
-		});
-	});
-</script>
+<script src="assets/js/memberJoin.js"></script>
 </head>
 <body>
 	<div align="center">
@@ -50,32 +22,35 @@
 						<tr>
 							<th width="200" style="color: red">* 회원명</th>
 							<td colspan="3"><input type="text" id="name" name="name"
-								size="15" required></td>
+								size="15" tabindex="1" required></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원ID</th>
-							<td colspan="3"><input id="id" name="id"
-								required>
+							<td colspan="3"><input id="id" name="id"  tabindex="2" required>
 								<div id="idResult"></div></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원PW</th>
 							<td colspan="3"><input type="password" id="pw" name="pw"
-								size="15" required></td>
+								size="15" tabindex="3"  required></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원PW확인</th>
 							<td colspan="3"><input type="password" id="pwc" name="pwc"
-								size="15" required></td>
+								size="15"  tabindex="4" required></td>
 						</tr>
 						<tr>
 							<th>주소</th>
 							<td colspan="3"><input type="text" id="addr" name="addr"
-								size=35></td>
+								size=35 tabindex="5" ></td>
 						</tr>
 						<tr>
 							<th>전화번호</th>
-							<td><input type="text" id="tell" name="tell" size="15"></td>
+							<td>
+								<div class="formfield">
+									 <input id="tell" name="tell" type="text" onKeyup="inputPhoneNumber(this);" maxlength="13" tabindex="6" autocomplete="off"> 
+								</div>
+							</td>
 						</tr>
 					</table>
 					<div>
