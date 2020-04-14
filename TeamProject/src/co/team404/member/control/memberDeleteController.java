@@ -1,4 +1,4 @@
-package co.team404.board.control;
+package co.team404.member.control;
 
 import java.io.IOException;
 
@@ -9,34 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import co.team404.order.dao.OrderDao;
+import co.team404.member.dao.MemberDAO;
 
-@WebServlet("/orderDelete")
-public class OrderDelete extends HttpServlet {
+@WebServlet("/memberDelete.do")
+public class memberDeleteController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public OrderDelete() {
+      
+    public memberDeleteController() {
         super();
+       
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("utf-8");
 		
-		OrderDao dao = new OrderDao();
-		
-		int orderId = Integer.parseInt(request.getParameter("orderId"));
-		boolean n = dao.delete(orderId); 
-		
-		String view = null;  
-		if(n != false) {
-
-			view = "views/order/fileOk.tiles";
-		} else {
-			view = "views/order/fileFail.tiles";
-		}
-		
-		RequestDispatcher dispatcher = request.getRequestDispatcher(view);
-		dispatcher.forward(request,response);
-		
+		String path = "/member/memberDelete.jsp";
+		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
+		dispatcher.forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

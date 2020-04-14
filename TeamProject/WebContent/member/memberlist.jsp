@@ -3,7 +3,7 @@
 	pageEncoding="UTF-8"%>
 <%@ page import="co.team404.member.dao.MemberVo" %>
 <%@ page import="co.team404.member.dao.MemberDAO" %>
-
+<% %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +17,10 @@
     }
     
     </style>
+    <script>
+  
+
+</script>
 <title>Member List</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
@@ -52,6 +56,8 @@
 	   <th>주  소</th>
 	   <th>전화번호</th>
 	   <th>등   급</th>
+	   <th>&nbsp;</th>
+	   <th>&nbsp;</th>
 	 </tr>	
 	 
 	 <%
@@ -64,16 +70,12 @@
 	 <td><%= member.getAddr() %></td>
 	 <td><%= member.getTell() %></td>
 	 <td><%= member.getGrade() %></td>
+	 <td><button type="button" onclick="../memberDelete.do">삭제</td>
+	 <td><button type="button" id="btnupdate" name="btnupdate" onclick="location.href='memberUpdate.do'">수정</button></td>
 	 </tr>
 	 
 	 <% } %>
 	</table>
 	<br/>
-	<button type="button" id="btnupdate" name="btnupdate" onclick="">수정</button>
-	<button type="button" id="btndelete" name="btndelete" onclick="">삭제</button>
-	<div>
-		<br />
-	</div>
-		</div>
 </body>
 </html>

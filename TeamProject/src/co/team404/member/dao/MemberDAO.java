@@ -45,15 +45,16 @@ public class MemberDAO {
 	}
 
 	// 회원 조회
-	public MemberVo selectMember(String id) {
-		MemberVo member = null;
+	public MemberVo selectMember(MemberVo member) {
+		MemberVo vo = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		try {
 			pstmt = conn.prepareStatement(SELECT);
-			pstmt.setString(1, id);
+			pstmt.setString(1, member.getId());
 			rs = pstmt.executeQuery();
+			
 			if (rs.next()) {
 				String user_id = rs.getString("id");
 				String pass = rs.getString("pass");
@@ -97,8 +98,8 @@ public class MemberDAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVo();
-				member.setId(rs.getString("id"));
-				member.setName(rs.getString("name"));
+				member.setId(rs.getString("member_id"));
+				member.setName(rs.getString("member_name"));
 				member.setPw(rs.getString("pw"));
 				member.setAddr(rs.getString("addr"));
 				member.setTell(rs.getString("tell"));
