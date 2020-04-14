@@ -65,7 +65,7 @@
 
  <div><h3>이벤트 주문</h3></div>
  <div><h4>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h4></div> 
- 	<form action="orderConfirm.jsp" class="order" id="orderConfirm"
+ 	<form action="/tilesTest/board/orderConfirm.tiles" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">

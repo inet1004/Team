@@ -7,6 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
- <h1>입력 성공</h1>
+ <h1>입력 성공</h1><br/><p/>
+ 
+ <h2><a href="orderJoin.do">이벤트 메뉴 돌아가기</a></h2>
+ 
+ 
 </body>
 </html>
