@@ -9,15 +9,9 @@
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 
-
-<style>
-div#orderContailer { background-color: yellowgreen;}
-</style>		
-
-
-<div id="orderContailer" >
-	<div align="center">
-	<h3>이벤트 Order List</h3>
+<div align="center"> 
+<body><h3>이벤트 삭제</h3></body>
+	
 		<%--추가 --%>
 		<%
 		Date nowTime = new Date();
@@ -73,11 +67,4 @@ for ( OrderVo dto : list ) {
 
         </tbody>
     </table>
-    
-    <br><p>
- 
- <h4><a href="orderJoin.do">이벤트 메뉴 돌아가기</a></h4>
-
-	</div>
-	
-	</div>
+</div>

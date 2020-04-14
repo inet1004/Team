@@ -39,7 +39,7 @@ div#orderContailer { background-color: yellowgreen;}
 	  String iid = "ccc" <--- emember table의 member_id 이름이어야 합니다
 <br><p>
  <div><h2>이벤트 주문</h2></div>
- <div><h3>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h3></div> 
+ <div><h3>여기는 <code>이벤트 수정</code> 하는 곳입니다.</h3></div> 
  	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			

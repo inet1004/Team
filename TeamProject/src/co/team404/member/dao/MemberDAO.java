@@ -21,11 +21,12 @@ public class MemberDAO {
 
 	private final String MEMBER_LIST = "select * from emember";
 	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
-	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate,'U')";
+	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
-	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
-	
+    private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
+    
+    
 	static MemberDAO instance;
 
 	public static MemberDAO getInstance() {
@@ -43,30 +44,27 @@ public class MemberDAO {
 		}
 	}
 
-	
-	public MemberVo selectMember(MemberVo member) {
-		MemberVo vo = null;
+	// 회원 조회
+	public MemberVo selectMember(String id) {
+		MemberVo member = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 
 		try {
-			pstmt = conn.prepareStatement(MEMBER_CHECK);
-			pstmt.setString(1, member.getId());
-			pstmt.setString(2, member.getPw());
+			pstmt = conn.prepareStatement(SELECT);
+			pstmt.setString(1, id);
 			rs = pstmt.executeQuery();
-			
 			if (rs.next()) {
-				String id = rs.getString("member_id");
-				String pw = rs.getString("pw");
-				
-				vo = new MemberVo(id, pw);
+				String user_id = rs.getString("id");
+				String pass = rs.getString("pass");
+				member = new MemberVo(user_id, pass);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 
 		}
 
-		return vo;
+		return member;
 	}
 
 	// 회원 수정
@@ -99,8 +97,8 @@ public class MemberDAO {
 			rs = psmt.executeQuery();
 			while (rs.next()) {
 				member = new MemberVo();
-				member.setId(rs.getString("member_id"));
-				member.setName(rs.getString("member_name"));
+				member.setId(rs.getString("id"));
+				member.setName(rs.getString("name"));
 				member.setPw(rs.getString("pw"));
 				member.setAddr(rs.getString("addr"));
 				member.setTell(rs.getString("tell"));
@@ -129,6 +127,20 @@ public class MemberDAO {
 		}
 		return n;
 	}
-
 	
+	public int memberIdCheck(String id) {
+		int n = 0;
+		try {
+			psmt = conn.prepareStatement(MEMBER_ID_CHECK);
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				n = 1; //레코드의 첫번째 요소를 담는 작업
+			}
+		}catch(SQLException e) {
+		e.printStackTrace();	
+		}
+		return n;
+	}
 }
+ 
