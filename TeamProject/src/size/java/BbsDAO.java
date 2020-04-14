@@ -13,7 +13,7 @@ public class BbsDAO {
 	
 	public BbsDAO() {
 		try {
-			
+			 
 			String dbURL= "jdbc:sqlserver://0.0.0.0;databaseName=BBS";
 			String dbID="#";
 			String dbPassword="#";

@@ -51,9 +51,9 @@ public class UserDAO {
 		 //String SQL = "INSERT INTO USER VALUES (?,?,?,?,?)";
 		 //insert into dbo.[USER](userID, userPassoword, userName, userGender, userEmail)values('gildong', '123456', '홍길동', '남자', 'gildong@naver.com');
 		 //SELECT userPassword FROM dbo.[USER] WHERE userID =  'sdfsdf';
-		 try {
+		 try { 
 			  
-			 pstmt = conn.prepareStatement(SQL);
+		 	 pstmt = conn.prepareStatement(SQL);
 			  
 			  pstmt.setString(1,  user.getUserID());
 			  pstmt.setString(2,  user.getUserPassword());
@@ -67,6 +67,6 @@ public class UserDAO {
 			 e.printStackTrace();
 		 }
 		 return -1; // 데이터 베이스 오류 
-	}
-
-}
+	} 
+ 
+} 

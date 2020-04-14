@@ -134,7 +134,7 @@
 					class="btn btn-success btn-arrow-left">다음</a>
 				<%
 					}
-				%>
+				%>  
 	
 	
 				<!-- 회원만넘어가도록 -->

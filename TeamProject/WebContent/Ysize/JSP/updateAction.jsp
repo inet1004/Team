@@ -64,7 +64,7 @@
 					script.println("alert('글수정에 실패했습니다')");
 					script.println("history.back()");
 					script.println("</script>");
-				} else {
+				} else { 
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
 					script.println("location.href='bbs.jsp'");

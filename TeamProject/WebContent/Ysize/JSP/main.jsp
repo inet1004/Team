@@ -12,8 +12,8 @@
 
 <link rel="stylesheet" href="css/bootstrap.css">
 </head>
-<body>
-<%
+<body> 
+<% 
 		String userID = null;
 		if(session.getAttribute("userID") != null){
 			userID = (String) session.getAttribute("userID");
