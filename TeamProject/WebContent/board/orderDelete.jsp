@@ -27,7 +27,7 @@
 
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 
-		String view = null; 
+		String view = null;  
 		
 		list = dao.select();
 	
