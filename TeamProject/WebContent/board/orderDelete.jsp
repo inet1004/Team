@@ -77,5 +77,5 @@ for ( OrderVo dto : list ) {
 </table>
 
         </tbody>
-    </table>
+    </table> 
 </div>

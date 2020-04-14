@@ -26,7 +26,7 @@ public class OrderDelete extends HttpServlet {
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		boolean n = dao.delete(orderId);
 		
-		String view = null; 
+		String view = null;  
 		if(n != false) {
 
 			view = "views/order/fileOk.tiles";

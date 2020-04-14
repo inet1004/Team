@@ -452,7 +452,7 @@ public class OrderDao {
 //		return vo;
 //	}
 
-	//public int orderInsert(OrderVo order) {
+	//public int orderInsert(OrderVo order) { 
 	public int orderInsert(OrderVo order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
