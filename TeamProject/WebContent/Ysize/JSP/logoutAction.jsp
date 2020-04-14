@@ -12,8 +12,8 @@
 	%>
 	<script>
 		location.href = 'main.jsp';
-	</script>
- 
+	</script> 
+   
 
 </body>
 </html>
