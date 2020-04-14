@@ -187,7 +187,7 @@ public class OrderDao {
 //	}
 	
 	
-	//전체 건수 조회
+	//전체 건수 조회 //
 	public int count(OrderSearchVo dto) {
 		int result = 0;
 		try{
