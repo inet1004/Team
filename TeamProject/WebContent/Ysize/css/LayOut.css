@@ -1,21 +1,15 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
+@charset "UTF-8";
 
-<body>
-body{ font-family: sans-serif; }
+
+* { box-sizing: border-box; }
+
+body { font-family: sans-serif; }
 
 /* ---- grid ---- */
 
 .grid {
   background: #EEE;
-  max-width: 1200px;
+  max-width: 100px;
 }
 
 /* clearfix */
@@ -23,6 +17,7 @@ body{ font-family: sans-serif; }
   content: '';
   display: block;
   clear: both;
+  
 }
 
 /* ---- grid-item ---- */
@@ -55,6 +50,6 @@ body{ font-family: sans-serif; }
   background: #A2C;
   border-color: white;
   cursor: pointer;
-</body>
-</body>
-</html>
+}
+
+}
