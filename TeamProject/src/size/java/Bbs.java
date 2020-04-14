@@ -12,7 +12,7 @@ public class Bbs {
 	}
 	public void setBbsTitle(String bbsTitle) {
 		this.bbsTitle = bbsTitle;
-	}  
+	}   
 	public String getUserID() {
 		return userID;
 	}
