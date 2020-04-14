@@ -34,10 +34,10 @@ public class OrderDao {
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
 
-	
+
 	
 	// 주문 목록을 가져오는 메써드
-	public ArrayList<OrderVo> select(OrderSearchVo dto){
+	public ArrayList<OrderVo> getDBList(OrderSearchVo dto){
 		
 		ArrayList<OrderVo> datas = new ArrayList<OrderVo>();
 		
@@ -109,6 +109,82 @@ public class OrderDao {
 		}
 		return datas; 
 	}
+	
+	
+	
+	// 주문 목록을 가져오는 메써드
+//	public ArrayList<OrderVo> select(OrderSearchVo dto){
+//		
+//		ArrayList<OrderVo> datas = new ArrayList<OrderVo>();
+//		
+//		//부서, first_name 풀다운 목록
+//		String where = " where 1=1 ";
+//		String oid = Integer.toString(dto.getOrderId());
+//		if(oid != null && ! oid.isEmpty()) {
+//			where += " and orderId = ? ";
+//		}
+//		
+//		if (dto.getId() != null && ! dto.getId().isEmpty()) {
+//			where += " and upper(id) like '%' || upper(?) || '%' ";
+//		}  // upper 는 대소문자 구분안하기 위함
+//		
+//		String sql ="select a.* from ( select rownum rn, b.* from ( " +
+//					"select * from eorder " + where + " order by ORDERID desc" +
+//					") b ) a where rn between ? and ? ";
+//
+//		String driver = "oracle.jdbc.driver.OracleDriver";
+////		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";  // team의 local server
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String user="hr";
+//		String password = "hr";
+//		
+//		try {
+//			Class.forName(driver);
+//			conn = DriverManager.getConnection(url,user,password);
+//		} catch (ClassNotFoundException | SQLException e) {
+//			e.printStackTrace();
+//		}
+//		
+//		try {
+//			psmt = conn.prepareStatement(ORDER_LIST);
+//			
+//			int p = 0;
+//			String oid2 = Integer.toString(dto.getOrderId());
+//			if(oid2 != null && ! oid2.isEmpty()) {
+//				where += " and orderId = ? ";
+//				psmt.setInt(++p,  dto.getOrderId());
+//			}
+//			if(dto.getId() != null && ! dto.getId().isEmpty()) {
+//				where += " and id = ? ";
+//				psmt.setString(++p,  dto.getId());
+//			}
+//			psmt.setInt(++p, dto.getFirst());
+//			psmt.setInt(++p, dto.getEnd());
+//			
+//			rs = psmt.executeQuery();
+//			while(rs.next()) {
+//				OrderVo order = new OrderVo();
+//				order.setOrderId(rs.getInt("orderId"));
+//				order.setWriteDate(rs.getString("writeDate"));
+//				order.setRequestDate(rs.getString("requestDate"));
+//				order.setRequestPlace(rs.getString("requestPlace"));
+//				order.setPlaceAddress(rs.getString("placeAddress"));
+//				order.setDress(rs.getString("dress"));
+//				order.setGoods(rs.getString("goods"));
+//				order.setMc(rs.getString("mc"));
+//				order.setTotalPrice(rs.getInt("totalPrice"));
+//				order.setId(rs.getString("id"));
+//				datas.add(order);
+//			}
+//			rs.close();
+//		} catch (SQLException e) {
+//			e.printStackTrace();
+//		}
+//		finally {
+//			ConnectionManager.close(conn);
+//		}
+//		return datas; 
+//	}
 	
 	
 	//전체 건수 조회
@@ -316,47 +392,47 @@ public class OrderDao {
 //		return vo;
 //	}
 
-//	
-//	public ArrayList<OrderVo> select(){
-//		
-//		String driver = "oracle.jdbc.driver.OracleDriver";
-//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-////		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-//		String user="hr";
-//		String password = "hr";
-//		
-//		try {
-//			Class.forName(driver);
-//			conn = DriverManager.getConnection(url,user,password);
-//		} catch (ClassNotFoundException | SQLException e) {
-//			e.printStackTrace();
-//		}
-//		
-//		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
-//		OrderVo order = null;
-//		try {
-//			psmt = conn.prepareStatement(ORDER_LIST);
-//			rs = psmt.executeQuery();
-//			while(rs.next()) {
-//				order = new OrderVo();
-//				order.setOrderId(rs.getInt("orderId"));
-//				order.setWriteDate(rs.getString("writeDate"));
-//				order.setRequestDate(rs.getString("requestDate"));
-//				order.setRequestPlace(rs.getString("requestPlace"));
-//				order.setPlaceAddress(rs.getString("placeAddress"));
-//				order.setDress(rs.getString("dress"));
-//				order.setGoods(rs.getString("goods"));
-//				order.setMc(rs.getString("mc"));
-//				order.setTotalPrice(rs.getInt("totalPrice"));
-//				order.setId(rs.getString("id"));
-//				list.add(order);
-//			}
-//		} catch (SQLException e) {
-//			e.printStackTrace();
-//		}
-//		return list;
-//	}
-//	
+	
+	public ArrayList<OrderVo> select(){
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+		OrderVo order = null;
+		try {
+			psmt = conn.prepareStatement(ORDER_LIST);
+			rs = psmt.executeQuery();
+			while(rs.next()) {
+				order = new OrderVo();
+				order.setOrderId(rs.getInt("orderId"));
+				order.setWriteDate(rs.getString("writeDate"));
+				order.setRequestDate(rs.getString("requestDate"));
+				order.setRequestPlace(rs.getString("requestPlace"));
+				order.setPlaceAddress(rs.getString("placeAddress"));
+				order.setDress(rs.getString("dress"));
+				order.setGoods(rs.getString("goods"));
+				order.setMc(rs.getString("mc"));
+				order.setTotalPrice(rs.getInt("totalPrice"));
+				order.setId(rs.getString("id"));
+				list.add(order);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	
 //	public OrderVo selectOrder(OrderVo order) {
 //		OrderVo vo = null;
 //		try {
