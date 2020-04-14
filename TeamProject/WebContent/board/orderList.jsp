@@ -54,7 +54,7 @@ div#orderContailer { background-color: yellowgreen;}
 <table border="1">
 
 <tr>
-<th>예약ID</th><th>회원ID</th><th>신청일</th><th>이벤트일</th><th>이벤트장소</th><th>이벤트주소</th><th>신청의상</th><th>신청소품</th><th>사회자</th><th>총액</th>
+<th>예약ID</th><th>회원ID</th><th>신청일</th><th>이벤트일</th><th>이벤트장소</th><th>이벤트주소</th><th>신청의상</th><th>신청소품</th><th>사회자</th><th>총액</th><th colspan="2">수정/삭제</th>
 </tr>
 
 <%
@@ -63,7 +63,7 @@ for ( OrderVo dto : list ) {
 
 <tr>
 <td><%= dto.getOrderId() %></td><td><%= dto.getId() %> </td><td><%= dto.getWriteDate() %> </td><td><%= dto.getRequestDate() %> </td><td><%= dto.getRequestPlace() %> </td><td><%= dto.getPlaceAddress() %> </td>
-<td><%= dto.getDress() %> </td><td><%= dto.getGoods() %> </td><td><%= dto.getMc() %> </td><td><%= dto.getTotalPrice() %> </td>
+<td><%= dto.getDress() %> </td><td><%= dto.getGoods() %> </td><td><%= dto.getMc() %> </td><td><%= dto.getTotalPrice() %> </td><td><input type="button" onClick=deleteRow(); value="수정"></td><td><input type="button" onClick=deleteRow(); value="삭제"></td>
 </tr>
 
 <% } %>

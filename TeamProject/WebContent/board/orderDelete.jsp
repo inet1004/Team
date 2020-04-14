@@ -10,14 +10,14 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 
 
-	 
+	  
 <script type="text/javascript">
-function button_event(){
-if (confirm("정말 삭제하시겠습니까??") == true){    //확인
-    document.form.submit();
-}else{   //취소
-    return;
-}
+function removeCheck() {
+	 if (confirm("정말 삭제하시겠습니까??") == true){    //확인
+	     document.removefrm.submit();
+	 }else{   //취소
+		 event.preventDefault();
+	 }
 }
 </script>
 
@@ -57,13 +57,13 @@ if (confirm("정말 삭제하시겠습니까??") == true){    //확인
 //	}
 	 %>
 	 
-	 <br><p>
+	 <br><p> 
 	 <br><p>
 	 삭제하실 <code>이벤트 ID</code>를 입력해 주세요!
 	 <div id="inputDel" name="inputDel" align="center">
 		 <form action="orderDelete" method="post">
 			 <input type="text" id="orderId" name="orderId">
-			 <input type="submit"  onclick="button_event();">
+			 <input type="submit" onclick=removeCheck(); > 
 		 </form>	 
 	 </div>
 	 
