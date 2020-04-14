@@ -23,7 +23,6 @@ public class MemberDAO {
 	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
 	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
-	private final String MEMBER_CHECK = "select * from emember where member_id = ? and pw = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
     
