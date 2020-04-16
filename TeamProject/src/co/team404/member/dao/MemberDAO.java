@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-
 public class MemberDAO {
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
@@ -21,12 +20,13 @@ public class MemberDAO {
 	ResultSet rs = null;
 
 	private final String MEMBER_LIST = "select * from emember";
-	private final String SELECT_CHECK = "SELECT * FROM EMEMBER WHERE member_id = ? and pw = ?";
+	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
 	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
     private final String MEMBER_CHECK = "SELECT MEMBER_ID,MEMBER_NAME,PW,ADDR,TELL,GRADE,JDATE FROM EMEMBER WHERE MEMBER_ID = ?";
+    
     
 	static MemberDAO instance;
 
@@ -44,7 +44,6 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-
 	public int loginCheck(String id, String pw) {
 		 String dbPW = "";
 		 int x = -1;
@@ -75,7 +74,7 @@ public class MemberDAO {
 		}
 		return x;
 	}
-	
+
 	public MemberVo selectMember(MemberVo member) {
 		MemberVo vo = new MemberVo();
 	
@@ -98,6 +97,7 @@ public class MemberDAO {
 		
 		return vo;
 	}
+
 
 	// 회원 수정
 	public void updateMember(MemberVo vo) {
@@ -171,7 +171,12 @@ public class MemberDAO {
 			}
 		}catch(SQLException e) {
 		e.printStackTrace();	
-		}
+		}finally {
+           try {
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}}
 		return n;
 	}
 }
