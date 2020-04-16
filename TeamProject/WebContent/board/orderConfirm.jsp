@@ -27,7 +27,7 @@
 	String writeDate = request.getParameter("writeDate");
 	String reqDate = request.getParameter("requestDate");
 	
-    int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
+    //int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
     // int money = Integer.parseInt(request.getParameter("money"));
    
     //2. 계산처리
