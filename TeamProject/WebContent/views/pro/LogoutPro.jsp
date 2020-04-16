@@ -9,7 +9,7 @@
 <body>
 <%
         session.invalidate(); // 모든세션정보 삭제
-        response.sendRedirect("../login/LoginForm.jsp"); // 로그인 화면으로 다시 돌아간다.
+        response.sendRedirect("prontpage.do"); // 메인 화면으로 다시 돌아간다.
     %>
 
 

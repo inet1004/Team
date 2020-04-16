@@ -1,3 +1,4 @@
+<%@page import="co.team404.member.dao.MemberVo"%>
 <%@page import="co.team404.member.dao.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -9,6 +10,9 @@
 </head>
 <body>
 <%
+        
+        MemberVo member = new MemberVo();
+        
         String id= request.getParameter("id");
         String pw = request.getParameter("pw");
         
@@ -16,13 +20,13 @@
         MemberDAO dao = MemberDAO.getInstance();
         int check = dao.loginCheck(id, pw);	
         
-        // URL 및 로그인관련 전달 메시지
         String msg = "";
         
         if(check == 1)    // 로그인 성공
         { 
-            // 세션에 현재 아이디 세팅
+            
             session.setAttribute("sessionID", id);
+            session.setAttribute("grade", member.getGrade());
             msg = "../../prontpage.do";
         }
         else if(check == 0) // 비밀번호가 틀릴경우

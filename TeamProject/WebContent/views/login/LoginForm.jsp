@@ -42,7 +42,7 @@
     
         // 회원가입 버튼 클릭시 회원가입 화면으로 이동
         function goJoinForm() {
-            location.href="";
+            location.href="views/member/memberJoin.tiles";
         }    
     </script>
 
@@ -58,7 +58,7 @@
 			<br /><br /><br />
 		</div>
 		<div>
-        <form name="loginInfo" method="post" action="views/pro/LoginPro.jsp" 
+        <form name="loginInfo" method="post" action="LoginCheck.do" 
                 onsubmit="return checkValue()">
 
 <div class="form-group">
@@ -91,8 +91,9 @@
                 out.println("<br>");
                 out.println("<font color='red' size='5'>아이디를 확인해 주세요.</font>");
             }
+            
         %>    
     </div>    
-
+  </div>
 </body>
 </html>
