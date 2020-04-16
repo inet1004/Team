@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!doctype html>
 <html class="no-js" lang="zxx">
     <head>
@@ -57,22 +58,20 @@
                             <!-- Main-menu -->
                             <div class="main-menu f-right d-none d-lg-block">
                                 <nav>                              
-                                    <ul id="navigation">    
-                                        <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/memberJoin.do">회원가입</a></li>
-                                        <li><a href="${pageContext.request.contextPath}/orderJoin.do">주문</a></li>
-                                        <li><a href="#">Pages</a>
-                                            <ul class="submenu">
-                                                <li><a href="blog.html">Blog</a></li>
-                                                <li><a href="single-blog.html">Blog Details</a></li>
-                                                <li><a href="elements.html">Element</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">contact</a></li>
-                                    </ul>
-                                </nav>
-                            </div>
+                                    <ul id="navigation">
+							  <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
+                               <li><a href="${pageContext.request.contextPath}/login.do">로그인</a></li>
+                               <li><a href="${pageContext.request.contextPath}/memberJoin.do">회원가입</a></li>
+                               <li><a href="#">Pages</a>
+                                 <ul class="submenu">
+                                    <li><a href="blog.html">Blog</a></li>
+                                    <li><a href="single-blog.html">Blog Details</a></li>
+                                    <li><a href="elements.html">Element</a></li>
+                                   </ul>
+                                 </li>
+					          </ul>
+                             </nav>
+                           </div>
                         </div> 
                         <!-- Mobile Menu -->
                         <div class="col-12">

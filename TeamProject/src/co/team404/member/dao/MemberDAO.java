@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
+
 public class MemberDAO {
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
@@ -25,7 +26,7 @@ public class MemberDAO {
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
-    
+    private final String MEMBER_CHECK = "select * from emember where member_id = ?";
     
 	static MemberDAO instance;
 
@@ -73,6 +74,29 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 		return x;
+	}
+	
+	public MemberVo selectMember(MemberVo member) {
+		MemberVo vo = new MemberVo();
+	
+		try {
+			psmt = conn.prepareStatement(MEMBER_CHECK);
+			psmt.setString(1, member.getId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+			vo.setId(rs.getString("member_id"));
+			vo.setName(rs.getString("name"));
+			vo.setPw(rs.getString("pw"));
+			vo.setAddr(rs.getString("addr"));
+			vo.setTell(rs.getString("tell"));
+			vo.setGrade(rs.getString("grade"));
+		  }
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		
+		return vo;
 	}
 
 	// 회원 수정
