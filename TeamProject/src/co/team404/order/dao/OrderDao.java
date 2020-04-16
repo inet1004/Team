@@ -32,6 +32,8 @@ public class OrderDao {
 	private final String ORDER_ONE = "select * from eorder where orderid = ?" ;
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
 	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
+//	private final String ORDER_INSERT_CHECK = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?) "
+//			+ " where not exists (select requireDate from eorder where requireDate LIKE rDate ) ";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
 
@@ -524,14 +526,24 @@ public class OrderDao {
 			e.printStackTrace();
 		}
 		
+
+//		final String ORDER_INSERT_CHECK = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?) "
+//				+ " where not exists (select requireDate from eorder where requireDate LIKE rDate ) ";
+		
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-//			psmt.setInt(1, order.getOrderId());
+	//		psmt = conn.prepareStatement(ORDER_INSERT_CHECK);
+			psmt.setInt(1, order.getOrderId());
 //			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
 //			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
 //			rs.getTimestamp("save_time");
 			psmt.setString(1, order.getWriteDate());
+//			
+//			String reDate = order.getRequestDate();
+//			String reTrimmedDate = reDate.substring(0,10);
+//			String rDate =  reTrimmedDate + '%';
+//			psmt.setString(2, rDate);
 			psmt.setString(2, order.getRequestDate());
 			psmt.setString(3, order.getRequestPlace());
 			psmt.setString(4, order.getPlaceAddress());
@@ -547,7 +559,7 @@ public class OrderDao {
 		}
 		return n;
 	}
-	
+	 
 
 //	public int memberIdCheck(String id) {
 //		int n=0;;
