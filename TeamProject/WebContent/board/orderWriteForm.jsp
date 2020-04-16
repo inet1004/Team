@@ -109,7 +109,7 @@ div#orderContailer { background-color: yellowgreen;}
 				<label for="eventGoods">이벤트 소품 : </label>
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" Checked>기본 소품 
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2">풀 소품 
-        		셋트수량 : <input type="number" name="goodsSet" size="3"><br>
+        		<!--  셋트수량 : <input type="number" name="goodsSet" size="3">   --> <br>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>

@@ -51,7 +51,7 @@
     case "1" : goods="스몰소품"; danGoods=30000; break;
     case "2" : goods="빅소품"; danGoods=50000; break;
     }
-    int goodsTotal = danGoods * goodsSet;
+    //int goodsTotal = danGoods * goodsSet;
     
 
     //메뉴에 따라 가격 설정
@@ -68,7 +68,7 @@
     }
    
     //총금액
-    total = danDress + goodsTotal + danPlace + danMc;
+    total = danDress + danGoods + danPlace + danMc;
     //change = money - total;
     //change = Math.abs(change);
    
@@ -107,8 +107,11 @@ div#orderContailer { background-color: yellowgreen;  }
             <li>Request Place : <%=place %></li>
             <li>rAddr : <%=rAddr %></li>
             <li>Dress : <%=danDress %> 원</li>
-            <li>Goods : <%=danGoods %> * set수: <%=goodsSet %> 
+            <li>Goods : <%=danGoods %> 
+            <%-- 
+            	* set수: <%=goodsSet %>  -->
                 = GoodsTotal : <%=goodsTotal %> 원</li>
+            --%>
             <li>Place : <%=danPlace %> 원</li>
             <li>MC : <%=danMc %> 원</li>
             <br/><p>----------------------<br/>

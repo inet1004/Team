@@ -74,37 +74,38 @@ div#orderContailer { background-color: yellowgreen;}
 			<div><br/></div>
 			
 			<div class="memberId">
-				<label for="uuid">회원 아이디 :</label> <%= vo.getId() %>
+				<label for="uuid">회원 아이디 : &nbsp;&nbsp;</label> <%= vo.getId() %>
 				<input type="hidden" class="inputOrder" id="id" name="id" placeholder="<%= vo.getId() %>" value="<%= vo.getId() %>">
 			</div>
-			
-			<div><br/></div>
   
 			<div class="memberName">
-				<label for="uuname">회원명 :</label> <%= session.getAttribute("member_name") %>
+				<label for="uuname">회원명 : &nbsp;&nbsp;</label> <%= session.getAttribute("member_name") %>
 			</div>
-			
+						
+			<div><br/></div>
+				이벤트 주문 orderId : <%= vo.getOrderId() %> <br/>
+			<div><br/></div>
 			<div><br/></div>
 			
 			<div class="writeDate">
-				<label for="writeDate">작성 일자 :</label> String writeDate = <%= vo.getWriteDate() %>
+				<label for="writeDate">작성 일자 : &nbsp;&nbsp;</label> String writeDate = <%= vo.getWriteDate() %>
 				<input type="hidden" id="writeDate" name="writeDate" placeholder="<%= sf.format(nowTime) %>" value="<%= sf.format(nowTime) %>">
 			</div>
 			
 			<div><br/></div>
 			
 			<div class="requestDate">
-				<label for="requestDate">이벤트 요청 일자 :</label> 
-				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate" placeholder="<%= vo.getRequestDate() %>">
+				<label for="requestDate">이벤트 요청 일자 : &nbsp;&nbsp;</label> <%= vo.getRequestDate() %> 
+				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate">
 			</div>
 			
 			<div><br/></div>
 			
 			<div class="place">
 				<div class="unit">
-				<label for="place">이벤트 신청장소 : </label>
-				<input type="radio"	class="inputOrder" id="place" name="place" value="1" <c:if test="${ vo.placeAddress eq '1'}">checked="checked"</c:if>/>출장 장소 
-				<input type="radio"	class="inputOrder" id="place" name="place" value="2" <c:if test="${ vo.placeAddress eq '2'}">checked="checked"</c:if>/>장소 임대
+				<label for="place">이벤트 신청장소 : &nbsp;&nbsp;</label>
+				<input type="radio"	class="inputOrder" id="place" name="place" value="1" <c:if test="${ vo.requestPlace eq '자택'}">checked="checked"</c:if>/>출장 장소 
+				<input type="radio"	class="inputOrder" id="place" name="place" value="2" <c:if test="${ vo.requestPlace eq '장소대여'}">checked="checked"</c:if>/>장소 임대
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -113,8 +114,8 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="placeAddress">
 				<div class="unit">
-				<label for="placeAddress">신청장소의 주소: </label>
-				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="<%= vo.getPlaceAddress() %>"></textarea>
+				<label for="placeAddress">신청장소의 주소: &nbsp;&nbsp;</label>
+				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="<%= vo.getPlaceAddress() %>" required></textarea>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -123,9 +124,9 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="requestDress">
 				<div class="unit">
-				<label for="requestDress">이벤트 의상 : </label>
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" <c:if test="${ vo.dress eq '1'}">checked="checked"</c:if>/>기본 의상 
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2" <c:if test="${ vo.dress eq '1'}">checked="checked"</c:if>/>풀 드레스
+				<label for="requestDress">이벤트 의상 : &nbsp;&nbsp;</label>
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" <c:if test="${ vo.dress eq '간편복'}">checked="checked"</c:if>/>기본 의상 
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2" <c:if test="${ vo.dress eq '풀드레스'}">checked="checked"</c:if>/>풀 드레스
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -134,10 +135,10 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="eventGoods">
 				<div class="unit">
-				<label for="eventGoods">이벤트 소품 : </label>
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" <c:if test="${ vo.goods == '1'}">checked="checked"</c:if>/>기본 소품 
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2" <c:if test="${ vo.goods == '2'}">checked="checked"</c:if>/>풀 소품 
-        		&nbsp;&nbsp;셋트수량 : <input type="number" name="goodsSet" size="3"><br>
+				<label for="eventGoods">이벤트 소품 : &nbsp;&nbsp;</label>
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" <c:if test="${ vo.goods == '스몰소품'}">checked="checked"</c:if>/>기본 소품 
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2" <c:if test="${ vo.goods == '빅소품'}">checked="checked"</c:if>/>풀 소품 
+        		<!-- &nbsp;&nbsp;셋트수량 : <input type="number" name="goodsSet" size="3">   --> <br>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -146,10 +147,10 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="eventMc">
 				<div class="unit">
-				<label for="eventMc">사외자 요청 : </label>${vo}========================
-				<input type="radio" name="mc" id="mc" value="1" <c:if test="${ vo.mc eq '1'}">checked="checked", value="사회자 불필요"</c:if>/>
+				<label for="eventMc">사외자 요청 : &nbsp;&nbsp;</label> <!-- ${vo} 확인하기 -->
+				<input type="radio" name="mc" id="mc" value="1" <c:if test="${ vo.mc eq '불필요'}">checked="checked", value="불필요"</c:if>/>
 				<label for="mc1">사회자 불필요</label> &nbsp;&nbsp;
-				<input type="radio" name="mc" id="mc" value="2" <c:if test="${ vo.mc eq '2'}">checked="checked", value="사회자 요청함"</c:if>/>
+				<input type="radio" name="mc" id="mc" value="2" <c:if test="${ vo.mc eq '필요'}">checked="checked", value="필요"</c:if>/>
 				<label for="mc2">사회자 요청</label>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
