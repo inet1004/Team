@@ -76,9 +76,9 @@ for ( OrderVo dto : list ) {
     </table>
     
     <br><p>
- 
- <a href="/Team404/orderList.do"><h5>[이벤트 주화면 바로가기]&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Team404/orderInsert.do">[이벤트 추가]</a></h5></a>
-
+			<div class="sendForm">
+				<input type="button" onclick="location.href='/Team404/orderInsert.do'" value="이벤트 추가하기">
+			</div> 
 	</div>
 	
 	</div>

@@ -1,10 +1,12 @@
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="co.team404.order.dao.OrderVo"%>
 <%@page import="co.team404.order.dao.OrderDao"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <%
 	 String iid = "ccc" ;
@@ -72,7 +74,7 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="memberId">
 				<label for="uuid">회원 아이디 :</label> <%= vo.getId() %>
-				<input type="hidden" class="inputOrder" id="id" name="id" value="<%= vo.getId() %>">
+				<input type="hidden" class="inputOrder" id="id" name="id" placeholder="<%= vo.getId() %>" value="<%= vo.getId() %>">
 			</div>
 			
 			<div><br/></div>
@@ -85,14 +87,14 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="writeDate">
 				<label for="writeDate">작성 일자 :</label> String writeDate = <%= vo.getWriteDate() %>
-				<input type="hidden" id="writeDate" name="writeDate" value="<%= sf.format(nowTime) %>">
+				<input type="hidden" id="writeDate" name="writeDate" placeholder="<%= sf.format(nowTime) %>" value="<%= sf.format(nowTime) %>">
 			</div>
 			
 			<div><br/></div>
 			
 			<div class="requestDate">
 				<label for="requestDate">이벤트 요청 일자 :</label> 
-				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate" value="<%= vo.getRequestDate() %>">
+				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate" placeholder="<%= vo.getRequestDate() %>">
 			</div>
 			
 			<div><br/></div>
@@ -100,8 +102,14 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="place">
 				<div class="unit">
 				<label for="place">이벤트 신청장소 : </label>
+				    <c:if test="${vo.place == 1 }">
 				<input type="radio"	class="inputOrder" id="place" name="place" value="1" Checked>출장 장소 
 				<input type="radio"	class="inputOrder" id="place" name="place" value="2">장소 임대
+					</c:if>
+				    <c:if test="${vo.place == 2 }">
+				<input type="radio"	class="inputOrder" id="place" name="place" value="1">출장 장소 
+				<input type="radio"	class="inputOrder" id="place" name="place" value="2" Checked>장소 임대
+					</c:if>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -121,8 +129,14 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="requestDress">
 				<div class="unit">
 				<label for="requestDress">이벤트 의상 : </label>
+				    <c:if test="${vo.dress == 1 }">
 				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" Checked>기본 의상 
 				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2">풀 드레스
+  					</c:if>
+  					<c:if test="${vo.dress == 2 }">
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1">기본 의상 
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2" Checked>풀 드레스
+  					</c:if>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -132,8 +146,14 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="eventGoods">
 				<div class="unit">
 				<label for="eventGoods">이벤트 소품 : </label>
+				    <c:if test="${vo.goods == 1 }">
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" Checked>기본 소품 
 				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2">풀 소품 
+  					</c:if>	
+  					<c:if test="${vo.goods == 2 }">
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1">기본 소품 
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2" Checked>풀 소품 
+  					</c:if>				
         		셋트수량 : <input type="number" name="goodsSet" size="3"><br>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
@@ -144,8 +164,16 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="eventMc">
 				<div class="unit">
 				<label for="eventMc">이벤트 소품 : </label>
+				    <c:if test="${vo.mc == 1 }">
+				    <span>
 				<input type="radio"	class="inputOrder" id="mc" name="mc" value="1" Checked>사회자 불필요 
 				<input type="radio"	class="inputOrder" id="mc" name="mc" value="2">사회자 요청
+  					</span></c:if>
+				    <c:if test="${vo.mc == 2 }">
+				    <span>
+				<input type="radio"	class="inputOrder" id="mc" name="mc" value="1">사회자 불필요 
+				<input type="radio"	class="inputOrder" id="mc" name="mc" value="2" Checked>사회자 요청
+  					</span></c:if>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -166,7 +194,8 @@ div#orderContailer { background-color: yellowgreen;}
         
 			<div class="sendForm">
 				<label for="sendForm">위의 사항을 확인하고 신청합니다.</label>
-				<input type="submit" value="주문하기">
+				<input type="submit" value="주문하기">&nbsp;&nbsp;&nbsp;
+				<input type="button" onclick="location.href='/Team404/orderList.do'" value="취소하기">
 			</div> 
 			
 			 
