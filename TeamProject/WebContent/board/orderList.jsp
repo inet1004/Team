@@ -14,10 +14,10 @@
 div#orderContailer { background-color: yellowgreen;}
 </style>		
 
-
 <div id="orderContailer" >
 	<div align="center">
 	<h3>이벤트 Order List</h3>
+	
 		<%--추가 --%>
 		<%
 		Date nowTime = new Date();
@@ -64,8 +64,8 @@ for ( OrderVo dto : list ) {
 <tr>
 <td><%= dto.getOrderId() %></td><td><%= dto.getId() %> </td><td><%= dto.getWriteDate() %> </td><td><%= dto.getRequestDate() %> </td><td><%= dto.getRequestPlace() %> </td><td><%= dto.getPlaceAddress() %> </td>
 <td><%= dto.getDress() %> </td><td><%= dto.getGoods() %> </td><td><%= dto.getMc() %> </td><td><%= dto.getTotalPrice() %> </td>
-<td><input type="button" id="<%= dto.getOrderId() %>" onClick=deleteRow(); value="수정"></td>
-<td><input type="button" id="<%= dto.getOrderId() %>" onClick="orderDelete?orderId='<%= dto.getOrderId() %>'"; value="삭제"></td>
+<td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderUpdate?orderId=<%= dto.getOrderId() %>'" value="수정"></td>
+<td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderDelete?orderId=<%= dto.getOrderId() %>'" value="삭제"></td>
 </tr>
 
 <% } %>
@@ -77,7 +77,7 @@ for ( OrderVo dto : list ) {
     
     <br><p>
  
- <h4><a href="orderJoin.do">이벤트 메뉴 돌아가기</a></h4>
+ <a href="/Team404/orderList.do"><h5>[이벤트 주화면 바로가기]&nbsp;&nbsp;&nbsp;&nbsp;<a href="/Team404/orderInsert.do">[이벤트 추가]</a></h5></a>
 
 	</div>
 	

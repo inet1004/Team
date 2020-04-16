@@ -10,35 +10,21 @@ div#orderContailer { background-color: yellowgreen;}
 <!-- <c:if test="${member.id == admin}">  -->
 
 	<div id="menu" class="menu" align="center">
-	<h2>
-		<ul>
-			<br><p>
-			<li>
-				<a href="orderList.do">이벤트 리스트 보기</a> 
-			</li> 
-			<br><p>
-			<li>
-			 	<a href="orderInsert.do">이벤트 추가</a> 
-			</li> 
-			<br><p>
-			<li>
-			 	<a href="orderDelete.do">이벤트 삭제</a> 
-			</li> 
-			<br><p>
-			<li>
-			 	<a href="orderUpdate.do">이벤트 수정</a> 
-			</li> 
-			<br><p>
-	<h5>
-			<li>
-			 	<a href="${pageContext.request.contextPath}/home.do">-메인 화면-</a> 
-			 	&nbsp;&nbsp;&nbsp;&nbsp;
-			 	<a href="logOut.do">-로그아웃-</a> 
-			</li> 
-	</h5>
-			<br><p>
-		</ul>
-	</h2>
+
+<%
+	//String id=request.getParameter("id");
+	//String pwd=request.getParameter("pwd");
+	// request스코프에 값 저장하기.
+	//request.setAttribute("id", id);
+	//request.setAttribute("pwd", pwd);
+
+	//포워드방식으로 페이지 이동하기.
+	pageContext.forward("/Team404/orderList.do");
+
+	//redirect방식
+	//response.sendRedirect("result.jsp");
+%>
+
 	</div>
 <!-- </c:if>  -->
 
