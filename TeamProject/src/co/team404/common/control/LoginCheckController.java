@@ -25,7 +25,7 @@ public class LoginCheckController extends HttpServlet {
        
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-     MemberVo member = new MemberVo();
+        MemberVo vo = new MemberVo();
         HttpSession session = request.getSession();
         String id= request.getParameter("id");
         String pw = request.getParameter("pw");
@@ -37,10 +37,11 @@ public class LoginCheckController extends HttpServlet {
         String msg = "";
         
         if(check == 1)    // 로그인 성공
-        { 
-        	dao.selectMember(member);
+        {   
+        	vo.setId(id);
+        	vo = dao.selectMember(vo);
             session.setAttribute("sessionID", id);
-            session.setAttribute("grade", member.getGrade());
+            session.setAttribute("grade", vo.getGrade());
             msg = "home.do";
         }
         else if(check == 0) // 비밀번호가 틀릴경우

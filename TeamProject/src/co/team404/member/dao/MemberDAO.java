@@ -26,7 +26,7 @@ public class MemberDAO {
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
-    private final String MEMBER_CHECK = "select * from emember where member_id = ?";
+    private final String MEMBER_CHECK = "SELECT MEMBER_ID,MEMBER_NAME,PW,ADDR,TELL,GRADE,JDATE FROM EMEMBER WHERE MEMBER_ID = ?";
     
 	static MemberDAO instance;
 
@@ -86,7 +86,7 @@ public class MemberDAO {
 			
 			if(rs.next()) {
 			vo.setId(rs.getString("member_id"));
-			vo.setName(rs.getString("name"));
+			vo.setName(rs.getString("member_name"));
 			vo.setPw(rs.getString("pw"));
 			vo.setAddr(rs.getString("addr"));
 			vo.setTell(rs.getString("tell"));

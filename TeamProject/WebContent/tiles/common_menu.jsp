@@ -21,9 +21,7 @@
                        <c:choose>
 						 <c:when test="${not empty sessionID }">
 							<c:if test="${grade == 'admin' }"> 
-							   <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
-							   <li><a href="${pageContext.request.contextPath}/home.do">회원목록</a></li>
-							   <li><a href="${pageContext.request.contextPath}/orderJoin.do">주문</a></li>
+							   <li><a href="${pageContext.request.contextPath}/memberList.do">회원목록</a></li>
 							</c:if>
 							  <li><a href="${pageContext.request.contextPath}/home.do">Home</a></li>
 							  <li><a href="${pageContext.request.contextPath}/orderJoin.do">주문</a></li>
