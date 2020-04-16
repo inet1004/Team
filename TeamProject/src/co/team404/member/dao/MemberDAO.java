@@ -44,30 +44,35 @@ public class MemberDAO {
 		}
 	}
 
-	// 회원 조회
-	public MemberVo selectMember(MemberVo member) {
-		MemberVo vo = null;
-
+	public int loginCheck(String id, String pw) {
+		 String dbPW = "";
+		 int x = -1;
+		 
 		try {
-			psmt = conn.prepareStatement(SELECT_CHECK);
-			psmt.setString(1, member.getId());
-			psmt.setString(2, member.getPw());
-			rs = psmt.executeQuery();
+			StringBuffer query = new StringBuffer();
+			query.append("SELECT pw FROM emember WHERE member_id = ?");
 			
-			if (rs.next()) {
-				String id = rs.getString("member_id");
-				String pw = rs.getString("pw");
-				vo = new MemberVo(id, pw);
-				vo.setId(rs.getString("id"));
-				vo.setName(rs.getString("name"));
-				vo.setGrade(rs.getString("grade"));
+			
+			psmt = conn.prepareStatement(query.toString());
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dbPW = rs.getString("pw");
+				
+				if(dbPW.equals(pw)) {
+					x = 1;
+					
+				}
+				else
+					x = 0;
+			} else {
+				x = -1;
 			}
-		} catch (SQLException e) {
+			
+		} catch(Exception e) {
 			e.printStackTrace();
-
 		}
-
-		return vo;
+		return x;
 	}
 
 	// 회원 수정
