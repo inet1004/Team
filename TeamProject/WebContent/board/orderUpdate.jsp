@@ -45,6 +45,7 @@ setTimeout(function() {
 		
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
 		vo = dao.selectOne(orderId);
+		request.setAttribute("vo", vo);
 		%>
 
 
@@ -102,14 +103,8 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="place">
 				<div class="unit">
 				<label for="place">이벤트 신청장소 : </label>
-				    <c:if test="${vo.place == 1 }">
-				<input type="radio"	class="inputOrder" id="place" name="place" value="1" Checked>출장 장소 
-				<input type="radio"	class="inputOrder" id="place" name="place" value="2">장소 임대
-					</c:if>
-				    <c:if test="${vo.place == 2 }">
-				<input type="radio"	class="inputOrder" id="place" name="place" value="1">출장 장소 
-				<input type="radio"	class="inputOrder" id="place" name="place" value="2" Checked>장소 임대
-					</c:if>
+				<input type="radio"	class="inputOrder" id="place" name="place" value="1" <c:if test="${ vo.placeAddress eq '1'}">checked="checked"</c:if>/>출장 장소 
+				<input type="radio"	class="inputOrder" id="place" name="place" value="2" <c:if test="${ vo.placeAddress eq '2'}">checked="checked"</c:if>/>장소 임대
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -129,14 +124,8 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="requestDress">
 				<div class="unit">
 				<label for="requestDress">이벤트 의상 : </label>
-				    <c:if test="${vo.dress == 1 }">
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" Checked>기본 의상 
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2">풀 드레스
-  					</c:if>
-  					<c:if test="${vo.dress == 2 }">
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1">기본 의상 
-				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2" Checked>풀 드레스
-  					</c:if>
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="1" <c:if test="${ vo.dress eq '1'}">checked="checked"</c:if>/>기본 의상 
+				<input type="radio"	class="inputOrder" id="dress" name="dress" value="2" <c:if test="${ vo.dress eq '1'}">checked="checked"</c:if>/>풀 드레스
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -146,15 +135,9 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="eventGoods">
 				<div class="unit">
 				<label for="eventGoods">이벤트 소품 : </label>
-				    <c:if test="${vo.goods == 1 }">
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" Checked>기본 소품 
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2">풀 소품 
-  					</c:if>	
-  					<c:if test="${vo.goods == 2 }">
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1">기본 소품 
-				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2" Checked>풀 소품 
-  					</c:if>				
-        		셋트수량 : <input type="number" name="goodsSet" size="3"><br>
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="1" <c:if test="${ vo.goods == '1'}">checked="checked"</c:if>/>기본 소품 
+				<input type="radio"	class="inputOrder" id="goods" name="goods" value="2" <c:if test="${ vo.goods == '2'}">checked="checked"</c:if>/>풀 소품 
+        		&nbsp;&nbsp;셋트수량 : <input type="number" name="goodsSet" size="3"><br>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
@@ -163,17 +146,11 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="eventMc">
 				<div class="unit">
-				<label for="eventMc">이벤트 소품 : </label>
-				    <c:if test="${vo.mc == 1 }">
-				    <span>
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="1" Checked>사회자 불필요 
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="2">사회자 요청
-  					</span></c:if>
-				    <c:if test="${vo.mc == 2 }">
-				    <span>
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="1">사회자 불필요 
-				<input type="radio"	class="inputOrder" id="mc" name="mc" value="2" Checked>사회자 요청
-  					</span></c:if>
+				<label for="eventMc">사외자 요청 : </label>${vo}========================
+				<input type="radio" name="mc" id="mc" value="1" <c:if test="${ vo.mc eq '1'}">checked="checked", value="사회자 불필요"</c:if>/>
+				<label for="mc1">사회자 불필요</label> &nbsp;&nbsp;
+				<input type="radio" name="mc" id="mc" value="2" <c:if test="${ vo.mc eq '2'}">checked="checked", value="사회자 요청함"</c:if>/>
+				<label for="mc2">사회자 요청</label>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>

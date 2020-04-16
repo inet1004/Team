@@ -155,6 +155,11 @@ public class OrderVo {
 		this.id = id;
 	}
 
+	@Override
+	public String toString() {
+		return "OrderVo [orderId=" + orderId + ", writeDate=" + writeDate + ", requestDate=" + requestDate
+				+ ", requestPlace=" + requestPlace + ", placeAddress=" + placeAddress + ", dress=" + dress + ", goods="
+				+ goods + ", mc=" + mc + ", totalPrice=" + totalPrice + ", id=" + id + "]";
+	}
 
-	
 }
