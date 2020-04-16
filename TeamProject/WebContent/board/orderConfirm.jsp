@@ -30,7 +30,7 @@
     //int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
     // int money = Integer.parseInt(request.getParameter("money"));
    
-    //2. 계산처리
+    //2. 계산처리  
     String menu = ""; 
     int danDress = 0;
     int danGoods = 0; 
