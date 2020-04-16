@@ -559,7 +559,7 @@ public class OrderDao {
 		}
 		return n;
 	}
-	
+	 
 
 //	public int memberIdCheck(String id) {
 //		int n=0;;
