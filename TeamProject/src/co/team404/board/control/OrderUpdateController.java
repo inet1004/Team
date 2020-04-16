@@ -19,6 +19,9 @@ public class OrderUpdateController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		// 회원 예약정보 읽어오기
+		
+		
 		
 		String path = "/board/orderUpdate.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

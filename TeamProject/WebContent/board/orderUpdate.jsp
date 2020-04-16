@@ -1,6 +1,9 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="co.team404.order.dao.OrderVo"%>
+<%@page import="co.team404.order.dao.OrderDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="java.util.Date" %>
+<%@ page import="java.util.*"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 
 <%
@@ -27,6 +30,23 @@ setTimeout(function() {
 	}
 %>
 
+
+
+
+		<%
+		OrderDao dao = new OrderDao();
+		OrderVo vo = new OrderVo();
+
+//		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+
+		String view = null; 
+		
+		int orderId = Integer.parseInt(request.getParameter("orderId"));
+		vo = dao.selectOne(orderId);
+		%>
+
+
+
 			
 		<%--추가 --%>
 		<%
@@ -51,8 +71,8 @@ div#orderContailer { background-color: yellowgreen;}
 			<div><br/></div>
 			
 			<div class="memberId">
-				<label for="uuid">회원 아이디 :</label> <%= session.getAttribute("id") %>
-				<input type="hidden" class="inputOrder" id="id" name="id" value="<%= session.getAttribute("id") %>">
+				<label for="uuid">회원 아이디 :</label> <%= vo.getId() %>
+				<input type="hidden" class="inputOrder" id="id" name="id" value="<%= vo.getId() %>">
 			</div>
 			
 			<div><br/></div>
@@ -63,15 +83,8 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div><br/></div>
 			
-			<div class="memberGrade">
-				<label for="grade">회원 등급 :</label> 
-				<input type="hidden" class="inputOrder" id="grade" name="grade" value="골드">
-			</div>
-			
-			<div><br/></div>
-			
 			<div class="writeDate">
-				<label for="writeDate">작성 일자 :</label> String writeDate = <%= sf.format(nowTime) %>
+				<label for="writeDate">작성 일자 :</label> String writeDate = <%= vo.getWriteDate() %>
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= sf.format(nowTime) %>">
 			</div>
 			
@@ -79,7 +92,7 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="requestDate">
 				<label for="requestDate">이벤트 요청 일자 :</label> 
-				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate">
+				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate" value="<%= vo.getRequestDate() %>">
 			</div>
 			
 			<div><br/></div>
@@ -98,7 +111,7 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="placeAddress">
 				<div class="unit">
 				<label for="placeAddress">신청장소의 주소: </label>
-				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="이벤트 장소의 주소 입력 "></textarea>
+				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="<%= vo.getPlaceAddress() %>"></textarea>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>

@@ -29,6 +29,7 @@ public class OrderDao {
 	}
 	
 	private final String ORDER_LIST = "select * from eorder order by orderId";
+	private final String ORDER_ONE = "select * from eorder where orderid = ?" ;
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
 	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
@@ -452,6 +453,60 @@ public class OrderDao {
 //		}
 //		return vo;
 //	}
+	
+
+	public OrderVo selectOne(int order) {
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+//	public OrderVo selectOne(OrderVo order) {
+//		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+		OrderVo vo = null;
+		try {
+			psmt = conn.prepareStatement(ORDER_ONE);
+			psmt.setInt(1, order);
+//			psmt.setInt(1, order.getOrderId());
+			//psmt.setString(2, order.getId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+
+				vo = new OrderVo();
+				vo.setOrderId(rs.getInt("orderId"));
+				vo.setWriteDate(rs.getString("writeDate"));
+				vo.setRequestDate(rs.getString("requestDate"));
+				vo.setRequestPlace(rs.getString("requestPlace"));
+				vo.setPlaceAddress(rs.getString("placeAddress"));
+				vo.setDress(rs.getString("dress"));
+				vo.setGoods(rs.getString("goods"));
+				vo.setMc(rs.getString("mc"));
+				vo.setTotalPrice(rs.getInt("totalPrice"));
+				vo.setId(rs.getString("id"));
+//				list.add(vo);
+				
+//				int orderId = rs.getInt("orderId");
+//				String id = rs.getString("id");
+//				vo = new OrderVo(orderId, id );
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vo;
+	}
+	
+	
+	
 
 	//public int orderInsert(OrderVo order) {  
 	public int orderInsert(OrderVo order) {

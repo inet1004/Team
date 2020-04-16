@@ -64,7 +64,7 @@ for ( OrderVo dto : list ) {
 <tr>
 <td><%= dto.getOrderId() %></td><td><%= dto.getId() %> </td><td><%= dto.getWriteDate() %> </td><td><%= dto.getRequestDate() %> </td><td><%= dto.getRequestPlace() %> </td><td><%= dto.getPlaceAddress() %> </td>
 <td><%= dto.getDress() %> </td><td><%= dto.getGoods() %> </td><td><%= dto.getMc() %> </td><td><%= dto.getTotalPrice() %> </td>
-<td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderUpdate?orderId=<%= dto.getOrderId() %>'" value="수정"></td>
+<td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderUpdate.do?orderId=<%= dto.getOrderId() %>'" value="수정"></td>
 <td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderDelete?orderId=<%= dto.getOrderId() %>'" value="삭제"></td>
 </tr>
 
