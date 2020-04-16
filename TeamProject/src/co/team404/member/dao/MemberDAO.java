@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 
-
 public class MemberDAO {
 
 	private String driver = "oracle.jdbc.driver.OracleDriver";
@@ -21,12 +20,12 @@ public class MemberDAO {
 	ResultSet rs = null;
 
 	private final String MEMBER_LIST = "select * from emember";
-	private final String SELECT_CHECK = "SELECT * FROM EMEMBER WHERE member_id = ? and pw = ?";
+	private final String SELECT = "SELECT * FROM EMEMBER WHERE member_id = ?";
 	private final String MEMBER_INSERT = "insert into emember values(?,?,?,?,?,'bronze',sysdate)";
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
-    private final String MEMBER_CHECK = "select * from emember where member_id = ?";
+    
     
 	static MemberDAO instance;
 
@@ -45,58 +44,28 @@ public class MemberDAO {
 		}
 	}
 
-	public int loginCheck(String id, String pw) {
-		 String dbPW = "";
-		 int x = -1;
-		 
-		try {
-			StringBuffer query = new StringBuffer();
-			query.append("SELECT pw FROM emember WHERE member_id = ?");
-			
-			
-			psmt = conn.prepareStatement(query.toString());
-			psmt.setString(1, id);
-			rs = psmt.executeQuery();
-			if(rs.next()) {
-				dbPW = rs.getString("pw");
-				
-				if(dbPW.equals(pw)) {
-					x = 1;
-					
-				}
-				else
-					x = 0;
-			} else {
-				x = -1;
-			}
-			
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		return x;
-	}
-	
+	// 회원 조회
 	public MemberVo selectMember(MemberVo member) {
-		MemberVo vo = new MemberVo();
-	
+		MemberVo vo = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
 		try {
-			psmt = conn.prepareStatement(MEMBER_CHECK);
-			psmt.setString(1, member.getId());
-			rs = psmt.executeQuery();
+			pstmt = conn.prepareStatement(SELECT);
+			pstmt.setString(1, member.getId());
+			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
-			vo.setId(rs.getString("member_id"));
-			vo.setName(rs.getString("name"));
-			vo.setPw(rs.getString("pw"));
-			vo.setAddr(rs.getString("addr"));
-			vo.setTell(rs.getString("tell"));
-			vo.setGrade(rs.getString("grade"));
-		  }
+			if (rs.next()) {
+				String user_id = rs.getString("id");
+				String pass = rs.getString("pass");
+				member = new MemberVo(user_id, pass);
+			}
 		} catch (SQLException e) {
-		e.printStackTrace();
+			e.printStackTrace();
+
 		}
-		
-		return vo;
+
+		return member;
 	}
 
 	// 회원 수정
@@ -171,7 +140,12 @@ public class MemberDAO {
 			}
 		}catch(SQLException e) {
 		e.printStackTrace();	
-		}
+		}finally {
+           try {
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}}
 		return n;
 	}
 }
