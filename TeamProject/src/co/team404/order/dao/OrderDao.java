@@ -36,6 +36,7 @@ public class OrderDao {
 //			+ " where not exists (select requireDate from eorder where requireDate LIKE rDate ) ";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
+	private final String ORDER_SELECT = "select * from eorder where id = ?" ;
 
 
 	
@@ -395,7 +396,7 @@ public class OrderDao {
 //		}
 //		return vo;
 //	}
- 
+
 	
 	public ArrayList<OrderVo> select(){
 		
@@ -578,5 +579,49 @@ public class OrderDao {
 //		return n;
 //	}
 	
+	public OrderVo selectOrder(String member_id) {
+		OrderVo vo = new OrderVo();
+		//ArrayList<OrderVo> viewlist = new ArrayList<OrderVo>();
+		
+		try {
+
+			String driver = "oracle.jdbc.driver.OracleDriver";
+			String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String user="hr";
+			String password = "hr";
+			
+			try {
+				Class.forName(driver);
+				conn = DriverManager.getConnection(url,user,password);
+			} catch (ClassNotFoundException | SQLException e) {
+				e.printStackTrace();
+			}
+			
+			psmt = conn.prepareStatement(ORDER_SELECT);
+			psmt.setString(1, member_id);
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				vo.setOrderId(rs.getInt("orderId"));
+				vo.setWriteDate(rs.getString("writeDate"));
+				vo.setRequestDate(rs.getString("requestDate"));
+				vo.setRequestPlace(rs.getString("requestPlace"));
+				vo.setPlaceAddress(rs.getString("placeAddress"));
+				vo.setDress(rs.getString("dress"));
+				vo.setGoods(rs.getString("goods"));
+				vo.setMc(rs.getString("mc"));
+				vo.setTotalPrice(rs.getInt("totalPrice"));
+				vo.setId(rs.getString("id"));
+				
+			}
+		} catch(SQLException e) {
+			e.printStackTrace();
+		}
+		return vo;
+		
+	}
 	
 }
+
