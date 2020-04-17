@@ -8,7 +8,7 @@
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-
+ 
 <%
 	//HttpSession session = request.getSession(false);
 	String id = (String)session.getAttribute("sessionID");

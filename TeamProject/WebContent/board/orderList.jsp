@@ -23,7 +23,7 @@ div#orderContailer { background-color: yellowgreen;}
 	//out.print("id : "+ id +"<br>");
 	}
 %>
-
+ 
 <%-- ID:<%=id %><br> --%>
 
 <div id="orderContailer" >

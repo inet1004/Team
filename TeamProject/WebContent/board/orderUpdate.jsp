@@ -18,7 +18,7 @@
 	out.print("id : "+ id +"<br>");
 	}
 %>
-
+ 
 		<%
 		OrderDao dao = new OrderDao();
 		OrderVo vo = new OrderVo();

@@ -18,7 +18,7 @@ public class OrderUpdateController extends HttpServlet {
        
     public OrderUpdateController() {
         super();
-    }
+    } 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
