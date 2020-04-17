@@ -36,9 +36,9 @@ public class memberInsertController extends HttpServlet {
 		
 		String path = null;
 		if (n !=0) {
-			path = "views/member/memberInsert.tiles";
+			path = "views/member/memberJoinOk.jsp";
 		}else {
-			path = "views/member/memberJoin.tiles";
+			path = "views/member/memberJoinFail.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
