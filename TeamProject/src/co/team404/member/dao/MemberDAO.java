@@ -140,7 +140,12 @@ public class MemberDAO {
 			}
 		}catch(SQLException e) {
 		e.printStackTrace();	
-		}
+		}finally {
+           try {
+			rs.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}}
 		return n;
 	}
 }

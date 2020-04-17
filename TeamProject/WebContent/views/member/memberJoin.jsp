@@ -22,34 +22,37 @@
 						<tr>
 							<th width="200" style="color: red">* 회원명</th>
 							<td colspan="3"><input type="text" id="name" name="name"
-								size="15" tabindex="1" required></td>
+								size="15" tabindex="1" required><div id="nameResult"></div></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원ID</th>
-							<td colspan="3"><input id="id" name="id"  tabindex="2" required>
-								<div id="idResult"></div></td>
+							<td colspan="3"><input id="id" name="id" tabindex="2"
+								required>
+								<div id="idResult"></div>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원PW</th>
 							<td colspan="3"><input type="password" id="pw" name="pw"
-								size="15" tabindex="3"  required></td>
+								size="15" tabindex="3" required><div id="pwResult"></div></td>
 						</tr>
 						<tr>
 							<th style="color: red">* 회원PW확인</th>
 							<td colspan="3"><input type="password" id="pwc" name="pwc"
-								size="15"  tabindex="4" required>
-								<div id="pwResult"></div></td>
+								size="15" tabindex="4" required>
+								<div id="pwcResult"></div></td>
 						</tr>
 						<tr>
 							<th>주소</th>
 							<td colspan="3"><input type="text" id="addr" name="addr"
-								size=35 tabindex="5" ></td>
+								size=35 tabindex="5"><div id="addrResult"></div></td>
 						</tr>
 						<tr>
 							<th>전화번호</th>
 							<td>
 								<div class="formfield">
-									 <input id="tell" name="tell" type="text" onKeyup="inputPhoneNumber(this);" maxlength="13" tabindex="6" autocomplete="off"> 
+									<input id="tell" name="tell" type="text"
+										onKeyup="inputPhoneNumber(this);" maxlength="11" tabindex="6"
+										autocomplete="off"><div id="tellResult"></div>
 								</div>
 							</td>
 						</tr>
