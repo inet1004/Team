@@ -148,7 +148,7 @@ div#orderContailer { background-color: yellowgreen;  }
     
     <br><p>
  
- <h4><a href="orderJoin.do">취소하고 이벤트 메뉴 돌아가기</a></h4> 
+ <h4><a href="../orderJoin.do">취소하고 이벤트 메뉴 돌아가기</a></h4> 
     
     <br><p>
     

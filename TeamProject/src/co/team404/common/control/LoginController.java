@@ -22,7 +22,7 @@ public class LoginController extends HttpServlet {
 			throws ServletException, IOException {
 		response.setCharacterEncoding("utf-8");
 
-		String path = "views/login/LoginForm.tiles";
+		String path = "views/login/LoginForm.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
