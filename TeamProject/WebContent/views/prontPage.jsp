@@ -39,7 +39,49 @@
               <span></span>
               <span></span>
               <span></span>
+<<<<<<< HEAD
+=======
             </div>
+            <!-- END menu-toggle -->
+
+            <div class="site-navbar js-site-navbar">
+              <nav role="navigation">
+                <div class="container">
+                  <div class="row full-height align-items-center">
+                    <div class="col-md-6">
+                      <ul class="list-unstyled menu">
+                        <li class="active"><a href="home.do">Home</a></li>
+                        <li><a href="login.do">로그인</a></li>
+                        <li><a href="memberJoin.do">회원가입</a></li>
+                        <li><a href="order.do">주문</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                      </ul>
+                    </div>
+                    <div class="col-md-6 extra-info">
+                      <div class="row">
+                        <div class="col-md-6 mb-5">
+                          <h3>오시는길</h3>
+                          <p> 대구광역시 중구 국채보상로 537 (수동, 5층) <br> 살려주세요ㅠㅠ</p>
+                          <p>info@yourdomain.com</p>
+                          <p>전화번호 : 053-421-2460</p>
+                          
+                        </div>
+                        <div class="col-md-6">
+                          <h3>도움을 준 사이트</h3>
+                          <ul class="list-unstyled">
+                            <li><a href="#">yedam</a></li>
+                            <li><a href="#">google</a></li>
+                            <li><a href="#">naver</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+>>>>>>> branch 'master' of https://github.com/inet1004/Team.git
+            </div>
+<<<<<<< HEAD
             <!-- END menu-toggle -->
  
             <div class="site-navbar js-site-navbar">
@@ -78,6 +120,8 @@
                 </div>
               </nav>
             </div>
+=======
+>>>>>>> branch 'master' of https://github.com/inet1004/Team.git
           </div>
         </div>
       </div>
