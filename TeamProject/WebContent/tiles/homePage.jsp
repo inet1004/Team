@@ -1,409 +1,195 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<section class="blog_area single-post-area section-padding">
-      <div class="container">
-         <div class="row">
-            <div class="col-lg-8 posts-list">
-               <div class="single-post">
-                  <div class="feature-img">
-                     <img class="img-fluid" src="assets/img/blog/single_blog_1.png" alt="">
-                  </div>
-                  <div class="blog_details">
-                     <h2>돌아버리겠네. 이거 할 수 있으려나...
-                     </h2>
-                     <ul class="blog-info-link mt-3 mb-4">
-                        <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                        <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                     </ul>
-                     <p class="excert">
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower 
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
-                     <div class="quote-wrapper">
-                        <div class="quotes">
-                           MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                           should have to spend money on boot camp when you can get the MCSE study materials yourself at
-                           a fraction of the camp price. However, who has the willpower to actually sit through a
-                           self-imposed MCSE training. 
-                        </div>
-                     </div>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower
-                     </p>
-                     <p>
-                        MCSE boot camps have its supporters and its detractors. Some people do not understand why you
-                        should have to spend money on boot camp when you can get the MCSE study materials yourself at a
-                        fraction of the camp price. However, who has the willpower to actually sit through a
-                        self-imposed MCSE training. who has the willpower to actually
-                     </p>
-                  </div>
-               </div>
-               <div class="navigation-top">
-                  <div class="d-sm-flex justify-content-between text-center">
-                     <p class="like-info"><span class="align-middle"><i class="fa fa-heart"></i></span> Lily and 4
-                        people like this</p>
-                     <div class="col-sm-4 text-center my-2 my-sm-0">
-                        <!-- <p class="comment-count"><span class="align-middle"><i class="fa fa-comment"></i></span> 06 Comments</p> -->
-                     </div>
-                     <ul class="social-icons">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                        <li><a href="#"><i class="fab fa-dribbble"></i></a></li>
-                        <li><a href="#"><i class="fab fa-behance"></i></a></li>
-                     </ul>
-                  </div>
-                  <div class="navigation-area">
-                     <div class="row">
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="assets/img/post/preview.png" alt="">
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-left"></span>
-                              </a>
-                           </div>
-                           <div class="detials">
-                              <p>Prev Post</p>
-                              <a href="#">
-                                 <h4>Space The Final Frontier</h4>
-                              </a>
-                           </div>
-                        </div>
-                        <div
-                           class="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
-                           <div class="detials">
-                              <p>Next Post</p>
-                              <a href="#">
-                                 <h4>Telescopes 101</h4>
-                              </a>
-                           </div>
-                           <div class="arrow">
-                              <a href="#">
-                                 <span class="lnr text-white ti-arrow-right"></span>
-                              </a>
-                           </div>
-                           <div class="thumb">
-                              <a href="#">
-                                 <img class="img-fluid" src="assets/img/post/next.png" alt="">
-                              </a>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="blog-author">
-                  <div class="media align-items-center">
-                     <img src="assets/img/blog/author.png" alt="">
-                     <div class="media-body">
-                        <a href="#">
-                           <h4>Harvard milan</h4>
-                        </a>
-                        <p>Second divided from form fish beast made. Every of seas all gathered use saying you're, he
-                           our dominion twon Second divided from</p>
-                     </div>
-                  </div>
-               </div>
-               <div class="comments-area">
-                  <h4>05 Comments</h4>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="assets/img/comment/comment_1.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="assets/img/comment/comment_2.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="comment-list">
-                     <div class="single-comment justify-content-between d-flex">
-                        <div class="user justify-content-between d-flex">
-                           <div class="thumb">
-                              <img src="assets/img/comment/comment_3.png" alt="">
-                           </div>
-                           <div class="desc">
-                              <p class="comment">
-                                 Multiply sea night grass fourth day sea lesser rule open subdue female fill which them
-                                 Blessed, give fill lesser bearing multiply sea night grass fourth day sea lesser
-                              </p>
-                              <div class="d-flex justify-content-between">
-                                 <div class="d-flex align-items-center">
-                                    <h5>
-                                       <a href="#">Emilly Blunt</a>
-                                    </h5>
-                                    <p class="date">December 4, 2017 at 3:12 pm </p>
-                                 </div>
-                                 <div class="reply-btn">
-                                    <a href="#" class="btn-reply text-uppercase">reply</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="comment-form">
-                  <h4>Leave a Reply</h4>
-                  <form class="form-contact comment_form" action="#" id="commentForm">
-                     <div class="row">
-                        <div class="col-12">
-                           <div class="form-group">
-                              <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                 placeholder="Write Comment"></textarea>
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="name" id="name" type="text" placeholder="Name">
-                           </div>
-                        </div>
-                        <div class="col-sm-6">
-                           <div class="form-group">
-                              <input class="form-control" name="email" id="email" type="email" placeholder="Email">
-                           </div>
-                        </div>
-                        <div class="col-12">
-                           <div class="form-group">
-                              <input class="form-control" name="website" id="website" type="text" placeholder="Website">
-                           </div>
-                        </div>
-                     </div>
-                     <div class="form-group">
-                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Send Message</button>
-                     </div>
-                  </form>
-               </div>
-            </div>
-            <div class="col-lg-4">
-               <div class="blog_right_sidebar">
-                  <aside class="single_sidebar_widget search_widget">
-                     <form action="#">
-                        <div class="form-group">
-                           <div class="input-group mb-3">
-                              <input type="text" class="form-control" placeholder='Search Keyword'
-                                 onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                              <div class="input-group-append">
-                                 <button class="btns" type="button"><i class="ti-search"></i></button>
-                              </div>
-                           </div>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Search</button>
-                     </form>
-                  </aside>
-                  <aside class="single_sidebar_widget post_category_widget">
-                     <h4 class="widget_title">Category</h4>
-                     <ul class="list cat-list">
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Resaurant food</p>
-                              <p>(37)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Travel news</p>
-                              <p>(10)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Modern technology</p>
-                              <p>(03)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Product</p>
-                              <p>(11)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Inspiration</p>
-                              <p>(21)</p>
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#" class="d-flex">
-                              <p>Health Care</p>
-                              <p>(21)</p>
-                           </a>
-                        </li>
-                     </ul>
-                  </aside>
-                  <aside class="single_sidebar_widget popular_post_widget">
-                     <h3 class="widget_title">Recent Post</h3>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_1.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>From life was you fish...</h3>
-                           </a>
-                           <p>January 12, 2019</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_2.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>The Amazing Hubble</h3>
-                           </a>
-                           <p>02 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_3.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Astronomy Or Astrology</h3>
-                           </a>
-                           <p>03 Hours ago</p>
-                        </div>
-                     </div>
-                     <div class="media post_item">
-                        <img src="assets/img/post/post_4.png" alt="post">
-                        <div class="media-body">
-                           <a href="single-blog.html">
-                              <h3>Asteroids telescope</h3>
-                           </a>
-                           <p>01 Hours ago</p>
-                        </div>
-                     </div>
-                  </aside>
-                  <aside class="single_sidebar_widget tag_cloud_widget">
-                     <h4 class="widget_title">Tag Clouds</h4>
-                     <ul class="list">
-                        <li>
-                           <a href="#">project</a>
-                        </li>
-                        <li>
-                           <a href="#">love</a>
-                        </li>
-                        <li>
-                           <a href="#">technology</a>
-                        </li>
-                        <li>
-                           <a href="#">travel</a>
-                        </li>
-                        <li>
-                           <a href="#">restaurant</a>
-                        </li>
-                        <li>
-                           <a href="#">life style</a>
-                        </li>
-                        <li>
-                           <a href="#">design</a>
-                        </li>
-                        <li>
-                           <a href="#">illustration</a>
-                        </li>
-                     </ul>
-                  </aside>
-                  <aside class="single_sidebar_widget instagram_feeds">
-                     <h4 class="widget_title">Instagram Feeds</h4>
-                     <ul class="instagram_row flex-wrap">
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_5.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_6.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_7.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_8.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_9.png" alt="">
-                           </a>
-                        </li>
-                        <li>
-                           <a href="#">
-                              <img class="img-fluid" src="assets/img/post/post_10.png" alt="">
-                           </a>
-                        </li>
-                     </ul>
-                  </aside>
-                  <aside class="single_sidebar_widget newsletter_widget">
-                     <h4 class="widget_title">Newsletter</h4>
-                     <form action="#">
-                        <div class="form-group">
-                           <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                              onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
-                        </div>
-                        <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                           type="submit">Subscribe</button>
-                     </form>
-                  </aside>
-               </div>
-            </div>
-         </div>
-      </div>
-   </section>
-   <!--================ Blog Area end =================-->
+	pageEncoding="UTF-8"%>
+<section class="bg-light">
+	<div class="half d-md-flex d-block">
+		<div class="image" data-aos="fade"
+			style="background-image: url('img/hero_1.jpg');"></div>
+		<div class="text" data-aos="fade-right" data-aos-delay="200">
+			<h2>특별한 파티!</h2>
+
+			<p>다양한 장소와 소품, 재치있는 사회자로 당신의 파티를 더욱 특별하게 만들어 드립니다.</p>
+			<p>결혼을 앞둔 당신!. 친구들과 특별한 추억을 원한다면 답은 이곳입니다!!.</p>
+
+			<p class="mt-5">
+				<a href="order.do" class="btn btn-primary uppercase">Learn More</a>
+			</p>
+		</div>
+	</div>
+
+	<div class="half d-md-flex d-block">
+		<div class="image order-2" data-aos="fade"
+			style="background-image: url('img/hero_2.jpg');"></div>
+		<div class="text" data-aos="fade-left" data-aos-delay="200">
+			<h2>다양한 드레스!</h2>
+
+			<p>예쁘게 가꾼당신은 사진을 찍을 자격이 있습니다.</p>
+			<p>Provident dolor aperiam similique maiores quasi. Quo
+				repudiandae fuga commodi itaque dolores accusamus, dolor esse
+				adipisci labore harum blanditiis in totam ipsum vero necessitatibus
+				incidunt reprehenderit, id iste quas, ab, non! Voluptates,
+				reiciendis culpa iure deserunt voluptatum itaque. Quos, soluta.</p>
+
+			<p class="mt-5">
+				<a href="order.do" class="btn btn-primary uppercase">Learn More</a>
+			</p>
+		</div>
+	</div>
+
+</section>
+<!-- END section -->
+
+<section class="section slider-section">
+	<div class="container">
+		<div class="row justify-content-center text-center mb-5">
+			<div class="col-md-8">
+				<h2 class="heading" data-aos="fade-up">Hotel Gallery</h2>
+				<p class="lead" data-aos="fade-up" data-aos-delay="100">Lorem
+					ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto
+					doloremque quo odio repudiandae sunt eveniet? Enim facilis laborum
+					voluptate id porro, culpa maiores quis, blanditiis laboriosam
+					alias. Sed.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12">
+				<div class="home-slider major-caousel owl-carousel mb-5"
+					data-aos="fade-up" data-aos-delay="200">
+					<div class="slider-item">
+						<img src="img/slider-1.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+					<div class="slider-item">
+						<img src="img/slider-2.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+					<div class="slider-item">
+						<img src="img/slider-3.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+					<div class="slider-item">
+						<img src="img/slider-4.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+					<div class="slider-item">
+						<img src="img/slider-5.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+					<div class="slider-item">
+						<img src="img/slider-6.jpg" alt="Image placeholder"
+							class="img-fluid">
+					</div>
+				</div>
+				<!-- END slider -->
+			</div>
+
+			<div class="col-md-12 text-center">
+				<a href="#" class="">View More Photos</a>
+			</div>
+
+		</div>
+	</div>
+</section>
+<!-- END section -->
+
+<section class="section blog-post-entry bg-pattern">
+	<div class="container">
+		<div class="row justify-content-center text-center mb-5">
+			<div class="col-md-8">
+				<h2 class="heading" data-aos="fade-up">More Hotel Features</h2>
+				<p class="lead" data-aos="fade-up">Lorem ipsum dolor sit amet,
+					consectetur adipisicing elit. In dolor, iusto doloremque quo odio
+					repudiandae sunt eveniet? Enim facilis laborum voluptate id porro,
+					culpa maiores quis, blanditiis laboriosam alias. Sed.</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-lg-4 col-md-6 col-sm-6 col-12 post"
+				data-aos="fade-up" data-aos-delay="100">
+
+				<div class="media media-custom d-block mb-4">
+					<a href="#" class="mb-4 d-block"><img src="img/img_1.jpg"
+						alt="Image placeholder" class="img-fluid"></a>
+					<div class="media-body">
+						<h2 class="mt-0 mb-3">
+							<a href="#">Five Reasons to Stay at Villa Resort</a>
+						</h2>
+					</div>
+				</div>
+
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6 col-12 post"
+				data-aos="fade-up" data-aos-delay="200">
+				<div class="media media-custom d-block mb-4">
+					<a href="#" class="mb-4 d-block"><img src="img/img_2.jpg"
+						alt="Image placeholder" class="img-fluid"></a>
+					<div class="media-body">
+						<h2 class="mt-0 mb-3">
+							<a href="#">Five Reasons to Stay at Villa Resort</a>
+						</h2>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-4 col-md-6 col-sm-6 col-12 post"
+				data-aos="fade-up" data-aos-delay="300">
+				<div class="media media-custom d-block mb-4">
+					<a href="#" class="mb-4 d-block"><img src="img/img_3.jpg"
+						alt="Image placeholder" class="img-fluid"></a>
+					<div class="media-body">
+						<h2 class="mt-0 mb-3">
+							<a href="#">Five Reasons to Stay at Villa Resort</a>
+						</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<footer class="section footer-section">
+	<div class="container">
+		<div class="row mb-4">
+			<div class="col-md-3 mb-5">
+				<ul class="list-unstyled link">
+					<li><a href="#">About Us</a></li>
+					<li><a href="#">Terms &amp; Conditions</a></li>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Help</a></li>
+					<li><a href="#">Rooms</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 mb-5">
+				<ul class="list-unstyled link">
+					<li><a href="#">Our Location</a></li>
+					<li><a href="#">The Hosts</a></li>
+					<li><a href="#">About</a></li>
+					<li><a href="#">Contact</a></li>
+					<li><a href="#">Restaurant</a></li>
+				</ul>
+			</div>
+			<div class="col-md-3 mb-5 pr-md-5 contact-info">
+				<p>
+					<span class="d-block">Address:</span> <span> 98 West 21th
+						Street, Suite 721 New York NY 10016</span>
+				</p>
+				<p>
+					<span class="d-block">Phone:</span> <span> (+1) 435 3533</span>
+				</p>
+				<p>
+					<span class="d-block">Email:</span> <span>
+						info@yourdomain.com</span>
+				</p>
+			</div>
+			<div class="col-md-3 mb-5">
+				<p>Sign up for our newsletter</p>
+				<form action="#" class="footer-newsletter">
+					<div class="form-group">
+						<input type="email" class="form-control"
+							placeholder="Your email...">
+						<button type="submit" class="btn">
+							<span class="fa fa-paper-plane"></span>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</footer>
