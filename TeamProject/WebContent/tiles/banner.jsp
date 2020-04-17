@@ -23,7 +23,7 @@
                         <li><a href="home.do">홈</a></li>
                         <li class="active"><a href="login.do">로그인</a></li>
                         <li><a href="memberJoin.do">회원가입</a></li>
-                        <li><a href="order.do">주문</a></li>
+                        <li><a href="orderJoin.do">주문</a></li>
                         <li><a href="board.do">게시판</a></li>
                       </ul>
                     </div>
