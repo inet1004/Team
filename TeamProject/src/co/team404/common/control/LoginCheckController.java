@@ -25,36 +25,38 @@ public class LoginCheckController extends HttpServlet {
        
     }
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
-    	HttpSession session = request.getSession(true);
-		MemberVo member = new MemberVo();
-		String path = null;
-		Connection conn = ConnectionManager.getConnnection();
-		
-		
-		String id = request.getParameter("id");
-		String pw = request.getParameter("pw");
-		member.setId(id);
-		member.setPw(pw);
-		member = MemberDAO.getInstance().selectMember(member);
-		
-		if(member != null) {
-			session.setAttribute("name", member.getName());
-			session.setAttribute("sessionid", member.getId());
-			session.setAttribute("grade", member.getGrade());
-			path = "/home.do";
-		    
-		} else {
-			 path = "views/loginFail.jsp";
-		}
-		ConnectionManager.close(conn);
-		dispatch(request,response,path);
-	}
-		
-		private void dispatch(HttpServletRequest request, HttpServletResponse response, String path) throws ServletException, IOException{
-			RequestDispatcher dispatcher = request.getRequestDispatcher(path);
-			dispatcher.forward(request, response);
-		}
-	
+        MemberVo vo = new MemberVo();
+        HttpSession session = request.getSession();
+        String id= request.getParameter("id");
+        String pw = request.getParameter("pw");
+        
+        // DB에서 아이디, 비밀번호 확인
+        MemberDAO dao = MemberDAO.getInstance();
+        int check = dao.loginCheck(id, pw);	
+        
+        String msg = "";
+        
+        if(check == 1)    // 로그인 성공
+        {   
+        	vo.setId(id);
+        	vo = dao.selectMember(vo);
+            session.setAttribute("sessionID", id);
+            session.setAttribute("grade", vo.getGrade());
+            msg = "home.do";
+        }
+        else if(check == 0) // 비밀번호가 틀릴경우
+        {
+            msg = "../views/login/LoginForm.jsp?msg=0";
+        }
+        else    // 아이디가 틀릴경우
+        {
+            msg = "../views/login/LoginForm.jsp?msg=-1";
+        }
+         
+        // sendRedirect(String URL) : 해당 URL로 이동
+        // URL뒤에 get방식 처럼 데이터를 전달가능
+        response.sendRedirect(msg);
+    }
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException{
 		doGet(request,response);

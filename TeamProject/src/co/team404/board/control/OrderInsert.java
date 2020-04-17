@@ -86,7 +86,8 @@ public class OrderInsert extends HttpServlet {
 		String view = null; 
 		if(n != 0) {
 //			String file = multi.getFilesystemName(str);
-			view = "views/order/fileOk.tiles";
+//			view = "views/order/fileOk.tiles";
+			view = "/board/orderList.tiles";
 		} else {
 			view = "views/order/fileFail.tiles";
 		}

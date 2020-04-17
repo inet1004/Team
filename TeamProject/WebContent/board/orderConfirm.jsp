@@ -4,18 +4,25 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
+ 
+<%
+	//HttpSession session = request.getSession(false);
+	String id = (String)session.getAttribute("sessionID");
+	if(id==null){
+	out.print("설정된 세션이 없습니다.<br>");
+	}else{
+	//out.print("id : "+ id +"<br>");
+	}
+%>
 
-
+<%-- ID:<%=id %><br> --%>
 
 <%
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
 
-	String id = (String) session.getAttribute("id");
-	String uname = (String) session.getAttribute("userName");
-
-	String grade = request.getParameter("grade");
-	
+	//int orderId = Integer.parseInt(request.getParameter("orderId"));
+	String orderId = request.getParameter("orderId");
     String dress = request.getParameter("dress");
     String goods = request.getParameter("goods");
     String place = request.getParameter("place");
@@ -27,10 +34,10 @@
 	String writeDate = request.getParameter("writeDate");
 	String reqDate = request.getParameter("requestDate");
 	
-    int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
+    //int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
     // int money = Integer.parseInt(request.getParameter("money"));
    
-    //2. 계산처리
+    //2. 계산처리  
     String menu = ""; 
     int danDress = 0;
     int danGoods = 0; 
@@ -51,7 +58,7 @@
     case "1" : goods="스몰소품"; danGoods=30000; break;
     case "2" : goods="빅소품"; danGoods=50000; break;
     }
-    int goodsTotal = danGoods * goodsSet;
+    //int goodsTotal = danGoods * goodsSet;
     
 
     //메뉴에 따라 가격 설정
@@ -68,7 +75,7 @@
     }
    
     //총금액
-    total = danDress + goodsTotal + danPlace + danMc;
+    total = danDress + danGoods + danPlace + danMc;
     //change = money - total;
     //change = Math.abs(change);
    
@@ -95,7 +102,9 @@ div#orderContailer { background-color: yellowgreen;  }
 		
 		<br><p>
     <h2>회원 정보</h2> <br><p>
-    	회원이름: <%=uname %> <br/> 회원아이디: <%=id %> <br/>회원등급: <%=grade %>
+ <%--  	회원이름: <br/>  --%>  
+    	 회원아이디 : <%=id %> <br/>
+    	 오더 아이디 : <%=orderId %> <br/>
     	<br><p>
     	<br><p>
     	
@@ -107,8 +116,11 @@ div#orderContailer { background-color: yellowgreen;  }
             <li>Request Place : <%=place %></li>
             <li>rAddr : <%=rAddr %></li>
             <li>Dress : <%=danDress %> 원</li>
-            <li>Goods : <%=danGoods %> * set수: <%=goodsSet %> 
+            <li>Goods : <%=danGoods %> 
+            <%-- 
+            	* set수: <%=goodsSet %>  -->
                 = GoodsTotal : <%=goodsTotal %> 원</li>
+            --%>
             <li>Place : <%=danPlace %> 원</li>
             <li>MC : <%=danMc %> 원</li>
             <br/><p>----------------------<br/>
@@ -120,7 +132,7 @@ div#orderContailer { background-color: yellowgreen;  }
 		
 			
     <form action="../orderInsert" method="post" >
-				<input type="hidden" id="orderId" name="orderId" value="1179">
+				<input type="hidden" id="orderId" name="orderId" value=<%= orderId %>">
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= wtDate %>">
 				<input type="hidden" id="requestDate" name="requestDate" value="<%=rqDate %>">
 				<input type="hidden" id="requestPlace" name="requestPlace" value="<%= place %>">

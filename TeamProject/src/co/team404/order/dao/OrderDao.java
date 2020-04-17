@@ -29,8 +29,11 @@ public class OrderDao {
 	}
 	
 	private final String ORDER_LIST = "select * from eorder order by orderId";
+	private final String ORDER_ONE = "select * from eorder where orderid = ?" ;
 	private final String ORDER_CHECK = "select * from eorder where orderid = ? and id = ?" ;
 	private final String ORDER_INSERT = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?)";
+//	private final String ORDER_INSERT_CHECK = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?) "
+//			+ " where not exists (select requireDate from eorder where requireDate LIKE rDate ) ";
 	// private final String ORDER_IDCHECK = "select id from member where id = ?";
 	//vo.setOrderId(Integer.parseInt("orderId.NEXTVAL"));
 
@@ -335,7 +338,7 @@ public class OrderDao {
 	public boolean update(OrderVo oid) {
 
 		String sql ="UPDATE EORDER SET "
-						+ " ORDERID = ?, "
+//						+ " ORDERID = ?, "
 						+ " WRITEDATE = ?, "
 						+ " REQUESTDATE = ?, "
 						+ " REQUESTPLACE = ?, "
@@ -349,16 +352,17 @@ public class OrderDao {
 		try {
 			conn = ConnectionManager.getConnnection();				
 			psmt = conn.prepareStatement(sql);
-			psmt.setInt(1,oid.getOrderId());
-			psmt.setString(2,oid.getWriteDate());
-			psmt.setString(3,oid.getRequestDate());
-			psmt.setString(4,oid.getRequestPlace());
-			psmt.setString(5,oid.getPlaceAddress());
-			psmt.setString(6,oid.getDress());
-			psmt.setString(7,oid.getGoods());
-			psmt.setString(8,oid.getMc());
-			psmt.setInt(9,oid.getTotalPrice());
-			psmt.setString(10,oid.getId());
+//			psmt.setInt(1,oid.getOrderId());
+			psmt.setString(1,oid.getWriteDate());
+			psmt.setString(2,oid.getRequestDate());
+			psmt.setString(3,oid.getRequestPlace());
+			psmt.setString(4,oid.getPlaceAddress());
+			psmt.setString(5,oid.getDress());
+			psmt.setString(6,oid.getGoods());
+			psmt.setString(7,oid.getMc());
+			psmt.setInt(8,oid.getTotalPrice());
+			psmt.setString(9,oid.getId());
+			psmt.setInt(10,oid.getOrderId());
 			psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -391,7 +395,7 @@ public class OrderDao {
 //		}
 //		return vo;
 //	}
-
+ 
 	
 	public ArrayList<OrderVo> select(){
 		
@@ -451,6 +455,60 @@ public class OrderDao {
 //		}
 //		return vo;
 //	}
+	
+
+	public OrderVo selectOne(int order) {
+		
+		String driver = "oracle.jdbc.driver.OracleDriver";
+		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+//	public OrderVo selectOne(OrderVo order) {
+//		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+		OrderVo vo = null;
+		try {
+			psmt = conn.prepareStatement(ORDER_ONE);
+			psmt.setInt(1, order);
+//			psmt.setInt(1, order.getOrderId());
+			//psmt.setString(2, order.getId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+
+				vo = new OrderVo();
+				vo.setOrderId(rs.getInt("orderId"));
+				vo.setWriteDate(rs.getString("writeDate"));
+				vo.setRequestDate(rs.getString("requestDate"));
+				vo.setRequestPlace(rs.getString("requestPlace"));
+				vo.setPlaceAddress(rs.getString("placeAddress"));
+				vo.setDress(rs.getString("dress"));
+				vo.setGoods(rs.getString("goods"));
+				vo.setMc(rs.getString("mc"));
+				vo.setTotalPrice(rs.getInt("totalPrice"));
+				vo.setId(rs.getString("id"));
+//				list.add(vo);
+				
+//				int orderId = rs.getInt("orderId");
+//				String id = rs.getString("id");
+//				vo = new OrderVo(orderId, id );
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return vo;
+	}
+	
+	
+	
 
 	//public int orderInsert(OrderVo order) {  
 	public int orderInsert(OrderVo order) {
@@ -468,14 +526,24 @@ public class OrderDao {
 			e.printStackTrace();
 		}
 		
+
+//		final String ORDER_INSERT_CHECK = "insert into eorder values (orderseq.NEXTVAL,?,?,?,?,?,?,?,?,?) "
+//				+ " where not exists (select requireDate from eorder where requireDate LIKE rDate ) ";
+		
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-//			psmt.setInt(1, order.getOrderId());
+	//		psmt = conn.prepareStatement(ORDER_INSERT_CHECK);
+			psmt.setInt(1, order.getOrderId());
 //			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
 //			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
 //			rs.getTimestamp("save_time");
 			psmt.setString(1, order.getWriteDate());
+//			
+//			String reDate = order.getRequestDate();
+//			String reTrimmedDate = reDate.substring(0,10);
+//			String rDate =  reTrimmedDate + '%';
+//			psmt.setString(2, rDate);
 			psmt.setString(2, order.getRequestDate());
 			psmt.setString(3, order.getRequestPlace());
 			psmt.setString(4, order.getPlaceAddress());
@@ -491,7 +559,7 @@ public class OrderDao {
 		}
 		return n;
 	}
-	
+	 
 
 //	public int memberIdCheck(String id) {
 //		int n=0;;
