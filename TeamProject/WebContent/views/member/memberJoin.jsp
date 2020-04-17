@@ -15,6 +15,7 @@
 <script src="${pageContext.request.contextPath}/templet/js/memberJoin.js"></script>
 </head>
 <body>
+
 	<div class="main">
 		<section class="signup">
 			<!-- <img src="images/signup-bg.jpg" alt=""> -->
@@ -57,7 +58,11 @@
 							<input type="submit" name="join" id="join"
 								class="form-submit" value="가입하기" /></div>
 							<div><input type="reset" name="join" id="join"
-								class="form-submit" value="가입하기" />
+								class="form-submit" value="취소" />
+							</div>
+							<div><br/>
+							<input type=button name="join" id="join"
+								class="form-submit" onclick ="location.href='${pageContext.request.contextPath}/home.do'" value="홈으로" />
 							</div>
 					</form>
 					<p class="loginhere">

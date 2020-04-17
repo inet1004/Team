@@ -1,4 +1,4 @@
-package co.team404.common.control;
+package co.team404.board.control;
 
 import java.io.IOException;
 
@@ -9,19 +9,23 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/prontpage.do")
-public class ProntPageController extends HttpServlet {
+@WebServlet("/board.do")
+public class boardController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	public ProntPageController() {
+	/**
+	 * @see HttpServlet#HttpServlet()
+	 */
+	public boardController() {
 		super();
 	}
 
+	// TODO Auto-generated constructor stub
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		String path = "views/prontPage.jsp";
+		String path = "views/board.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
