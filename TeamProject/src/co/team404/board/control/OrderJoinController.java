@@ -1,7 +1,7 @@
 package co.team404.board.control;
 
 import java.io.IOException;
-
+import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -13,6 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import co.team404.member.dao.MemberDAO;
 import co.team404.member.dao.MemberVo;
+import co.team404.order.dao.OrderDao;
+import co.team404.order.dao.OrderVo;
 
 @WebServlet("/orderJoin.do")
 public class OrderJoinController extends HttpServlet {
@@ -24,6 +26,7 @@ public class OrderJoinController extends HttpServlet {
  
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
+		// 회원 예약정보 읽어오기
 		
 		String path = "/board/orderList.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);

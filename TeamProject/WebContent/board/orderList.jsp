@@ -42,13 +42,9 @@ div#orderContailer { background-color: yellowgreen;}
 <%
 		OrderDao dao = new OrderDao();
 		OrderVo vo = new OrderVo();
-
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
-
 		String view = null; 
-		
 		list = dao.select();
-	
 //for (OrderVo dto : list) {
 //	System.out.print(dto.getOrderId() + " ");
 //	System.out.print(dto.getWriteDate() + " ");
