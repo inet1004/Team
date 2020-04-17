@@ -5,17 +5,24 @@
     pageEncoding="UTF-8"%>
 
 
+<%
+	//HttpSession session = request.getSession(false);
+	String id = (String)session.getAttribute("sessionID");
+	if(id==null){
+	out.print("설정된 세션이 없습니다.<br>");
+	}else{
+	//out.print("id : "+ id +"<br>");
+	}
+%>
 
+<%-- ID:<%=id %><br> --%>
 
 <%
     //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
 
-	String id = (String) session.getAttribute("id");
-	String uname = (String) session.getAttribute("userName");
-
-	String grade = request.getParameter("grade");
-	
+	//int orderId = Integer.parseInt(request.getParameter("orderId"));
+	String orderId = request.getParameter("orderId");
     String dress = request.getParameter("dress");
     String goods = request.getParameter("goods");
     String place = request.getParameter("place");
@@ -95,7 +102,9 @@ div#orderContailer { background-color: yellowgreen;  }
 		
 		<br><p>
     <h2>회원 정보</h2> <br><p>
-    	회원이름: <%=uname %> <br/> 회원아이디: <%=id %> <br/>회원등급: <%=grade %>
+ <%--  	회원이름: <br/>  --%>  
+    	 회원아이디 : <%=id %> <br/>
+    	 오더 아이디 : <%=orderId %> <br/>
     	<br><p>
     	<br><p>
     	
@@ -123,7 +132,7 @@ div#orderContailer { background-color: yellowgreen;  }
 		
 			
     <form action="../orderInsert" method="post" >
-				<input type="hidden" id="orderId" name="orderId" value="1179">
+				<input type="hidden" id="orderId" name="orderId" value=<%= orderId %>">
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= wtDate %>">
 				<input type="hidden" id="requestDate" name="requestDate" value="<%=rqDate %>">
 				<input type="hidden" id="requestPlace" name="requestPlace" value="<%= place %>">

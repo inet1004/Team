@@ -15,21 +15,12 @@
 	if(id==null){
 	out.print("설정된 세션이 없습니다.<br>");
 	}else{
-	out.print("id : "+ id +"<br>");
+	//out.print("id : "+ id +"<br>");
 	}
+	
 %>
 
-		<%
-		OrderDao dao = new OrderDao();
-		OrderVo vo = new OrderVo();
-		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
-		String view = null; 
-		int orderId = Integer.parseInt(request.getParameter("orderId"));
-		vo = dao.selectOne(orderId);
-		request.setAttribute("vo", vo);
-		%>
-		
-		
+
 		<%--추가 --%>
 		<%
 		Date nowTime = new Date();
@@ -54,27 +45,24 @@ div#orderContailer { background-color: yellowgreen;}
 			
 			<div class="memberId">
 				<label for="uuid">회원 아이디 : &nbsp;&nbsp;</label> <%=id %>
-				<input type="hidden" class="inputOrder" id="id" name="id" placeholder="<%= vo.getId() %>" value="<%= vo.getId() %>">
+				<input type="hidden" class="inputOrder" id="id" name="id"  value="<%=id %>">
 			</div>
-  
-			<div class="memberName">
-				<label for="uuname">회원명 : &nbsp;&nbsp;</label> <%= session.getAttribute("member_name") %>
-			</div>
-						
+  						
 			<div><br/></div>
-				이벤트 주문 orderId : <%= vo.getOrderId() %> <br/>
+				이벤트 주문 orderId : ${vo.orderId}<br/>
+				<input type="hidden" class="inputOrder" id="orderId" name="orderId"  value="${vo.orderId}">
 			<div><br/></div>
 			<div><br/></div>
 			
 			<div class="writeDate">
-				<label for="writeDate">작성 일자 : &nbsp;&nbsp;</label> String writeDate = <%= vo.getWriteDate() %>
+				<label for="writeDate">작성 일자 : &nbsp;&nbsp;</label> ${vo.writeDate}
 				<input type="hidden" id="writeDate" name="writeDate" placeholder="<%= sf.format(nowTime) %>" value="<%= sf.format(nowTime) %>">
 			</div>
 			
 			<div><br/></div>
 			
 			<div class="requestDate">
-				<label for="requestDate">이벤트 요청 일자 : &nbsp;&nbsp;</label> <%= vo.getRequestDate() %> 
+				<label for="requestDate">이벤트 요청 일자 : &nbsp;&nbsp;</label> ${vo.requestDate} 
 				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate">
 			</div>
 			
@@ -94,7 +82,7 @@ div#orderContailer { background-color: yellowgreen;}
 			<div class="placeAddress">
 				<div class="unit">
 				<label for="placeAddress">신청장소의 주소: &nbsp;&nbsp;</label>
-				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="<%= vo.getPlaceAddress() %>" required></textarea>
+				<textarea class="inputOrder" id="rAddr" name="rAddr" placeholder="${vo.placeAddress}" required></textarea>
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
