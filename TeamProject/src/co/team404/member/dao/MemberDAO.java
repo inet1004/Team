@@ -25,6 +25,7 @@ public class MemberDAO {
 	private final String UPDATE = "UPDATE EMEMBER SET pw = ?, addr = ?, tell = ?, WHERE member_id = ?";
     private final String DELETE_MEMBER = "delete from emember where member_id = ?";
     private final String MEMBER_ID_CHECK = "select member_id from emember where member_id = ?";
+    private final String MEMBER_CHECK = "SELECT MEMBER_ID,MEMBER_NAME,PW,ADDR,TELL,GRADE,JDATE FROM EMEMBER WHERE MEMBER_ID = ?";
     
     
 	static MemberDAO instance;
@@ -43,30 +44,60 @@ public class MemberDAO {
 			e.printStackTrace();
 		}
 	}
-
-	// 회원 조회
-	public MemberVo selectMember(MemberVo member) {
-		MemberVo vo = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
+	public int loginCheck(String id, String pw) {
+		 String dbPW = "";
+		 int x = -1;
+		 
 		try {
-			pstmt = conn.prepareStatement(SELECT);
-			pstmt.setString(1, member.getId());
-			rs = pstmt.executeQuery();
+			StringBuffer query = new StringBuffer();
+			query.append("SELECT pw FROM emember WHERE member_id = ?");
 			
-			if (rs.next()) {
-				String user_id = rs.getString("id");
-				String pass = rs.getString("pass");
-				member = new MemberVo(user_id, pass);
+			
+			psmt = conn.prepareStatement(query.toString());
+			psmt.setString(1, id);
+			rs = psmt.executeQuery();
+			if(rs.next()) {
+				dbPW = rs.getString("pw");
+				
+				if(dbPW.equals(pw)) {
+					x = 1;
+					
+				}
+				else
+					x = 0;
+			} else {
+				x = -1;
 			}
-		} catch (SQLException e) {
+			
+		} catch(Exception e) {
 			e.printStackTrace();
-
 		}
-
-		return member;
+		return x;
 	}
+
+	public MemberVo selectMember(MemberVo member) {
+		MemberVo vo = new MemberVo();
+	
+		try {
+			psmt = conn.prepareStatement(MEMBER_CHECK);
+			psmt.setString(1, member.getId());
+			rs = psmt.executeQuery();
+			
+			if(rs.next()) {
+			vo.setId(rs.getString("member_id"));
+			vo.setName(rs.getString("member_name"));
+			vo.setPw(rs.getString("pw"));
+			vo.setAddr(rs.getString("addr"));
+			vo.setTell(rs.getString("tell"));
+			vo.setGrade(rs.getString("grade"));
+		  }
+		} catch (SQLException e) {
+		e.printStackTrace();
+		}
+		
+		return vo;
+	}
+
 
 	// 회원 수정
 	public void updateMember(MemberVo vo) {
