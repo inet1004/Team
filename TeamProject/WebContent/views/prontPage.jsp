@@ -39,8 +39,6 @@
               <span></span>
               <span></span>
               <span></span>
-<<<<<<< HEAD
-=======
             </div>
             <!-- END menu-toggle -->
 
@@ -79,9 +77,7 @@
                   </div>
                 </div>
               </nav>
->>>>>>> branch 'master' of https://github.com/inet1004/Team.git
             </div>
-<<<<<<< HEAD
             <!-- END menu-toggle -->
  
             <div class="site-navbar js-site-navbar">
@@ -120,8 +116,6 @@
                 </div>
               </nav>
             </div>
-=======
->>>>>>> branch 'master' of https://github.com/inet1004/Team.git
           </div>
         </div>
       </div>
