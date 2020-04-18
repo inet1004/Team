@@ -1,6 +1,7 @@
 package co.team404.board.control;
 
 import java.io.IOException;
+
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -11,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import co.team404.member.dao.MemberDAO;
-import co.team404.member.dao.MemberVo;
 import co.team404.order.dao.OrderDao;
 import co.team404.order.dao.OrderVo;
+import co.team404.order.dao.Paging;
+import co.team404.order.dao.OrderSearchVo;
 
 @WebServlet("/orderJoin.do")
 public class OrderJoinController extends HttpServlet {
@@ -37,7 +38,8 @@ public class OrderJoinController extends HttpServlet {
 		
 		if(id == "admin") {
 			list = OrderDao.getInstance().select();
-		} else {
+		} 
+		if(id != "admin") {
 			list = OrderDao.getInstance().selectOrder(id);
 		}
 

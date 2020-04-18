@@ -11,11 +11,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import co.team404.order.dao.OrderDao;
-import co.team404.order.dao.OrderSearchVo;
 import co.team404.order.dao.OrderVo;
 import co.team404.order.dao.Paging;
+import co.team404.order.dao.OrderSearchVo;
 
 @WebServlet("/orderList.do")
 public class OrderListController extends HttpServlet {
@@ -31,6 +32,7 @@ public class OrderListController extends HttpServlet {
 		OrderVo vo = new OrderVo();
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		String view = null; 
+		
 		list = OrderDao.getInstance().select();
 		
 		request.setAttribute("list", list);
