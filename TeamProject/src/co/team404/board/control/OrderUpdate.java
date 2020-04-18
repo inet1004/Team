@@ -40,7 +40,7 @@ public class OrderUpdate extends HttpServlet {
 			vo.setId(request.getParameter("id"));
 			// DB처리
 			
-			boolean n = dao.update(vo);
+			boolean n = OrderDao.getInstance().update(vo);
 			
 			String view = null; 
 			if(n != false) {

@@ -81,7 +81,7 @@ public class OrderInsert extends HttpServlet {
 //		vo.setFilename(ofile); //파일명 담음 // 이런방법은 편볍임
 //		int n=dao.memberInsert(vo);
 		
-		int n = dao.orderInsert(vo);
+		int n = OrderDao.getInstance().orderInsert(vo);
 		
 		String view = null; 
 		if(n != 0) {

@@ -24,7 +24,7 @@ public class OrderDelete extends HttpServlet {
 		OrderDao dao = new OrderDao();
 		
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
-		boolean n = dao.delete(orderId); 
+		boolean n = OrderDao.getInstance().delete(orderId); 
 		
 		String view = null;  
 		if(n != false) {

@@ -31,7 +31,7 @@ public class OrderListController extends HttpServlet {
 		OrderVo vo = new OrderVo();
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		String view = null; 
-		list = dao.select();
+		list = OrderDao.getInstance().select();
 		
 		request.setAttribute("list", list);
 				
