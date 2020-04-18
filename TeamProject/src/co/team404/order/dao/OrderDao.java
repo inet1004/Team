@@ -198,12 +198,13 @@ public class OrderDao {
 	
 	public ArrayList<OrderVo> selectOrder(String member_id) {
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>(); //
-		OrderVo vo = new OrderVo();
+		OrderVo vo = null;
 		try {
 			psmt = conn.prepareStatement(ORDER_SELECT);
 			psmt.setString(1, member_id);
 			rs = psmt.executeQuery();
 			if(rs.next()) {
+				vo = new OrderVo();
 				vo.setOrderId(rs.getInt("orderId"));
 				vo.setWriteDate(rs.getString("writeDate"));
 				vo.setRequestDate(rs.getString("requestDate"));
