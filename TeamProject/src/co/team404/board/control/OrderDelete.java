@@ -29,7 +29,7 @@ public class OrderDelete extends HttpServlet {
 		String view = null;  
 		if(n != false) {
 //			view = "views/order/fileOk.tiles";
-			view = "/board/orderList.jsp";
+			view = "/orderList.do";
 		} else {
 			view = "views/order/fileFail.jsp";
 		}

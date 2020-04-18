@@ -27,6 +27,7 @@ tr.onMouseOver:hover { background-color: yellow; }
 
 
 <script type="text/javascript">
+
 function button_event($oid){
 	if (confirm( "예약번호 "+ $oid +" 번을 정말 삭제하시겠습니까?" ) == true){    //확인 "정말 삭제하시겠습니까??"+
 		
@@ -39,6 +40,21 @@ function button_event($oid){
 	    e.preventDefault();;
 	}
 }
+
+
+function button_update($oid){
+	if (confirm( "예약번호 "+ $oid +" 번을 수정하시겠습니까?" ) == true){    //확인 "정말 수정하시겠습니까??"+
+		
+		var text1 = "/Team404/orderUpdate.do?orderId=";
+		var url = text1 + $oid;
+		
+		location.href = url;
+	    document.form.submit();  
+	}else{   //취소
+	    e.preventDefault();;
+	}
+}
+
 </script>
 
 
@@ -60,6 +76,7 @@ function button_event($oid){
     	 회원아이디:  <%=id %><br/>
     	<br><p>
     	
+
     	
 <table border="1">
 	<tr  bgcolor="#ff4000">
@@ -73,13 +90,14 @@ function button_event($oid){
 		<th>신청소품</th>
 		<th>사회자</th>
 		<th>총액</th>
-		<th colspan="2">수정/삭제</th>
+		<th>수정</th>
+		<th>삭제</th>
 	</tr>
 
 
   <c:forEach items="${list}" var="b" varStatus="status">
-   [${status.index}]: ${gamelist[status.index]}
-	   <TR>
+  <%--[${status.index}]: ${gamelist[status.index]}  --%> 
+	   <TR class="onMouseOver">
 		    <TD>${b.orderId}</TD>
 		    <TD>${b.id}</TD>
 		    <TD>${b.writeDate}</TD>
@@ -90,7 +108,7 @@ function button_event($oid){
 		    <TD>${b.goods}</TD>
 		    <TD>${b.mc}</TD>
 		    <TD>${b.totalPrice}</TD>
-			<TD><input type="button" id="${map.getOrderId()}" onClick="location.href='/Team404/orderUpdate.do?orderId='${b.orderId}'" value="수정"><TD>
+			<TD><input type="button" id="${map.getOrderId()}" onClick="button_update(${b.orderId});" value="수정"></TD>
 			<TD><input type="button" id="${map.getOrderId()}" onClick="button_event(${b.orderId});" value="삭제"><TD>
 	   </TR>
   </c:forEach>
