@@ -96,7 +96,7 @@ function button_update($oid){
 
 
   <c:forEach items="${list}" var="b" varStatus="status">
-  <%--[${status.index}]: ${gamelist[status.index]}  --%> 
+  <%--[${status.index}]: ${list[status.index]}  --%> 
 	   <TR class="onMouseOver">
 		    <TD>${b.orderId}</TD>
 		    <TD>${b.id}</TD>

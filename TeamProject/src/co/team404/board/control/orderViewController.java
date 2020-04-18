@@ -35,7 +35,7 @@ public class orderViewController extends HttpServlet {
 		String id =  (String)session.getAttribute("sessionID");
 		
 		if(id == "admin") {
-			list = dao.select();
+			list = OrderDao.getInstance().select();
 		} else {
 			list = OrderDao.getInstance().selectOrder(id);
 		}
