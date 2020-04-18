@@ -76,28 +76,24 @@ function button_event($oid){
 		<th colspan="2">수정/삭제</th>
 	</tr>
 
-<% System.out.println("list"); %>
-<% out.println(); %>
 
-<c:forEach items="${list}" var="ilist">
-	<tr>
-		<c:forEach items="${ilist}" var="map">
-			<td> ${map.orderId} </td>
-			<td> ${map.id} </td>
-			<td> ${map.writeDate} </td>
-			<td> ${map.requestDate} </td>
-			<td> ${map.requestPlace} </td>
-			<td> ${map.placeAddress} </td>
-			<td> ${map.dress} </td>
-			<td> ${map.goods} </td>
-			<td> ${map.mc} </td>
-			<td> ${map.totalPrice} </td>
-			<td><input type="button" id="${map.getOrderId()}" onClick="location.href='/Team404/orderUpdate.do?orderId='${map.getOrderId()}'" value="수정"></td>
-			<td><input type="button" id="${map.getOrderId()}" onClick="button_event(${map.getOrderId()});" value="삭제"></td>
-	
-		</c:forEach>
-	</tr>
-</c:forEach>
+  <c:forEach items="${list}" var="b" varStatus="status">
+   [${status.index}]: ${gamelist[status.index]}
+	   <TR>
+		    <TD>${b.orderId}</TD>
+		    <TD>${b.id}</TD>
+		    <TD>${b.writeDate}</TD>
+		    <TD>${b.requestDate}</TD>
+		    <TD>${b.requestPlace}</TD>
+		    <TD>${b.placeAddress}</TD>
+		    <TD>${b.dress}</TD>
+		    <TD>${b.goods}</TD>
+		    <TD>${b.mc}</TD>
+		    <TD>${b.totalPrice}</TD>
+			<TD><input type="button" id="${map.getOrderId()}" onClick="location.href='/Team404/orderUpdate.do?orderId='${b.orderId}'" value="수정"><TD>
+			<TD><input type="button" id="${map.getOrderId()}" onClick="button_event(${b.orderId});" value="삭제"><TD>
+	   </TR>
+  </c:forEach>
 
 </table>
     

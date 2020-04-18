@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import java.util.ArrayList;
 
+import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -31,6 +32,8 @@ public class OrderListController extends HttpServlet {
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		String view = null; 
 		list = dao.select();
+		
+		request.setAttribute("list", list);
 				
 		String path = "/board/orderList.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
