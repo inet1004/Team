@@ -196,12 +196,12 @@ public class OrderDao {
 	}
 
 	
-	public ArrayList<OrderVo> selectOrder(String member_id) {
+	public ArrayList<OrderVo> selectOrder(String id) {
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>(); //
 		OrderVo vo = null;
 		try {
 			psmt = conn.prepareStatement(ORDER_SELECT);
-			psmt.setString(1, member_id);
+			psmt.setString(1, id);
 			rs = psmt.executeQuery();
 			if(rs.next()) {
 				vo = new OrderVo();
