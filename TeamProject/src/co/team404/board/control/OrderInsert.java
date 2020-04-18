@@ -87,9 +87,9 @@ public class OrderInsert extends HttpServlet {
 		if(n != 0) {
 //			String file = multi.getFilesystemName(str);
 //			view = "views/order/fileOk.tiles";
-			view = "/board/orderList.tiles";
+			view = "/board/orderList.jsp";
 		} else {
-			view = "views/order/fileFail.tiles";
+			view = "views/order/fileFail.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);

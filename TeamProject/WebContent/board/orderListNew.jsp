@@ -26,6 +26,39 @@ tr.onMouseOver:hover { background-color: yellow; }
 %>
 
 
+<div id="orderContailer" >
+	<div align="center">
+	<h2>이벤트 Order List</h2>
+	
+		<%--추가 --%>
+		<%
+		Date nowTime = new Date();
+		SimpleDateFormat cf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss");
+		%>
+		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
+		조회 일시 : <%= cf.format(nowTime) %>
+ 
+<%
+		OrderDao dao = new OrderDao();
+		OrderVo vo = new OrderVo();
+		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+		String view = null; 
+		list = dao.select();
+//for (OrderVo dto : list) {
+//	System.out.print(dto.getOrderId() + " ");
+//	System.out.print(dto.getWriteDate() + " ");
+//	System.out.print(dto.getRequestDate() + " ");
+//	System.out.print(dto.getRequestPlace() + " ");
+//	System.out.print(dto.getPlaceAddress() + " ");
+//	System.out.print(dto.getDress() + " ");
+//	System.out.print(dto.getGoods() + " ");
+//	System.out.print(dto.getMc() + " ");
+//	System.out.print(dto.getTotalPrice() + " ");
+//	System.out.println(dto.getId() + " ");
+//	}
+	 %>
+
+
 <script type="text/javascript">
 function button_event($oid){
 	if (confirm( "예약번호 "+ $oid +" 번을 정말 삭제하시겠습니까?" ) == true){    //확인 "정말 삭제하시겠습니까??"+
@@ -41,19 +74,6 @@ function button_event($oid){
 }
 </script>
 
-
-<div id="orderContailer" >
-	<div align="center">
-	<h2>이벤트 Order List</h2>
-	
-		<%--추가 --%>
-		<%
-		Date nowTime = new Date();
-		SimpleDateFormat cf = new SimpleDateFormat("yyyy년 MM월 dd일 a hh:mm:ss");
-		%>
-		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
-		조회 일시 : <%= cf.format(nowTime) %>
- 
 
 		<br><p>
     <h3>회원 정보</h3> 
@@ -76,30 +96,32 @@ function button_event($oid){
 		<th colspan="2">수정/삭제</th>
 	</tr>
 
-<% System.out.println("list"); %>
-<% out.println(); %>
+<%
+for ( OrderVo dto : list ) {
+%>
 
-<c:forEach items="${list}" var="ilist">
-	<tr>
-		<c:forEach items="${ilist}" var="map">
-			<td> ${map.orderId} </td>
-			<td> ${map.id} </td>
-			<td> ${map.writeDate} </td>
-			<td> ${map.requestDate} </td>
-			<td> ${map.requestPlace} </td>
-			<td> ${map.placeAddress} </td>
-			<td> ${map.dress} </td>
-			<td> ${map.goods} </td>
-			<td> ${map.mc} </td>
-			<td> ${map.totalPrice} </td>
-			<td><input type="button" id="${map.getOrderId()}" onClick="location.href='/Team404/orderUpdate.do?orderId='${map.getOrderId()}'" value="수정"></td>
-			<td><input type="button" id="${map.getOrderId()}" onClick="button_event(${map.getOrderId()});" value="삭제"></td>
-	
-		</c:forEach>
+	<tr onmouseover="this.className='onMouseOver'" onmouseout="this.className='onMouseOut'">
+		<td>${dto.getOrderId() }</td>
+		<td><%=dto.getId() %> </td>
+		<td><%= dto.getWriteDate() %> </td>
+		<td><%= dto.getRequestDate() %> </td>
+		<td><%= dto.getRequestPlace() %> </td>
+		<td><%= dto.getPlaceAddress() %> </td>
+		<td><%= dto.getDress() %> </td>
+		<td><%= dto.getGoods() %> </td>
+		<td><%= dto.getMc() %> </td>
+		<td><%= dto.getTotalPrice() %> </td>
+		<td><input type="button" id="<%= dto.getOrderId() %>" onClick="location.href='/Team404/orderUpdate.do?orderId='<%= dto.getOrderId() %>'" value="수정"></td>
+		<td><input type="button" id="<%= dto.getOrderId() %>" onClick="button_event(<%= dto.getOrderId() %>);" value="삭제"></td>
 	</tr>
-</c:forEach>
+
+<% } %>
+
 
 </table>
+
+        </tbody>
+    </table>
     
     <br><p>
 			<div class="sendForm">

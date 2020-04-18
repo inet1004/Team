@@ -317,10 +317,24 @@ public class OrderDao {
 	// 주문정보 삭제 메서드
 	public boolean delete(int orderId) {
 		
+
+		String driver = "oracle.jdbc.driver.OracleDriver";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+		String user="hr";
+		String password = "hr";
+		
+		try {
+			Class.forName(driver);
+			conn = DriverManager.getConnection(url,user,password);
+		} catch (ClassNotFoundException | SQLException e) {
+			e.printStackTrace();
+		}
+		
 		String sql ="DELETE FROM EORDER WHERE ORDERID=?";
 		
 		try {
-			conn = ConnectionManager.getConnnection();			
+	//		conn = ConnectionManager.getConnnection();			
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, orderId);
 			psmt.executeUpdate();
@@ -401,8 +415,8 @@ public class OrderDao {
 	public ArrayList<OrderVo> select(){
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		
@@ -461,8 +475,8 @@ public class OrderDao {
 	public OrderVo selectOne(int order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		
@@ -515,8 +529,8 @@ public class OrderDao {
 	public int orderInsert(OrderVo order) {
 		
 		String driver = "oracle.jdbc.driver.OracleDriver";
-		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//		String url = "jdbc:oracle:thin:@localhost:1521:xe";
+//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+		String url = "jdbc:oracle:thin:@localhost:1521:xe";
 		String user="hr";
 		String password = "hr";
 		
@@ -586,8 +600,8 @@ public class OrderDao {
 		try {
 
 			String driver = "oracle.jdbc.driver.OracleDriver";
-			String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
-//			String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	//		String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";
+			String url = "jdbc:oracle:thin:@localhost:1521:xe";
 			String user="hr";
 			String password = "hr";
 			

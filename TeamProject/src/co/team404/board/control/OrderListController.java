@@ -26,7 +26,13 @@ public class OrderListController extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 		
-		String path = "/board/orderList.tiles";
+		OrderDao dao = new OrderDao();
+		OrderVo vo = new OrderVo();
+		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
+		String view = null; 
+		list = dao.select();
+				
+		String path = "/board/orderList.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}

@@ -3,6 +3,7 @@
 <%@page import="java.text.SimpleDateFormat"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
  
 <%
@@ -94,35 +95,40 @@
 	
 
 <style>
-div#orderContailer { background-color: yellowgreen;  }
+div#orderContailer { background-color:#ff33ff ; color: #ffffff; }
+div.p , h2 {color: #800080; font-weight: bold; display: inline-block;}
+li { list-style-type : none; }
 </style>	
 
 <div id="orderContailer" align="center" >
 
 		
 		<br><p>
-    <h2>회원 정보</h2> <br><p>
+    <h2>회원 정보</h2><br/>
  <%--  	회원이름: <br/>  --%>  
     	 회원아이디 : <%=id %> <br/>
+    	 
+    <c:if test="${orderId != null }">
     	 오더 아이디 : <%=orderId %> <br/>
-    	<br><p>
+    </c:if>
+    
     	<br><p>
     	
-    <h2>주문 결과</h2> <br><p>
+    <h2>주문 내용 체크</h2> <br><p>
          <ul>
          
-            <li>writeDate : <%=writeDate %></li>
-            <li>requestDate : <%=rqDate %></li>
-            <li>Request Place : <%=place %></li>
-            <li>rAddr : <%=rAddr %></li>
-            <li>Dress : <%=danDress %> 원</li>
-            <li>Goods : <%=danGoods %> 
+            <li><div class="p">Write Date :</div> &nbsp;&nbsp; <%=writeDate %></li>
+            <li><div class="p">RequestvDate :</div> &nbsp;&nbsp;  <%=rqDate %></li>
+            <li><div class="p">Request Place :</div> &nbsp;&nbsp;  <%=place %></li>
+            <li><div class="p">Address :</div> &nbsp;&nbsp;  <%=rAddr %></li>
+            <li><div class="p">Dress :</div> &nbsp;&nbsp;  <%=dress %> <%=danDress %> 원</li>
+            <li><div class="p">Goods :</div> &nbsp;&nbsp;  <%=goods %> <%=danGoods %>  원</li>
             <%-- 
             	* set수: <%=goodsSet %>  -->
                 = GoodsTotal : <%=goodsTotal %> 원</li>
             --%>
-            <li>Place : <%=danPlace %> 원</li>
-            <li>MC : <%=danMc %> 원</li>
+            <li><div class="p">Place :</div> &nbsp;&nbsp; <%=place %>  <%=danPlace %> 원</li>
+            <li><div class="p">MC :</div> &nbsp;&nbsp;  <%=mc %> <%=danMc %> 원</li>
             <br/><p>----------------------<br/>
              총 액 : <%=total %> 원  <br/>
          </ul>
@@ -142,13 +148,9 @@ div#orderContailer { background-color: yellowgreen;  }
 				<input type="hidden" id="mc" name="mc" value="<%= mc %>">
 				<input type="hidden" id="totalPrice" name="totalPrice" value="<%= total %>">
 				<input type="hidden" id="id" name="id" value="<%= id %>">
-        <input type="submit" value="주문 확인">
+    			<br><p>
+        <input type="submit" value="주문 확인">  &nbsp;&nbsp; <input type="button" onclick="location.href='../orderJoin.do'" value="추문 취소">
     </form>  
-    
-    
-    <br><p>
- 
- <h4><a href="../orderJoin.do">취소하고 이벤트 메뉴 돌아가기</a></h4> 
     
     <br><p>
     

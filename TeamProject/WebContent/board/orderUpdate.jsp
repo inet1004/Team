@@ -46,7 +46,7 @@ div#orderContailer { background-color: yellowgreen;}
  <div><h2>이벤트 주문</h2></div>
  <div><h3>여기는 <code>이벤트 수정</code> 하는 곳입니다.</h3></div> 
  
- 	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
+ 	<form action="board/orderConfirm.jsp" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">

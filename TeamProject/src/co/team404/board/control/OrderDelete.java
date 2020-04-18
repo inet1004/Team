@@ -29,9 +29,9 @@ public class OrderDelete extends HttpServlet {
 		String view = null;  
 		if(n != false) {
 //			view = "views/order/fileOk.tiles";
-			view = "/board/orderList.tiles";
+			view = "/board/orderList.jsp";
 		} else {
-			view = "views/order/fileFail.tiles";
+			view = "views/order/fileFail.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);

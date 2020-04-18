@@ -28,7 +28,7 @@ public class OrderJoinController extends HttpServlet {
 		request.setCharacterEncoding("utf-8");
 		// 회원 예약정보 읽어오기
 		
-		String path = "/board/orderList.tiles";
+		String path = "/board/orderList.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
