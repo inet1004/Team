@@ -25,7 +25,7 @@ public class orderViewController extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
-		
+		//
 		OrderDao dao = new OrderDao();
 		OrderVo vo = new OrderVo();
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
@@ -33,9 +33,15 @@ public class orderViewController extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 		String member_id =  (String)session.getAttribute("sessionID");
-		list = OrderDao.getInstance().selectOrder(member_id);
+		
+		if(member_id == "admin") {
+			list = dao.select();
+		} else {
+			list = OrderDao.getInstance().selectOrder(member_id);
+		}
+
 		request.setAttribute("list", list);
-				
+		//		
 		String path = "/board/orderView.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);

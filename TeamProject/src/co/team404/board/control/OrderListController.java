@@ -35,7 +35,7 @@ public class OrderListController extends HttpServlet {
 		
 		request.setAttribute("list", list);
 				
-		String path = "/board/orderList.jsp";
+		String path = "/board/orderView.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}

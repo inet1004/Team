@@ -31,11 +31,19 @@ public class OrderJoinController extends HttpServlet {
 		OrderVo vo = new OrderVo();
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		String view = null; 
-		list = dao.select();
+
+		HttpSession session = request.getSession(false);
+		String member_id =  (String)session.getAttribute("sessionID");
 		
+		if(member_id == "admin") {
+			list = dao.select();
+		} else {
+			list = OrderDao.getInstance().selectOrder(member_id);
+		}
+
 		request.setAttribute("list", list);
 		//		
-		String path = "/board/orderList.jsp";
+		String path = "/board/orderView.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
