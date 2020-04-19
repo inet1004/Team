@@ -28,7 +28,8 @@ public class OrderUpdate extends HttpServlet {
 			OrderDao dao = new OrderDao();
 			OrderVo vo = new OrderVo();
 		
-			vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+//			vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
+			String orderId = request.getParameter("orderId");
 			vo.setWriteDate(request.getParameter("writeDate"));
 			vo.setRequestDate(request.getParameter("requestDate"));
 			vo.setRequestPlace(request.getParameter("requestPlace"));
@@ -40,7 +41,8 @@ public class OrderUpdate extends HttpServlet {
 			vo.setId(request.getParameter("id"));
 			// DB처리
 			
-			boolean n = OrderDao.getInstance().update(vo);
+//			boolean n = OrderDao.getInstance().update(vo);
+			boolean n = OrderDao.getInstance().update(vo,orderId);
 			
 			String view = null; 
 			if(n != false) {

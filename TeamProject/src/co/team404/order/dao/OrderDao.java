@@ -78,7 +78,7 @@ public class OrderDao {
 
 	
 	// 수정된 사원정보 내용 갱신을 위한 메서드
-	public boolean update(OrderVo oid) {
+	public boolean update(OrderVo oid, String OrderId) {
 
 		String sql ="UPDATE EORDER SET "
 //						+ " ORDERID = ?, "
@@ -91,9 +91,9 @@ public class OrderDao {
 						+ " MC = ?, "
 						+ " TOTALPRICE = ?, "
 						+ " ID = ? "
-				   +" WHERE ORDER_ID = ?";			 
+				   +" WHERE ORDERID = ?";			 
 		try {
-			conn = ConnectionManager.getConnnection();				
+//			conn = ConnectionManager.getConnnection();				
 			psmt = conn.prepareStatement(sql);
 //			psmt.setInt(1,oid.getOrderId());
 			psmt.setString(1,oid.getWriteDate());
@@ -105,7 +105,8 @@ public class OrderDao {
 			psmt.setString(7,oid.getMc());
 			psmt.setInt(8,oid.getTotalPrice());
 			psmt.setString(9,oid.getId());
-			psmt.setInt(10,oid.getOrderId());
+//			psmt.setInt(10,oid.getOrderId());
+			psmt.setInt(10,Integer.parseInt(OrderId));
 			psmt.executeUpdate();
 			
 		} catch (SQLException e) {
@@ -143,6 +144,7 @@ public class OrderDao {
 	public OrderVo selectOne(int order) {
 		OrderVo vo = new OrderVo();
 		try {
+			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(ORDER_ONE);
 			psmt.setInt(1, order);
 			rs = psmt.executeQuery();

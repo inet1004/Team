@@ -43,6 +43,7 @@ function button_event($oid){
 function button_update($oid){
 	if (confirm( "예약번호 "+ $oid +" 번을 수정하시겠습니까?" ) == true){    //확인 "정말 수정하시겠습니까??"+
 		
+//		var text1 = "/Team404/orderUpdate.do?orderId=";		
 		var text1 = "/Team404/orderUpdate.do?orderId=";
 		var url = text1 + $oid;
 		
