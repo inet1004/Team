@@ -106,8 +106,8 @@ function button_update($oid){
 		    <TD>${b.goods}</TD>
 		    <TD>${b.mc}</TD>
 		    <TD>${b.totalPrice}</TD>
-			<TD><input type="button" id="${map.getOrderId()}" onClick="button_update(${b.orderId});" value="수정"></TD>
-			<TD><input type="button" id="${map.getOrderId()}" onClick="button_event(${b.orderId});" value="삭제"></TD>
+			<TD><input type="button" id="${b.orderId}" onClick="button_update(${b.orderId});" value="수정"></TD>
+			<TD><input type="button" id="${b.orderId}" onClick="button_event(${b.orderId});" value="삭제"></TD>
 	   </TR>
   </c:forEach>
 
