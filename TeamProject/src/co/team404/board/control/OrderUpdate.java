@@ -47,7 +47,7 @@ public class OrderUpdate extends HttpServlet {
 			String view = null; 
 			if(n != false) {
 //				view = "views/order/fileOk.tiles";
-				view = "/board/orderList.jsp";
+				view = "/orderJoin.do";
 			} else {
 				view = "views/order/fileFail.jsp";
 			}
