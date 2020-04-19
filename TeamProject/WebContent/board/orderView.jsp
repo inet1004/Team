@@ -35,7 +35,7 @@ function button_event($oid){
 		location.href = url;
 	    document.form.submit();  
 	}else{   //취소
-	    e.preventDefault();;
+	    e.preventDefault();
 	}
 }
 
@@ -49,7 +49,7 @@ function button_update($oid){
 		location.href = url;
 	    document.form.submit();  
 	}else{   //취소
-	    e.preventDefault();;
+	    e.preventDefault();
 	}
 }
 

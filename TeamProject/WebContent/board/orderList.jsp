@@ -1,8 +1,6 @@
 
 <%@page import="co.team404.order.dao.OrderVo"%>
 <%@page import="co.team404.order.dao.OrderDao"%>
-<%@page import="jdk.nashorn.internal.ir.TryNode"%>
-<%@page import="jdk.internal.org.objectweb.asm.tree.TryCatchBlockNode"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ page import="java.util.*"%>
@@ -37,7 +35,7 @@ function button_event($oid){
 		location.href = url;
 	    document.form.submit();  
 	}else{   //취소
-	    e.preventDefault();;
+	    e.preventDefault();
 	}
 }
 
@@ -51,7 +49,7 @@ function button_update($oid){
 		location.href = url;
 	    document.form.submit();  
 	}else{   //취소
-	    e.preventDefault();;
+	    e.preventDefault();
 	}
 }
 
