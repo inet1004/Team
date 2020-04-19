@@ -173,6 +173,7 @@ public class OrderDao {
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
 			//psmt.setInt(1, order.getOrderId());
+
 			psmt.setString(1, order.getWriteDate());
 			psmt.setString(2, order.getRequestDate());
 			psmt.setString(3, order.getRequestPlace());
@@ -182,6 +183,7 @@ public class OrderDao {
 			psmt.setString(7, order.getMc());
 			psmt.setInt(8, order.getTotalPrice());
 			psmt.setString(9, order.getId());
+			
 //			psmt.setString(10, order.getFilename());
 //			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
 //			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
@@ -190,6 +192,7 @@ public class OrderDao {
 //			String reTrimmedDate = reDate.substring(0,10);
 //			String rDate =  reTrimmedDate + '%';
 //			psmt.setString(2, rDate);
+			
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
