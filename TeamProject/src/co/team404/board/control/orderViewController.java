@@ -32,13 +32,26 @@ public class orderViewController extends HttpServlet {
 		String view = null; 
 
 		HttpSession session = request.getSession(false);
-		String id =  (String)session.getAttribute("sessionID");
+		String iid =  (String)session.getAttribute("sessionID");
 		
-		if(id == "admin") {
-			list = OrderDao.getInstance().select();
-		} else {
-			list = OrderDao.getInstance().selectOrder(id);
-		}
+//		if(id == "admin") {
+//			list = OrderDao.getInstance().select();
+//		} else {
+//			list = OrderDao.getInstance().selectOrder(id);
+//		}
+		
+	    switch(iid){
+	        case "admin" : 
+				list = OrderDao.getInstance().select();
+	            break;
+	        case "ccc" : 
+//	        	list = OrderDao.getInstance().selectOrder(iid);
+	        	list = dao.selectOrder(iid);
+	            break;
+	        default :
+	        	list = OrderDao.getInstance().selectOrder(iid);
+	    }
+		
 
 		request.setAttribute("list", list);
 		//		

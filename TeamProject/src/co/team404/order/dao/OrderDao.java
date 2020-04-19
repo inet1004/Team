@@ -197,27 +197,28 @@ public class OrderDao {
 
 	
 	public ArrayList<OrderVo> selectOrder(String id) {
-		ArrayList<OrderVo> list = new ArrayList<OrderVo>(); //
-		OrderVo vo = null;
+		ArrayList<OrderVo> list = new ArrayList<OrderVo>(); 
+		OrderVo voo = null;
 		try {
+			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(ORDER_SELECT);
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();
-			if(rs.next()) {
-				vo = new OrderVo();
-				vo.setOrderId(rs.getInt("orderId"));
-				vo.setWriteDate(rs.getString("writeDate"));
-				vo.setRequestDate(rs.getString("requestDate"));
-				vo.setRequestPlace(rs.getString("requestPlace"));
-				vo.setPlaceAddress(rs.getString("placeAddress"));
-				vo.setDress(rs.getString("dress"));
-				vo.setGoods(rs.getString("goods"));
-				vo.setMc(rs.getString("mc"));
-				vo.setTotalPrice(rs.getInt("totalPrice"));
-				vo.setId(rs.getString("id"));
-				list.add(vo);
+			while(rs.next()) {
+				voo = new OrderVo();
+				voo.setOrderId(rs.getInt("orderId"));
+				voo.setWriteDate(rs.getString("writeDate"));
+				voo.setRequestDate(rs.getString("requestDate"));
+				voo.setRequestPlace(rs.getString("requestPlace"));
+				voo.setPlaceAddress(rs.getString("placeAddress"));
+				voo.setDress(rs.getString("dress"));
+				voo.setGoods(rs.getString("goods"));
+				voo.setMc(rs.getString("mc"));
+				voo.setTotalPrice(rs.getInt("totalPrice"));
+				voo.setId(rs.getString("id"));
+				list.add(voo);
 			}
-		} catch(SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		return list;

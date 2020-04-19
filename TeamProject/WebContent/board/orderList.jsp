@@ -55,6 +55,8 @@ function button_update($oid){
 
 </script>
 
+<%-- ${list}  --%>
+
 
 <div id="orderContailer" >
 	<div align="center">
