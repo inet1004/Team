@@ -172,7 +172,7 @@ public class OrderDao {
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-			psmt.setInt(1, order.getOrderId());
+			//psmt.setInt(1, order.getOrderId());
 			psmt.setString(1, order.getWriteDate());
 			psmt.setString(2, order.getRequestDate());
 			psmt.setString(3, order.getRequestPlace());
@@ -202,7 +202,7 @@ public class OrderDao {
 		ArrayList<OrderVo> list = new ArrayList<OrderVo>(); 
 		OrderVo voo = null;
 		try {
-			conn = ConnectionManager.getConnnection();			//ConnectionManager
+//			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(ORDER_SELECT);
 			psmt.setString(1, id);
 			rs = psmt.executeQuery();

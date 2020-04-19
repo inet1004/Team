@@ -42,17 +42,20 @@ public class OrderJoinController extends HttpServlet {
 //			list = OrderDao.getInstance().selectOrder(id);
 //		}
 		
-	    switch(iid){
-	        case "admin" : 
-				list = OrderDao.getInstance().select();
-	            break;
-	        case "ccc" : 
+
+    	list = OrderDao.getInstance().selectOrder(iid);
+		
+//	    switch(iid){
+//	        case "admin" : 
+//				list = OrderDao.getInstance().select();
+//	            break;
+//	        case "ccc" : 
+////	        	list = OrderDao.getInstance().selectOrder(iid);
 //	        	list = OrderDao.getInstance().selectOrder(iid);
-	        	list = dao.selectOrder(iid);
-	            break;
-	        default :
-	        	list = OrderDao.getInstance().selectOrder(iid);
-	    }
+//	            break;
+//	        default :
+//	        	list = OrderDao.getInstance().selectOrder(iid);
+//	    }
 		
 
 		request.setAttribute("list", list);

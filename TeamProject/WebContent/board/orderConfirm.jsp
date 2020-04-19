@@ -16,6 +16,8 @@
 	}
 %>
 
+
+ID:<%=id %><br>
 <%-- ID:<%=id %><br> --%>
 
 <%
@@ -138,7 +140,7 @@ li { list-style-type : none; }
 		
 			
     <form action="../orderInsert" method="post" >
-				<input type="hidden" id="orderId" name="orderId" value=<%= orderId %>">
+		<%--	<input type="hidden" id="orderId" name="orderId" value=<%= orderId %>>  --%>	
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= wtDate %>">
 				<input type="hidden" id="requestDate" name="requestDate" value="<%=rqDate %>">
 				<input type="hidden" id="requestPlace" name="requestPlace" value="<%= place %>">
