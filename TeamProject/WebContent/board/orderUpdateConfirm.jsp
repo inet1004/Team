@@ -5,35 +5,28 @@
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
- 
-<%
-	//HttpSession session = request.getSession(false);
-	String id = (String)session.getAttribute("sessionID");
-	if(id==null){
-	out.print("설정된 세션이 없습니다.<br>");
-	}else{
-	//out.print("id : "+ id +"<br>");
-	}
-%>
 
+<style>
+div#orderContailer { background-color:#ff33ff ; color: #ffffff; }
+div.p , h2 {color: #800080; font-weight: bold; display: inline-block;}
+li { list-style-type : none; }
+</style>	
+ 
+ 
 <%-- ID:<%=id %><br> --%>
 
 <%
-    //1. 넘겨받은 값 추출
     request.setCharacterEncoding("UTF-8"); 
 
-	//int orderId = Integer.parseInt(request.getParameter("orderId"));
 	String orderId = request.getParameter("orderId");
     String dress = request.getParameter("dress");
     String goods = request.getParameter("goods");
     String place = request.getParameter("place");
     String mc = request.getParameter("mc");
-	
-	// Date wDate=new SimpleDateFormat("yyyy-MM-dd").parse(request.getParameter("sf"));
-	// Date rDate=new SimpleDateFormat("yyyy-MM-dd'T'hh:mm").parse(request.getParameter("requestDate"));
 	String rAddr = request.getParameter("rAddr");
 	String writeDate = request.getParameter("writeDate");
 	String reqDate = request.getParameter("requestDate");
+	String id = request.getParameter("id");
 	
     //int goodsSet = Integer.parseInt(request.getParameter("goodsSet"));
     // int money = Integer.parseInt(request.getParameter("money"));
@@ -77,13 +70,8 @@
    
     //총금액
     total = danDress + danGoods + danPlace + danMc;
-    //change = money - total;
-    //change = Math.abs(change);
    
 %>
-
-		  
-       
 		<%--추가 --%>
 		<%		
 		String wtDate = writeDate;
@@ -92,13 +80,6 @@
 
 		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
 	
-	
-
-<style>
-div#orderContailer { background-color:#ff33ff ; color: #ffffff; }
-div.p , h2 {color: #800080; font-weight: bold; display: inline-block;}
-li { list-style-type : none; }
-</style>	
 
 <div id="orderContailer" align="center" >
 
@@ -135,8 +116,6 @@ li { list-style-type : none; }
          </ul>
        * 위의 사항을 확인하고 주문 합니다 : <br/><p>
        
-     
-		
 			
     <form action="../orderUpdate" method="post" >
 				<input type="hidden" id="orderId" name="orderId" value=<%= orderId %>>

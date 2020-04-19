@@ -24,6 +24,7 @@ public class OrderUpdate extends HttpServlet {
 			request.setCharacterEncoding("utf-8"); 
 			OrderDao dao = new OrderDao();
 			OrderVo vo = new OrderVo();
+			
 			String orderId = request.getParameter("orderId");
 			vo.setWriteDate(request.getParameter("writeDate"));
 			vo.setRequestDate(request.getParameter("requestDate"));
@@ -33,6 +34,8 @@ public class OrderUpdate extends HttpServlet {
 			vo.setGoods(request.getParameter("goods"));
 			vo.setMc(request.getParameter("mc"));
 			vo.setTotalPrice(Integer.parseInt(request.getParameter("totalPrice")));
+			vo.setId(request.getParameter("id"));
+			
 			boolean n = OrderDao.getInstance().update(vo,orderId);
 			String view = null; 
 			if(n != false) {

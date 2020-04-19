@@ -101,7 +101,7 @@ public class OrderDao {
 			psmt.setString(6,oid.getGoods());
 			psmt.setString(7,oid.getMc());
 			psmt.setInt(8,oid.getTotalPrice());
-			psmt.setString(9,oid.getId());
+			psmt.setString(9, oid.getId());
 			psmt.setInt(10,Integer.parseInt(OrderId));
 			psmt.executeUpdate();
 		} catch (SQLException e) {

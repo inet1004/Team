@@ -33,30 +33,20 @@ public class orderViewController extends HttpServlet {
 
 		HttpSession session = request.getSession(false);
 		String iid =  (String)session.getAttribute("sessionID");
-		
-//		if(id == "admin") {
-//			list = OrderDao.getInstance().select();
-//		} else {
-//			list = OrderDao.getInstance().selectOrder(id);
-//		}
-		
 
-		list = OrderDao.getInstance().select();
-//	    switch(iid){
-//	        case "admin" : 
-//				list = OrderDao.getInstance().select();
-//	            break;
-//	        case "ccc" : 
-//	        	list = OrderDao.getInstance().selectOrder(iid);
-////	        	list = dao.selectOrder(iid);
-//	            break;
-//	        default :
-//	        	list = OrderDao.getInstance().selectOrder(iid);
-//	    }
+	    switch(iid){
+	        case "admin" : 
+				list = OrderDao.getInstance().select();
+	            break;
+	        case "ccc" : 
+	        	list = OrderDao.getInstance().selectOrder(iid);
+	            break;
+	        default :
+	        	list = OrderDao.getInstance().selectOrder(iid);
+	    }
 		
-
 		request.setAttribute("list", list);
-		//		
+
 		String path = "/board/orderView.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
