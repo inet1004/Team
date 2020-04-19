@@ -21,14 +21,9 @@ public class OrderUpdate extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
 			request.setCharacterEncoding("utf-8"); 
-			
-			
 			OrderDao dao = new OrderDao();
 			OrderVo vo = new OrderVo();
-		
-//			vo.setOrderId(Integer.parseInt(request.getParameter("orderId")));
 			String orderId = request.getParameter("orderId");
 			vo.setWriteDate(request.getParameter("writeDate"));
 			vo.setRequestDate(request.getParameter("requestDate"));
@@ -38,20 +33,13 @@ public class OrderUpdate extends HttpServlet {
 			vo.setGoods(request.getParameter("goods"));
 			vo.setMc(request.getParameter("mc"));
 			vo.setTotalPrice(Integer.parseInt(request.getParameter("totalPrice")));
-			vo.setId(request.getParameter("id"));
-			// DB처리
-			
-//			boolean n = OrderDao.getInstance().update(vo);
 			boolean n = OrderDao.getInstance().update(vo,orderId);
-			
 			String view = null; 
 			if(n != false) {
-//				view = "views/order/fileOk.tiles";
 				view = "/orderView.do";
 			} else {
 				view = "views/order/fileFail.jsp";
 			}
-			
 			RequestDispatcher dispatcher = request.getRequestDispatcher(view);
 			dispatcher.forward(request,response);
 	}

@@ -81,7 +81,6 @@ public class OrderDao {
 	public boolean update(OrderVo oid, String OrderId) {
 
 		String sql ="UPDATE EORDER SET "
-//						+ " ORDERID = ?, "
 						+ " WRITEDATE = ?, "
 						+ " REQUESTDATE = ?, "
 						+ " REQUESTPLACE = ?, "
@@ -92,10 +91,8 @@ public class OrderDao {
 						+ " TOTALPRICE = ?, "
 						+ " ID = ? "
 				   +" WHERE ORDERID = ?";			 
-		try {
-//			conn = ConnectionManager.getConnnection();				
+		try {			
 			psmt = conn.prepareStatement(sql);
-//			psmt.setInt(1,oid.getOrderId());
 			psmt.setString(1,oid.getWriteDate());
 			psmt.setString(2,oid.getRequestDate());
 			psmt.setString(3,oid.getRequestPlace());
@@ -105,16 +102,11 @@ public class OrderDao {
 			psmt.setString(7,oid.getMc());
 			psmt.setInt(8,oid.getTotalPrice());
 			psmt.setString(9,oid.getId());
-//			psmt.setInt(10,oid.getOrderId());
 			psmt.setInt(10,Integer.parseInt(OrderId));
 			psmt.executeUpdate();
-			
 		} catch (SQLException e) {
 			e.printStackTrace();
 			return false;
-		}
-		finally {
-			ConnectionManager.close(conn);
 		}
 		return true;
 	}
@@ -172,8 +164,6 @@ public class OrderDao {
 		int n=0;
 		try {
 			psmt = conn.prepareStatement(ORDER_INSERT);
-			//psmt.setInt(1, order.getOrderId());
-
 			psmt.setString(1, order.getWriteDate());
 			psmt.setString(2, order.getRequestDate());
 			psmt.setString(3, order.getRequestPlace());
@@ -183,16 +173,6 @@ public class OrderDao {
 			psmt.setString(7, order.getMc());
 			psmt.setInt(8, order.getTotalPrice());
 			psmt.setString(9, order.getId());
-			
-//			psmt.setString(10, order.getFilename());
-//			pstmt.setDate(1, new java.sql.Timestamp(dat.getTime());
-//			당연히 뺄때도 Timestamp로 빼와야 시간까지 가져옵니다. ^^
-//			rs.getTimestamp("save_time");
-//			String reDate = order.getRequestDate();
-//			String reTrimmedDate = reDate.substring(0,10);
-//			String rDate =  reTrimmedDate + '%';
-//			psmt.setString(2, rDate);
-			
 			n=psmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();

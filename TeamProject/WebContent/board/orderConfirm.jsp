@@ -149,7 +149,7 @@ li { list-style-type : none; }
 				<input type="hidden" id="goods" name="goods" value="<%= goods %>">
 				<input type="hidden" id="mc" name="mc" value="<%= mc %>">
 				<input type="hidden" id="totalPrice" name="totalPrice" value="<%= total %>">
-				<input type="hidden" id="id" name="id" value="<%= id %>">
+				<input type="hidden" id="id" name="id" value="<%=id %>">
     			<br><p>
         <input type="submit" value="주문 확인">  &nbsp;&nbsp; <input type="button" onclick="location.href='../orderJoin.do'" value="추문 취소">
     </form>  
