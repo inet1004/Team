@@ -35,8 +35,8 @@ label {color: #0000ff; font-weight: bold;}
 			
 <div id="orderContailer" class="container" align="center">
 <br><p>
- <div><h2>이벤트 수정</h2></div>
- <div><h5><font color="#ff00bf">여기는 이벤트 수정 하는 곳입니다.</font></h5></div> 
+ <div><h2>이벤트 작성</h2></div>
+ <div><h5><font color="#ff00bf">여기는 이벤트 작성 하는 곳입니다.</font></h5></div> 
  
  	<form action="board/orderUpdateConfirm.jsp" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
@@ -49,14 +49,9 @@ label {color: #0000ff; font-weight: bold;}
 				<input type="hidden" class="inputOrder" id="id" name="id"  value="<%=id %>">
 			</div>
   						
-			<div><br/></div>
-				<font color="#ff0080"> 이벤트 주문 orderId : ${vo.orderId}</font><br/>
-				<input type="hidden" class="inputOrder" id="orderId" name="orderId"  value="${vo.orderId}">
-			<div><br/></div>
-			<div><br/></div>
 			
 			<div class="writeDate">
-				<label for="writeDate">작성 일자 : &nbsp;&nbsp;</label> ${vo.writeDate}
+				<label for="writeDate">작성 일자 : &nbsp;&nbsp;</label> <%= sf.format(nowTime) %>
 				<input type="hidden" id="writeDate" name="writeDate" placeholder="<%= sf.format(nowTime) %>" value="<%= sf.format(nowTime) %>">
 			</div>
 			
