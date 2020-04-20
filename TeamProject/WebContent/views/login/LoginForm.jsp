@@ -89,33 +89,35 @@
 						<br />
 					</div>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn"
-							onclick="checkValue()">Sign in</button>
+						<button class="login100-form-btn" onclick="checkValue()">Sign
+							in</button>
 					</div>
+					<%
+						// 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
+						// LoginPro.jsp에서 로그인 처리 결과에 따른 메시지를 보낸다.
+						String msg = request.getParameter("msg");
+
+						if (msg != null && msg.equals("0")) {
+							out.println("<br>");
+							out.println("<font color='black' size='3'>비밀번호를 확인해 주세요.</font>");
+						} else if (msg != null && msg.equals("-1")) {
+							out.println("<br>");
+							out.println("<font color='black' size='3'>아이디를 확인해 주세요.</font>");
+						}
+					%>
 					<div>
 						<br />
 					</div>
 					<a href="memberJoin.do" class="txt3"> Sign up now </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<a href="home.do" class="txt3"> Go Home </a>
+
+					
 				</form>
 			</div>
 
 
 		</div>
 	</div>
-	<%
-		// 아이디, 비밀번호가 틀릴경우 화면에 메시지 표시
-		// LoginPro.jsp에서 로그인 처리 결과에 따른 메시지를 보낸다.
-		String msg = request.getParameter("msg");
-
-		if (msg != null && msg.equals("0")) {
-			out.println("<br>");
-			out.println("<font color='red' size='5'>비밀번호를 확인해 주세요.</font>");
-		} else if (msg != null && msg.equals("-1")) {
-			out.println("<br>");
-			out.println("<font color='red' size='5'>아이디를 확인해 주세요.</font>");
-		}
-	%>
 	<!--===============================================================================================-->
 	<script
 		src="${pageContext.request.contextPath}/templet3/vendor/jquery/jquery-3.2.1.min.js"></script>

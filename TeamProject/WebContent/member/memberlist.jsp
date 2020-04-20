@@ -49,7 +49,7 @@
 	  list = dao.selectAll();
 	%>
 	
-	<table border="1">
+	<table border="1" class="table">
 	 <tr>
 	   <th>아이디</th>
 	   <th>이  름</th>
@@ -72,6 +72,7 @@
 	 
 	 <% } %>
 	</table>
+	</div>
 	<br/>
 </body>
 </html>

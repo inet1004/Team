@@ -9,14 +9,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/board.do")
-public class boardController extends HttpServlet {
+@WebServlet("/board3.do")
+public class boardController3 extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * @see HttpServlet#HttpServlet()
 	 */
-	public boardController() {
+	public boardController3() {
 		super();
 	}
 
@@ -25,7 +25,7 @@ public class boardController extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");
 
-		String path = "views/board.jsp";
+		String path = "views/board3.jsp";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
