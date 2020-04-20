@@ -55,7 +55,7 @@
 
 	// 회원가입 버튼 클릭시 회원가입 화면으로 이동
 	function goJoinForm() {
-		location.href = "views/member/memberJoin.tiles";
+		location.href = "memberJoin.do";
 	}
 </script>
 
@@ -89,17 +89,18 @@
 						<br />
 					</div>
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">Sign in</button>
+						<button class="login100-form-btn"
+							onclick="checkValue()">Sign in</button>
 					</div>
 					<div>
 						<br />
 					</div>
 					<a href="memberJoin.do" class="txt3"> Sign up now </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a href="home.do" class="txt3"> Go Home </a>
+					<a href="home.do" class="txt3"> Go Home </a>
 				</form>
 			</div>
-			
-			
+
+
 		</div>
 	</div>
 	<%

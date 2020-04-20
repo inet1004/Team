@@ -63,7 +63,7 @@ body {
 											<li><a href="login.do">로그인</a></li>
 											<li><a href="memberJoin.do">회원가입</a></li>
 											<li><a href="orderJoin.do">주문</a></li>
-											<li><a href="board.do">포토 게시판</a></li>
+											<li><a href="board.do">포트폴리오</a></li>
 										</ul>
 									</div>
 									<div class="col-md-6 extra-info">
