@@ -12,8 +12,8 @@ import java.util.ArrayList;
 public class OrderDao {
 	
 	String driver = "oracle.jdbc.driver.OracleDriver";
-//	String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";  // Team DB
-	String url = "jdbc:oracle:thin:@localhost:1521:xe";		 // Local DB
+	String url = "jdbc:oracle:thin:@192.168.0.116:1521:xe";  // Team DB
+//	String url = "jdbc:oracle:thin:@localhost:1521:xe";		 // Local DB
 	String user="hr";
 	String password = "hr";
 
@@ -117,7 +117,6 @@ public class OrderDao {
 		
 		String sql ="DELETE FROM EORDER WHERE ORDERID=?";
 		try {
-			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, orderId);
 			psmt.executeUpdate();
@@ -136,7 +135,7 @@ public class OrderDao {
 	public OrderVo selectOne(int order) {
 		OrderVo vo = new OrderVo();
 		try {
-			conn = ConnectionManager.getConnnection();			//ConnectionManager
+//			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(ORDER_ONE);
 			psmt.setInt(1, order);
 			rs = psmt.executeQuery();

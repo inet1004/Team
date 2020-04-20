@@ -38,9 +38,6 @@ public class orderViewController extends HttpServlet {
 	        case "admin" : 
 				list = OrderDao.getInstance().select();
 	            break;
-	        case "ccc" : 
-	        	list = OrderDao.getInstance().selectOrder(iid);
-	            break;
 	        default :
 	        	list = OrderDao.getInstance().selectOrder(iid);
 	    }

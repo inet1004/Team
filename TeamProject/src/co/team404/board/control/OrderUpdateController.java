@@ -28,7 +28,7 @@ public class OrderUpdateController extends HttpServlet {
 //		ArrayList<OrderVo> list = new ArrayList<OrderVo>();
 		String view = null; 
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
-		vo = dao.selectOne(orderId);
+		vo = OrderDao.getInstance().selectOne(orderId);
 		request.setAttribute("vo", vo);
 		
 		String path = "/board/orderUpdateNew.jsp";
