@@ -117,7 +117,6 @@ public class OrderDao {
 		
 		String sql ="DELETE FROM EORDER WHERE ORDERID=?";
 		try {
-//			conn = ConnectionManager.getConnnection();			//ConnectionManager
 			psmt = conn.prepareStatement(sql);
 			psmt.setInt(1, orderId);
 			psmt.executeUpdate();
