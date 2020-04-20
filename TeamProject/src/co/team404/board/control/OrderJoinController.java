@@ -34,7 +34,7 @@ public class OrderJoinController extends HttpServlet {
 		String view = null; 
 
 		HttpSession session = request.getSession(false);
-		String iid =  (String)session.getAttribute("sessionID");
+		String id =  (String)session.getAttribute("sessionID");
 		
 //		if(id == "admin") {
 //			list = OrderDao.getInstance().select();
@@ -43,7 +43,7 @@ public class OrderJoinController extends HttpServlet {
 //		}
 		
 
-    	list = OrderDao.getInstance().selectOrder(iid);
+    	list = OrderDao.getInstance().selectOrder(id);
 		
 //	    switch(iid){
 //	        case "admin" : 
