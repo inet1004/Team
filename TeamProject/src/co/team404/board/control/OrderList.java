@@ -54,7 +54,7 @@ public class OrderList extends HttpServlet {
 		request.setAttribute("list", list);
 		request.setAttribute("paging", paging);
 	
-		request.getRequestDispatcher("./board/orderListNew.jsp").forward(request, response);
+		request.getRequestDispatcher("./board/orderListNew.tiles").forward(request, response);
 	}
 
 

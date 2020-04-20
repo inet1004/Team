@@ -31,7 +31,7 @@ public class OrderUpdateController extends HttpServlet {
 		vo = OrderDao.getInstance().selectOne(orderId);
 		request.setAttribute("vo", vo);
 		
-		String path = "/board/orderUpdateNew.jsp";
+		String path = "/board/orderUpdateNew.tiles";
 		RequestDispatcher dispatcher = request.getRequestDispatcher(path);
 		dispatcher.forward(request, response);
 	}
