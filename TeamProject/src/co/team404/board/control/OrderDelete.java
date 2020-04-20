@@ -24,14 +24,15 @@ public class OrderDelete extends HttpServlet {
 		OrderDao dao = new OrderDao();
 		
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
+//		boolean n = OrderDao.getInstance().delete(orderId); //getInstance()
 		boolean n = dao.delete(orderId); 
 		
 		String view = null;  
 		if(n != false) {
 //			view = "views/order/fileOk.tiles";
-			view = "/board/orderList.tiles";
+			view = "/orderList.do";
 		} else {
-			view = "views/order/fileFail.tiles";
+			view = "views/order/fileFail.jsp";
 		}
 		
 		RequestDispatcher dispatcher = request.getRequestDispatcher(view);

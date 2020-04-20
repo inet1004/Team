@@ -13,22 +13,25 @@
 
 
 <style>
-div#orderContailer { background-color: yellowgreen;}
+div#orderContailer { background-color: #bf00ff;}
+label {color: yellow; font-weight: bold;}
 </style>		
+
+<% String id = (String) session.getAttribute("sessionID"); %>
 			
 <div id="orderContailer" class="container" align="center">
 <br><p>
  <div><h2>이벤트 주문</h2></div>
- <div><h3>여기는 <code>이벤트 주문</code> 하는 곳입니다.</h3></div> 
- 	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
+ <div><h5><font color="#000000">여기는 이벤트 주문 하는 곳입니다.</font></h5></div> 
+ 	<form action="/Team404/board/orderConfirm.jsp" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
-		<div id="formBody" class="formBody">
+		<div id="formBody" class="formBody"> 
 			<div><br/></div>
-			
+			 
 			<div class="memberId">
-				<label for="uuid">회원 아이디 :</label> <%= session.getAttribute("sessionID") %>
-				<input type="hidden" class="inputOrder" id="id" name="id" value="<%= session.getAttribute("id") %>">
+				<label for="uuid">회원 아이디 :</label> <%=id %>
+				<input type="hidden" class="inputOrder" id="id" name="id" value="<%=id %>">
 			</div>
 			
 			<div><br/></div>
@@ -36,7 +39,7 @@ div#orderContailer { background-color: yellowgreen;}
 			<div><br/></div>
 			
 			<div class="writeDate">
-				<label for="writeDate">작성 일자 :</label> String writeDate = <%= sf.format(nowTime) %>
+				<label for="writeDate">작성 일자 :</label>  <%= sf.format(nowTime) %>
 				<input type="hidden" id="writeDate" name="writeDate" value="<%= sf.format(nowTime) %>">
 			</div>
 			
@@ -117,7 +120,7 @@ div#orderContailer { background-color: yellowgreen;}
 			<div><br/></div>
         
 			<div class="sendForm">
-				<label for="sendForm">위의 사항을 확인하고 신청합니다.</label>
+				<label for="sendForm">* 위의 사항을 확인하고 신청합니다.</label>
 				<input type="submit" value="주문하기">
 			</div> 
 			

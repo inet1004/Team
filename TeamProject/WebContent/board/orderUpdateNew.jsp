@@ -29,15 +29,16 @@
 		<%--현재 날짜와 시간은 <%= nowTime %>, <%= sf.format(nowTime) %> 입니다.--%>
 
 <style>
-div#orderContailer { background-color: yellowgreen;}
+div#orderContailer { background-color: #00ffbf;}
+label {color: #0000ff; font-weight: bold;}
 </style>		
 			
 <div id="orderContailer" class="container" align="center">
 <br><p>
- <div><h2>이벤트 주문</h2></div>
- <div><h3>여기는 <code>이벤트 수정</code> 하는 곳입니다.</h3></div> 
+ <div><h2>이벤트 수정</h2></div>
+ <div><h5><font color="#ff00bf">여기는 이벤트 수정 하는 곳입니다.</font></h5></div> 
  
- 	<form action="board/orderConfirm.tiles" class="order" id="orderConfirm"
+ 	<form action="board/orderUpdateConfirm.jsp" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">
@@ -49,7 +50,7 @@ div#orderContailer { background-color: yellowgreen;}
 			</div>
   						
 			<div><br/></div>
-				이벤트 주문 orderId : ${vo.orderId}<br/>
+				<font color="#ff0080"> 이벤트 주문 orderId : ${vo.orderId}</font><br/>
 				<input type="hidden" class="inputOrder" id="orderId" name="orderId"  value="${vo.orderId}">
 			<div><br/></div>
 			<div><br/></div>
@@ -62,8 +63,8 @@ div#orderContailer { background-color: yellowgreen;}
 			<div><br/></div>
 			
 			<div class="requestDate">
-				<label for="requestDate">이벤트 요청 일자 : &nbsp;&nbsp;</label> ${vo.requestDate} 
-				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate">
+				<label for="requestDate">이벤트 요청 일자 : &nbsp;&nbsp;</label> ${vo.requestDate} 에서
+				<input type="datetime-local" class="inputOrder" id="requestDate" name="requestDate"> 으로
 			</div>
 			
 			<div><br/></div>
@@ -116,9 +117,9 @@ div#orderContailer { background-color: yellowgreen;}
 				<div class="unit">
 				<label for="eventMc">사외자 요청 : &nbsp;&nbsp;</label> <!-- ${vo} 확인하기 -->
 				<input type="radio" name="mc" id="mc" value="1" <c:if test="${ vo.mc eq '불필요'}">checked="checked", value="불필요"</c:if>/>
-				<label for="mc1">사회자 불필요</label> &nbsp;&nbsp;
+				사회자 불필요 &nbsp;&nbsp;
 				<input type="radio" name="mc" id="mc" value="2" <c:if test="${ vo.mc eq '필요'}">checked="checked", value="필요"</c:if>/>
-				<label for="mc2">사회자 요청</label>
+				사회자 요청
 				</div>
 				<div class="unit"> [ 가격: 원 ] </div>
 			</div>
