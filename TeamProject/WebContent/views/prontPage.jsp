@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -59,11 +60,30 @@ body {
 								<div class="row full-height align-items-center">
 									<div class="col-md-6">
 										<ul class="list-unstyled menu">
-											<li><a href="home.do">홈</a></li>
-											<li><a href="login.do">로그인</a></li>
-											<li><a href="memberJoin.do">회원가입</a></li>
-											<li><a href="orderJoin.do">주문</a></li>
-											<li><a href="board.do">포트폴리오</a></li>
+											<c:choose>
+												<c:when test="${not empty sessionID }">
+													<c:if test="${grade == 'admin' }">
+														<li><a href="home.do">홈</a></li>
+														<li><a href="memberList.do">회원목록</a></li>
+														<li><a href="orderJoin.do">주문목록</a></li>
+														<li><a href="board.do">포트폴리오</a></li>
+													<li><a href="logout.do">로그아웃</a></li>
+													</c:if>
+													<c:if test="${grade != 'admin' }">
+													<li><a href="home.do">홈</a></li>
+													<li><a href="orderView.do">주문</a></li>
+													<li><a href="board.do">포트폴리오</a></li>
+													<li><a href="logout.do">로그아웃</a></li>
+													</c:if>
+												</c:when>
+												<c:otherwise>
+													<li><a href="home.do">홈</a></li>
+													<li><a href="login.do">로그인</a></li>
+													<li><a href="memberJoin.do">회원가입</a></li>
+													<li><a href="orderJoin.do">주문</a></li>
+													<li><a href="board.do">포트폴리오</a></li>
+												</c:otherwise>
+											</c:choose>
 										</ul>
 									</div>
 									<div class="col-md-6 extra-info">
@@ -104,8 +124,7 @@ body {
 				class="row site-hero-inner justify-content-center align-items-center">
 				<div class="col-md-10 text-center">
 					<h1 class="heading" data-aos="fade-up">
-						Welcome to our <br />
-						<em>Bridal Shower</em> Store
+						Welcome to our <br /> <em>Bridal Shower</em> Store
 					</h1>
 					<p class="sub-heading mb-5" data-aos="fade-up" data-aos-delay="100">결혼을
 						앞둔 당신 &amp; 기회는 지금뿐이다!</p>
