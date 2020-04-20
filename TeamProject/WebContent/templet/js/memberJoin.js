@@ -32,7 +32,7 @@ $(function() {
 		var addr = $('#addr').val();
 		if (addr == '') {
 			$('#addrResult').html("주소를 다시 입력해 주세요.");
-			$('#pwResult').css("color", "red");
+			$('#addrResult').css("color", "red");
 			return false;
 		} else {
 			$('#addrResult').html("사용가능한 주소입니다.");
