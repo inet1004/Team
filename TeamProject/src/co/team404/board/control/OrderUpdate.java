@@ -51,5 +51,4 @@ public class OrderUpdate extends HttpServlet {
 		doGet(request, response);
 	}
 
-	
 }

@@ -38,4 +38,5 @@ public class OrderInsertController extends HttpServlet {
 		doGet(request, response);
 	}
 
+	
 }
