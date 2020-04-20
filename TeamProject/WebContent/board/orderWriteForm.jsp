@@ -38,7 +38,7 @@ label {color: #0000ff; font-weight: bold;}
  <div><h2>이벤트 작성</h2></div>
  <div><h5><font color="#ff00bf">여기는 이벤트 작성 하는 곳입니다.</font></h5></div> 
  
- 	<form action="board/orderUpdateConfirm.jsp" class="order" id="orderConfirm"
+ 	<form action="board/orderConfirm.jsp" class="order" id="orderConfirm"
 			name="orderConfirm" method="post" >
 			
 		<div id="formBody" class="formBody">
