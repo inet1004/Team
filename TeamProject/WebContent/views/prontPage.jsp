@@ -65,13 +65,13 @@ body {
 													<c:if test="${grade == 'admin' }">
 														<li><a href="home.do">홈</a></li>
 														<li><a href="memberList.do">회원목록</a></li>
-														<li><a href="orderJoin.do">주문목록</a></li>
+													<li><a href="orderView.do">관리자주문</a></li>
 														<li><a href="board.do">포트폴리오</a></li>
 													<li><a href="logout.do">로그아웃</a></li>
 													</c:if>
 													<c:if test="${grade != 'admin' }">
 													<li><a href="home.do">홈</a></li>
-													<li><a href="orderView.do">주문</a></li>
+														<li><a href="orderJoin.do">주문목록</a></li>
 													<li><a href="board.do">포트폴리오</a></li>
 													<li><a href="logout.do">로그아웃</a></li>
 													</c:if>
